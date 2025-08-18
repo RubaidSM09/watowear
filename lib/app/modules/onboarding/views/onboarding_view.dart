@@ -152,10 +152,13 @@ class OnboardingView extends GetView<OnboardingController> {
                   Positioned(
                     left: 368.w,
                     top: 873.76.h,
-                    child: Image.asset(
-                      'assets/images/onboarding/next.png',
-                      width: 34.w,
-                      height: 34.h,
+                    child: GestureDetector(
+                      onTap: controller.next,
+                      child: Image.asset(
+                        'assets/images/onboarding/next.png',
+                        width: 34.w,
+                        height: 34.h,
+                      ),
                     ),
                   ),
                 ],

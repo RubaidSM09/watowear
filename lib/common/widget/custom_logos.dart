@@ -4,26 +4,36 @@ import 'package:watowear_chole/common/custom_colors.dart';
 
 class CustomLogo extends StatelessWidget {
   final String icon;
+  final double width;
+  final double height;
+  final double imgWidth;
+  final double imgHeight;
+  final Color logoColor;
 
   const CustomLogo({
     required this.icon,
+    this.width = 80,
+    this.height = 80,
+    this.imgWidth = 21,
+    this.imgHeight = 24,
+    this.logoColor = WTWColor.primary,
     super.key
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(28.w),
-      width: 80.w,
-      height: 80.h,
+      // padding: EdgeInsets.all(28.w),
+      width: width.w,
+      height: height.h,
       decoration: BoxDecoration(
-        color: WTWColor.primary,
+        color: logoColor,
         shape: BoxShape.circle
       ),
       child: Image.asset(
         icon,
-        width: 21.w,
-        height: 24.h,
+        width: imgWidth.w,
+        height: imgHeight.h,
         scale: 4,
       ),
     );

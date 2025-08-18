@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
+import 'package:watowear_chole/common/widget/custom_logos.dart';
 
 class OnboardingButton extends GetView {
   final String text;
@@ -285,6 +286,63 @@ class ResetPasswordButton extends GetView {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class QuickActionButton extends StatelessWidget {
+  final String text;
+  final String logo;
+  final Color logoColor;
+  final VoidCallback onTap;
+
+  const QuickActionButton({
+    required this.text,
+    required this.logo,
+    this.logoColor = WTWColor.primary,
+    required this.onTap,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 186.w,
+        height: 118.h,
+        padding: EdgeInsets.symmetric(horizontal: 32.18.w, vertical: 19.h),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+            color: WTWColor.secondary_bg,
+          )
+        ),
+        child: Column(
+          children: [
+            CustomLogo(
+              icon: logo,
+              width: 48,
+              height: 48,
+              imgWidth: 20,
+              imgHeight: 17.5,
+              logoColor: logoColor,
+            ),
+            SizedBox(height: 7.h,),
+            Text(
+              text,
+              style: TextStyle(
+                color: WTWColor.text_icons,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w400,
+                fontSize: 14.sp,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );

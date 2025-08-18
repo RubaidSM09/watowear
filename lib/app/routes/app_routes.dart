@@ -8,6 +8,8 @@ abstract class Routes {
   static const ONBOARDING = _Paths.ONBOARDING;
   static const SIGN_IN = _Paths.SIGN_IN;
   static const SIGN_UP = _Paths.SIGN_UP;
+  static const VERIFY_MAIL = _Paths.VERIFY_MAIL;
+  static const ADD_WARDROBE = _Paths.ADD_WARDROBE;
 }
 
 abstract class _Paths {
@@ -17,4 +19,6 @@ abstract class _Paths {
   static const ONBOARDING = '/onboarding';
   static const SIGN_IN = '/sign-in';
   static const SIGN_UP = '/sign-up';
+  static const VERIFY_MAIL = '/verify-mail';
+  static const ADD_WARDROBE = '/add-wardrobe';
 }

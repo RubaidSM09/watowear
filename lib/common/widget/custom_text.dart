@@ -279,13 +279,17 @@ class ResetPasswordHeadText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: WTWColor.text_icons,
-        fontFamily: 'Comfortaa',
-        fontWeight: FontWeight.w600,
-        fontSize: 24.sp,
+    return SizedBox(
+      width: 313.w,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: WTWColor.text_icons,
+          fontFamily: 'Comfortaa',
+          fontWeight: FontWeight.w600,
+          fontSize: 24.sp,
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }
@@ -307,6 +311,32 @@ class ResetPasswordSubheadText extends StatelessWidget {
         text,
         style: TextStyle(
           color: WTWColor.text_icons,
+          fontFamily: 'Comfortaa',
+          fontWeight: FontWeight.w600,
+          fontSize: 16.sp,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+class ExtrasSubheadText extends StatelessWidget {
+  final String text;
+
+  const ExtrasSubheadText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 358.09375.w,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: WTWColor.text_icons.withAlpha(166),
           fontFamily: 'Comfortaa',
           fontWeight: FontWeight.w600,
           fontSize: 16.sp,
@@ -446,6 +476,278 @@ class ResendCodeText extends StatelessWidget {
           }),
         ],
       ),
+    );
+  }
+}
+
+class BodyShapeText extends StatelessWidget {
+  final String text;
+
+  const BodyShapeText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: WTWColor.text_icons,
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 16.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class VibeText extends StatelessWidget {
+  final String text;
+
+  const VibeText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: WTWColor.text_icons,
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 16.65.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class NewThingsText extends StatelessWidget {
+  final String text;
+
+  const NewThingsText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: WTWColor.text_icons,
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 18.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class NewThingsSubtext extends StatelessWidget {
+  final String text;
+
+  const NewThingsSubtext({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Color(0xFF4B5563),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 14.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+
+
+class FavColorsText extends StatelessWidget {
+  final String text;
+
+  const FavColorsText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Color(0xFF4B5563),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w700,
+        fontSize: 18.74.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class CelebrityText extends StatelessWidget {
+  final String text;
+
+  const CelebrityText({
+    required this.text,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 134.28070068359375.w,
+      child: Text(
+        text,
+        style: TextStyle(
+          color: WTWColor.text_icons,
+          fontFamily: 'Comfortaa',
+          fontWeight: FontWeight.w400,
+          fontSize: 14.57.sp,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+class StyleInspirationText extends StatelessWidget {
+
+  const StyleInspirationText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Style Inspirations:',
+      style: TextStyle(
+        color: Color(0xFF4B5563),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w600,
+        fontSize: 14.57.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class MoreUploadText extends StatelessWidget {
+
+  const MoreUploadText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 263.w,
+      child: Text(
+        'The more you upload, the better the suggestions!',
+        style: TextStyle(
+          color: Color(0xFF4B5563),
+          fontFamily: 'Comfortaa',
+          fontWeight: FontWeight.w400,
+          fontSize: 14.sp,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}
+
+class HowToTakePhotosText extends StatelessWidget {
+
+  const HowToTakePhotosText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'How to take great photos',
+      style: TextStyle(
+        color: WTWColor.text_icons,
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 14.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class QuickTipsText extends StatelessWidget {
+
+  const QuickTipsText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Quick tips for the best results',
+      style: TextStyle(
+        color: Color(0xFF4B5563),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 12.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class NewToWatowearText extends StatelessWidget {
+
+  const NewToWatowearText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'New to Watowear?',
+      style: TextStyle(
+        color: Color(0xFF707868),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w700,
+        fontSize: 17.73.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class TakeAppTourText extends StatelessWidget {
+
+  const TakeAppTourText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Take the app tour to get started!',
+      style: TextStyle(
+        color: Color(0xFF3D403A),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 15.51.sp,
+      ),
+      textAlign: TextAlign.center,
     );
   }
 }

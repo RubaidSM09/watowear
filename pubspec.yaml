@@ -69,6 +69,12 @@ flutter:
   assets:
     - assets/images/onboarding/
     - assets/images/authentication/
+    - assets/images/authentication/body_shape/
+    - assets/images/authentication/vibe/
+    - assets/images/authentication/new_things/
+    - assets/images/authentication/celebrity/
+    - assets/images/add_wardrobe/
+    - assets/images/home/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

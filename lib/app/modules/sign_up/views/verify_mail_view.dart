@@ -24,11 +24,10 @@ class VerifyMailView extends GetView<VerifyMailController> {
     return Scaffold(
       backgroundColor: WTWColor.background,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: WTWColor.background,
-        title: Center(
-          child: WTWAppbarText(
-            text: 'Verify Email',
-          ),
+        title: WTWAppbarText(
+          text: 'Verify Email',
         ),
         elevation: 0,
       ),
@@ -36,7 +35,8 @@ class VerifyMailView extends GetView<VerifyMailController> {
         children: [
           Positioned(
             top: 152.8.h,
-            left: 42.w,
+            left: 0.w,
+            right: 0.w,
             child: Column(
               children: [
                 CustomLogo(icon: 'assets/images/authentication/verify_mail.png'),

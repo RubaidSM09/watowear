@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/common/widget/custom_cards.dart';
 
 import '../../../../common/custom_colors.dart';
+import '../../../../common/widget/custom_text.dart';
 
 class Extra2View extends GetView {
   const Extra2View({super.key});
@@ -12,50 +14,32 @@ class Extra2View extends GetView {
     return Stack(
         children: [
           Positioned(
-            top: 202.6.h,
-            left: 49.w,
-            child: Column(
-              children: [
-                Image.asset('assets/images/onboarding/onboarding2.png', height: 256.h, width: 192.w,),
-                SizedBox(height: 38.h),
-                Text(
-                  'Upload your real\nwardrobe',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 30.sp
-                  ),
-                  // style: titleStyle,
-                ),
-                SizedBox(height: 26.h),
-                Text(
-                  'Digitize your real clothes in seconds.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: WTWColor.accent,
-                    fontFamily: 'Comfortaa',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                SizedBox(
-                  width: 341.w,
-                  child: Text(
-                    'Organize. See what you own. Get personalized outfit suggestions based on your actual wardrobe.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: WTWColor.text_icons,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Comfortaa'
-                    ),
-                    // style: bodyStyle,
-                  ),
-                ),
-              ],
+            top: 132.68.h,
+            left: 42.5.w,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  ResetPasswordHeadText(text: 'How would you describe your body shape?'),
+              
+                  SizedBox(height: 12.h,),
+              
+                  ExtrasSubheadText(text: 'I want to suggest cuts and fits\nthat truly flatter you.',),
+              
+                  SizedBox(height: 24.08.h,),
+              
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/apple_body.png', text: 'Apple',),
+                  SizedBox(height: 16.h,),
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/pear_body.png', text: 'Pear',),
+                  SizedBox(height: 16.h,),
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/hourglass_body.png', text: 'Hourglass',),
+                  SizedBox(height: 16.h,),
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/rectangle_body.png', text: 'Rectangle',),
+                  SizedBox(height: 16.h,),
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/inverted_triangle_body.png', text: 'Inverted Triangle',),
+                  SizedBox(height: 16.h,),
+                  BodyShapeCard(icon: 'assets/images/authentication/body_shape/not_sure_body.png', text: 'I\'m not sure',),
+                ],
+              ),
             ),
           ),
         ]
