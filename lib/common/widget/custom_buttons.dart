@@ -348,3 +348,54 @@ class QuickActionButton extends StatelessWidget {
     );
   }
 }
+
+class WTWPrimaryButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final VoidCallback onTap;
+
+  const WTWPrimaryButton({
+    required this.text,
+    this.icon = '',
+    this.width = 385,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 360.w,
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          color: WTWColor.primary,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? SizedBox(width: 10.w,) : SizedBox.shrink(),
+            Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                fontFamily: 'Comfortaa',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

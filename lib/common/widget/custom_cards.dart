@@ -7,11 +7,7 @@ class BodyShapeCard extends StatelessWidget {
   final String icon;
   final String text;
 
-  const BodyShapeCard({
-    required this.icon,
-    required this.text,
-    super.key
-  });
+  const BodyShapeCard({required this.icon, required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +36,7 @@ class BodyShapeCard extends StatelessWidget {
                   height: 17.19.h,
                 ),
               ),
-              SizedBox(width: 16.w,),
+              SizedBox(width: 16.w),
               BodyShapeText(text: text),
             ],
           ),
@@ -50,7 +46,7 @@ class BodyShapeCard extends StatelessWidget {
             height: 20.h,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: WTWColor.text_icons, width: 2.sp)
+              border: Border.all(color: WTWColor.text_icons, width: 2.sp),
             ),
           ),
         ],
@@ -68,7 +64,7 @@ class SkinToneCard extends StatelessWidget {
     required this.color,
     required this.borderColor,
     required this.text,
-    super.key
+    super.key,
   });
 
   @override
@@ -95,7 +91,7 @@ class SkinToneCard extends StatelessWidget {
                   border: Border.all(color: borderColor),
                 ),
               ),
-              SizedBox(width: 16.w,),
+              SizedBox(width: 16.w),
               BodyShapeText(text: text),
             ],
           ),
@@ -104,8 +100,8 @@ class SkinToneCard extends StatelessWidget {
             width: 20.w,
             height: 20.h,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: WTWColor.text_icons, width: 2.sp)
+              shape: BoxShape.circle,
+              border: Border.all(color: WTWColor.text_icons, width: 2.sp),
             ),
           ),
         ],
@@ -118,11 +114,7 @@ class VibeCard extends StatelessWidget {
   final String icon;
   final String text;
 
-  const VibeCard({
-    required this.icon,
-    required this.text,
-    super.key
-  });
+  const VibeCard({required this.icon, required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -137,11 +129,8 @@ class VibeCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            icon,
-            scale: 4,
-          ),
-          SizedBox(height: 13.93.h,),
+          Image.asset(icon, scale: 4),
+          SizedBox(height: 13.93.h),
           VibeText(text: text),
         ],
       ),
@@ -158,7 +147,7 @@ class NewThingsCard extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.subText,
-    super.key
+    super.key,
   });
 
   @override
@@ -188,7 +177,7 @@ class NewThingsCard extends StatelessWidget {
                   height: 17.19.h,
                 ),
               ),
-              SizedBox(width: 16.w,),
+              SizedBox(width: 16.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -203,8 +192,8 @@ class NewThingsCard extends StatelessWidget {
             width: 20.w,
             height: 20.h,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: WTWColor.text_icons, width: 2.sp)
+              shape: BoxShape.circle,
+              border: Border.all(color: WTWColor.text_icons, width: 2.sp),
             ),
           ),
         ],
@@ -216,10 +205,7 @@ class NewThingsCard extends StatelessWidget {
 class FavColorCard extends StatelessWidget {
   final Color color;
 
-  const FavColorCard({
-    required this.color,
-    super.key
-  });
+  const FavColorCard({required this.color, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -229,7 +215,7 @@ class FavColorCard extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: Color(0xFFD1D5DB), width: 2.08.sp),
-        color: color
+        color: color,
       ),
     );
   }
@@ -239,11 +225,7 @@ class CelebrityCard extends StatelessWidget {
   final String image;
   final String text;
 
-  const CelebrityCard({
-    required this.image,
-    required this.text,
-    super.key
-  });
+  const CelebrityCard({required this.image, required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -260,11 +242,9 @@ class CelebrityCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 33.30994034.r,
-            backgroundImage: AssetImage(
-              image,
-            ),
+            backgroundImage: AssetImage(image),
           ),
-          SizedBox(height: 12.28.h,),
+          SizedBox(height: 12.28.h),
           CelebrityText(text: text),
         ],
       ),
@@ -284,9 +264,7 @@ class MoreUploadCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.r),
         color: WTWColor.accent.withAlpha(26),
-        border: Border.all(
-          color: WTWColor.accent.withAlpha(51),
-        )
+        border: Border.all(color: WTWColor.accent.withAlpha(51)),
       ),
       child: Row(
         children: [
@@ -296,7 +274,7 @@ class MoreUploadCard extends StatelessWidget {
             height: 18.h,
             scale: 4,
           ),
-          SizedBox(width: 22.w,),
+          SizedBox(width: 22.w),
           MoreUploadText(),
         ],
       ),
@@ -316,15 +294,21 @@ class TutorialCard extends StatelessWidget {
           height: 191.h,
           padding: EdgeInsets.symmetric(horizontal: 145.5.w, vertical: 63.63.h),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(topRight: Radius.circular(7.r), topLeft: Radius.circular(7.r)),
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(7.r),
+              topLeft: Radius.circular(7.r),
+            ),
             gradient: LinearGradient(
-              colors: [WTWColor.primary.withAlpha(51), WTWColor.accent.withAlpha(51)],
+              colors: [
+                WTWColor.primary.withAlpha(51),
+                WTWColor.accent.withAlpha(51),
+              ],
             ),
             border: Border(
               top: BorderSide(color: Color(0xFFE5E7EB)),
               left: BorderSide(color: Color(0xFFE5E7EB)),
               right: BorderSide(color: Color(0xFFE5E7EB)),
-            )
+            ),
           ),
           child: Container(
             decoration: BoxDecoration(
@@ -335,14 +319,14 @@ class TutorialCard extends StatelessWidget {
                 BoxShadow(
                   color: Colors.black.withAlpha(26),
                   blurRadius: 15.r,
-                  offset: Offset(0.w, 10.h)
+                  offset: Offset(0.w, 10.h),
                 ),
                 BoxShadow(
-                    color: Colors.black.withAlpha(26),
-                    blurRadius: 6.r,
-                    offset: Offset(0.w, 4.h)
+                  color: Colors.black.withAlpha(26),
+                  blurRadius: 6.r,
+                  offset: Offset(0.w, 4.h),
                 ),
-              ]
+              ],
             ),
             child: Center(
               child: Image.asset(
@@ -360,20 +344,23 @@ class TutorialCard extends StatelessWidget {
           height: 76.h,
           padding: EdgeInsets.symmetric(horizontal: 16.5.w, vertical: 16.05.h),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(bottomRight: Radius.circular(7.r), bottomLeft: Radius.circular(7.r)),
-              color: Colors.white,
-              border: Border(
-                bottom: BorderSide(color: Color(0xFFE5E7EB)),
-                left: BorderSide(color: Color(0xFFE5E7EB)),
-                right: BorderSide(color: Color(0xFFE5E7EB)),
-              )
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(7.r),
+              bottomLeft: Radius.circular(7.r),
+            ),
+            color: Colors.white,
+            border: Border(
+              bottom: BorderSide(color: Color(0xFFE5E7EB)),
+              left: BorderSide(color: Color(0xFFE5E7EB)),
+              right: BorderSide(color: Color(0xFFE5E7EB)),
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HowToTakePhotosText(),
-              SizedBox(height: 4.0.h,),
+              SizedBox(height: 4.0.h),
               QuickTipsText(),
             ],
           ),
@@ -398,7 +385,7 @@ class AddWardrobeCard extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subTitle,
-    super.key
+    super.key,
   });
 
   @override
@@ -406,27 +393,19 @@ class AddWardrobeCard extends StatelessWidget {
     return Container(
       width: 356.w,
       height: 68.5.h,
-      padding: EdgeInsets.symmetric(horizontal: 20.5.w, vertical: 10.13.h,),
+      padding: EdgeInsets.symmetric(horizontal: 20.5.w, vertical: 10.13.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.r),
         color: fillColor,
-        border: Border.all(
-          color: borderColor,
-          width: borderWidth.sp
-        )
+        border: Border.all(color: borderColor, width: borderWidth.sp),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
-              Image.asset(
-                image,
-                width: 18.w,
-                height: 18.h,
-                scale: 4,
-              ),
-              SizedBox(width: 15.21.w,),
+              Image.asset(image, width: 18.w, height: 18.h, scale: 4),
+              SizedBox(width: 15.21.w),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -448,9 +427,9 @@ class AddWardrobeCard extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp,
                     ),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
 
@@ -458,7 +437,7 @@ class AddWardrobeCard extends StatelessWidget {
             Icons.arrow_forward_ios,
             color: WTWColor.text_icons.withAlpha(153),
             size: 22.sp,
-          )
+          ),
         ],
       ),
     );
@@ -476,7 +455,7 @@ class WhatHappensNext extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 42.5.w, vertical: 18.15.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.r),
-        color: Colors.white
+        color: Colors.white,
       ),
       child: Column(
         children: [
@@ -490,7 +469,7 @@ class WhatHappensNext extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 11.1.h,),
+          SizedBox(height: 11.1.h),
 
           SizedBox(
             height: 93.h,
@@ -501,10 +480,13 @@ class WhatHappensNext extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5.25.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 5.25.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
                         color: WTWColor.primary.withAlpha(26),
-                        shape: BoxShape.circle
+                        shape: BoxShape.circle,
                       ),
                       child: Image.asset(
                         'assets/images/add_wardrobe/auto_tag.png',
@@ -524,7 +506,7 @@ class WhatHappensNext extends StatelessWidget {
                           fontSize: 14.sp,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
 
@@ -532,10 +514,13 @@ class WhatHappensNext extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5.25.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 5.25.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
-                          color: WTWColor.primary.withAlpha(26),
-                          shape: BoxShape.circle
+                        color: WTWColor.primary.withAlpha(26),
+                        shape: BoxShape.circle,
                       ),
                       child: Image.asset(
                         'assets/images/add_wardrobe/color.png',
@@ -555,7 +540,7 @@ class WhatHappensNext extends StatelessWidget {
                           fontSize: 14.sp,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
 
@@ -563,10 +548,13 @@ class WhatHappensNext extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5.25.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 5.25.w,
+                        vertical: 4.h,
+                      ),
                       decoration: BoxDecoration(
-                          color: WTWColor.primary.withAlpha(26),
-                          shape: BoxShape.circle
+                        color: WTWColor.primary.withAlpha(26),
+                        shape: BoxShape.circle,
                       ),
                       child: Image.asset(
                         'assets/images/add_wardrobe/suggestion.png',
@@ -586,12 +574,12 @@ class WhatHappensNext extends StatelessWidget {
                           fontSize: 14.sp,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
@@ -610,14 +598,14 @@ class NewToWatowear extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
           color: Color(0xFF707868).withAlpha(51),
-          width: 1.11.sp
+          width: 1.11.sp,
         ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withAlpha(13),
             blurRadius: 13.3.r,
             offset: Offset(0.w, 4.43.h),
-          )
+          ),
         ],
       ),
       child: Row(
@@ -625,15 +613,302 @@ class NewToWatowear extends StatelessWidget {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            children: [NewToWatowearText(), TakeAppTourText()],
+          ),
+          Icon(Icons.close, size: 22.16.sp, color: Color(0xFF9CA3AF)),
+        ],
+      ),
+    );
+  }
+}
+
+class StyleProfileCard extends StatelessWidget {
+  final List<String> styles;
+
+  const StyleProfileCard({required this.styles, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 385.w,
+      height: 88.h,
+      padding: EdgeInsets.all(17.w),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(13.3.r),
+        border: Border.all(color: Color(0xFFE5E7EB)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(13),
+            blurRadius: 13.3.r,
+            offset: Offset(0.w, 4.43.h),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              NewToWatowearText(),
-              TakeAppTourText(),
+              Text(
+                'Your Style Profile',
+                style: TextStyle(
+                  color: Color(0xFF6B7280),
+                  fontFamily: 'Comfortaa',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15.51.sp,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              Row(
+                children: List.generate(styles.length * 2 - 1, (index) {
+                  // Odd indices will be separators
+                  if (index.isOdd) {
+                    return Text(
+                      ' · ',
+                      style: TextStyle(
+                        color: Color(0xFF3D403A),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17.73.sp,
+                      ),
+                    );
+                  }
+                  // Even indices will be style items
+                  final styleText = styles[index ~/ 2];
+                  return Text(
+                    styleText,
+                    style: TextStyle(
+                      color: Color(0xFF3D403A),
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17.73.sp,
+                    ),
+                  );
+                }),
+              ),
             ],
           ),
-          Icon(
-            Icons.close,
-            size: 22.16.sp,
-            color: Color(0xFF9CA3AF),
+
+          GestureDetector(
+            onTap: () {},
+            child: Image.asset(
+              'assets/images/home/edit.png',
+              width: 22.135.w,
+              height: 22.135.h,
+              scale: 4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class DailyMissionsCard extends StatelessWidget {
+  final int totalUploads;
+
+  const DailyMissionsCard({
+    required this.totalUploads,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Daily Missions',
+              style: TextStyle(
+                color: WTWColor.text_icons,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Image.asset(
+              'assets/images/home/earnXp.png',
+              width: 18.w,
+              height: 18.h,
+              scale: 4,
+            ),
+          ],
+        ),
+        SizedBox(height: 10.h),
+        Container(
+          width: 385.w,
+          height: 95.h,
+          padding: EdgeInsets.all(17.305.w),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8.r),
+            border: Border.all(color: WTWColor.secondary_bg),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Upload 3 new items',
+                    style: TextStyle(
+                      color: WTWColor.text_icons,
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '+50 XP',
+                    style: TextStyle(
+                      color: WTWColor.accent,
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+
+              Stack(
+                children: [
+                  Container(
+                    width: 356.w,
+                    height: 8.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(9999.r),
+                      color: WTWColor.secondary_bg,
+                      border: Border.all(
+                        color: Color(0xFFE5E7EB)
+                      )
+                    ),
+                  ),
+                  Container(
+                    width: ((356/3)*totalUploads).w,
+                    height: 8.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9999.r),
+                        color: WTWColor.primary,
+                        border: Border.all(
+                            color: Color(0xFFE5E7EB)
+                        )
+                    ),
+                  ),
+                ],
+              ),
+
+              Row(
+                children: [
+                  Text(
+                    '$totalUploads of 3 completed',
+                    style: TextStyle(
+                      color: Color(0xFF6B7280),
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12.sp,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class RecentOutfitsCard extends StatelessWidget {
+  final String image;
+  final String title;
+
+  const RecentOutfitsCard({
+    required this.image,
+    required this.title,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 186.1363525390625.w,
+      height: 177.27273559570312.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(13.3.r),
+        border: Border.all(
+          color: Color(0xFFE5E7EB),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(13),
+            blurRadius: 13.3.r,
+            offset: Offset(0.w, 4.43.h),
+          )
+        ]
+      ),
+      child: Stack(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(13.3.r),
+            child: Image.asset(
+              image,
+              scale: 4,
+              fit: BoxFit.contain,
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(13.3.r),
+              gradient: LinearGradient(
+                  colors: [
+                    Colors.black.withAlpha(153),
+                    Colors.transparent
+                  ]
+              )
+            ),
+          ),
+          Positioned(
+            top: 12.1.h,
+            left: 154.w,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 5.21.w, vertical: 2.31.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6405.4.r),
+                color: Colors.white.withAlpha(204),
+              ),
+              child: SizedBox(
+                height: 15.374506950378418.h,
+                child: Image.asset(
+                  'assets/images/home/favourite.png',
+                  width: 10.249672889709473.w,
+                  scale: 4,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 148.38.h,
+            left: 13.3.w,
+            child: Text(
+              title,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w600,
+                fontSize: 14.sp,
+              ),
+              textAlign: TextAlign.center,
+            ),
           )
         ],
       ),
