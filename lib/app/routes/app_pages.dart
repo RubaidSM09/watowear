@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/add_wardrobe/bindings/add_wardrobe_binding.dart';
 import '../modules/add_wardrobe/views/add_wardrobe_view.dart';
+import '../modules/generate/bindings/generate_binding.dart';
+import '../modules/generate/views/generate_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -56,6 +58,11 @@ class AppPages {
       name: _Paths.ADD_WARDROBE,
       page: () => const AddWardrobeView(),
       binding: AddWardrobeBinding(),
+    ),
+    GetPage(
+      name: _Paths.GENERATE,
+      page: () => const GenerateView(),
+      binding: GenerateBinding(),
     ),
   ];
 }

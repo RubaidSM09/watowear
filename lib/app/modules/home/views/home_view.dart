@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
+import 'package:watowear_chole/app/modules/home/views/generate_outfit_view.dart';
+import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
+import 'package:watowear_chole/app/modules/home/views/outfit_suggestions_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 
@@ -18,17 +22,18 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         backgroundColor: WTWColor.background,
         scrolledUnderElevation: 0,
+        leading: Image.asset(
+          'assets/images/home/menu.png',
+          width: 17.5.w,
+          height: 15.h,
+          scale: 4,
+        ),
         title: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/images/home/menu.png',
-                  width: 17.5.w,
-                  height: 15.h,
-                  scale: 4,
-                ),
+                SizedBox.shrink(),
                 Image.asset(
                   'assets/images/onboarding/onboarding1Text.png',
                   color: WTWColor.text_icons,
@@ -44,16 +49,19 @@ class HomeView extends GetView<HomeController> {
                 )
               ],
             ),
-            Divider(color: WTWColor.secondary_bg,),
           ],
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 30.w, right: 30.w, top: 53.h),
+          padding: EdgeInsets.only(left: 30.w, right: 30.w, /*top: 53.h*/),
           child: Column(
             children: [
+              Divider(color: WTWColor.secondary_bg,),
+
+              SizedBox(height: 26.5.h,),
+
               NewToWatowear(),
 
               SizedBox(height: 29.h,),
@@ -97,13 +105,18 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   QuickActionButton(text: 'Add items', logo: 'assets/images/home/add_item.png', onTap: () {  }),
 
-                  QuickActionButton(text: 'Generate Outfit', logo: 'assets/images/home/generate_outfit.png', logoColor: WTWColor.accent, onTap: () {  }),
+                  QuickActionButton(
+                    text: 'Generate Outfit',
+                    logo: 'assets/images/home/generate_outfit.png',
+                    logoColor: WTWColor.accent,
+                    onTap: () => Get.dialog(GenerateOutfitView()),
+                  ),
                 ],
               ),
 
               SizedBox(height: 21.h,),
 
-              WTWPrimaryButton(text: 'Add Items to Your Closet', icon: 'assets/images/home/add_items_to_closet.png', onTap: () {  }),
+              WTWPrimaryButton(text: 'Add Items to Your Closet', icon: 'assets/images/home/add_items_to_closet.png', onTap: () => Get.to(GenerateView())),
 
               SizedBox(height: 21.h,),
 
@@ -133,15 +146,18 @@ class HomeView extends GetView<HomeController> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text(
-                    'Take Suggestions?',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
+                  GestureDetector(
+                    onTap: () => Get.to(OutfitSuggestionsView()),
+                    child: Text(
+                      'Take Suggestions?',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12.sp,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -151,9 +167,12 @@ class HomeView extends GetView<HomeController> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RecentOutfitsCard(
-                    image: 'assets/images/home/casual_friday.png',
-                    title: 'Casual Friday',
+                  GestureDetector(
+                    onTap: () => Get.to(OutfitDetailsView()),
+                    child: RecentOutfitsCard(
+                      image: 'assets/images/home/casual_friday.png',
+                      title: 'Casual Friday',
+                    ),
                   ),
                   RecentOutfitsCard(
                     image: 'assets/images/home/weekend_vibes.png',

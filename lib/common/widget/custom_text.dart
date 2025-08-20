@@ -751,3 +751,108 @@ class TakeAppTourText extends StatelessWidget {
     );
   }
 }
+
+class GenerateOutfitTopText extends StatelessWidget {
+  const GenerateOutfitTopText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Creating Your Look',
+      style: TextStyle(
+        color: Color(0xFF3D403A),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w700,
+        fontSize: 24.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class GenerateOutfitMidText extends StatelessWidget {
+  const GenerateOutfitMidText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Chloé is generating your look…',
+      style: TextStyle(
+        color: Color(0xFF4B5563),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 18.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class GenerateOutfitBottomText extends StatelessWidget {
+
+  const GenerateOutfitBottomText({
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'This might take a moment',
+      style: TextStyle(
+        color: Color(0xFF9CA3AF),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 14.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}
+
+class OutfitSuggestionsText extends StatelessWidget {
+  final String text;
+  final TextAlign alignment;
+
+  const OutfitSuggestionsText({
+    required this.text,
+    this.alignment = TextAlign.center,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Color(0xFF858585),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w400,
+        fontSize: 17.73.sp,
+      ),
+      textAlign: alignment,
+    );
+  }
+}
+
+class OutfitSuggestionsTextBold extends StatelessWidget {
+  final String text;
+
+  const OutfitSuggestionsTextBold({
+    required this.text,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Color(0xFF4A4A4A),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w600,
+        fontSize: 19.94.sp,
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+}

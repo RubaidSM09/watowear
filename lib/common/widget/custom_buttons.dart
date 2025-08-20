@@ -353,12 +353,14 @@ class WTWPrimaryButton extends GetView {
   final String text;
   final String icon;
   final double width;
+  final double height;
   final VoidCallback onTap;
 
   const WTWPrimaryButton({
     required this.text,
     this.icon = '',
     this.width = 385,
+    this.height = 48,
     required this.onTap,
     super.key,
   });
@@ -368,7 +370,8 @@ class WTWPrimaryButton extends GetView {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 360.w,
+        width: width,
+        height: height,
         padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
@@ -383,8 +386,8 @@ class WTWPrimaryButton extends GetView {
               height: 16.h,
               scale: 4,
             ) : SizedBox.shrink(),
-            icon != '' ? SizedBox(width: 10.w,) : SizedBox.shrink(),
-            Text(
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
               text,
               style: TextStyle(
                 color: Colors.white,
@@ -392,8 +395,155 @@ class WTWPrimaryButton extends GetView {
                 fontWeight: FontWeight.w600,
                 fontFamily: 'Comfortaa',
               ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WTWSecondaryButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final VoidCallback onTap;
+
+  const WTWSecondaryButton({
+    required this.text,
+    this.icon = '',
+    this.width = 385,
+    this.height = 48,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+            color: WTWColor.primary
+          )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: WTWColor.text_icons,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class LikeDislikeButton extends StatelessWidget {
+  final String icon;
+  final VoidCallback onTap;
+
+  const LikeDislikeButton({
+    required this.icon,
+    required this.onTap,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(15.51.w),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          border: Border.all(
+            color: Color(0xFFE5E7EB)
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(26),
+              blurRadius: 4.43.r,
+              offset: Offset(0.w, 2.22.h),
+            ),
+            BoxShadow(
+              color: Colors.black.withAlpha(26),
+              blurRadius: 6.65.r,
+              offset: Offset(0.w, 4.43.h),
             ),
           ],
+        ),
+        child: Image.asset(
+          icon,
+          width: 22.159090042114258.w,
+          height: 19.39093780517578.h,
+          scale: 4,
+        ),
+      ),
+    );
+  }
+}
+
+class RefineSuggestionsButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onTap;
+
+  const RefineSuggestionsButton({
+    required this.text,
+    required this.onTap,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 14.5.w, vertical: 7.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(11078.44.r),
+          color: Colors.white,
+          border: Border.all(
+              color: Color(0xFFE5E7EB)
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(13),
+              blurRadius: 2.22.r,
+              offset: Offset(0.w, 1.11.h),
+            ),
+          ],
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Color(0xFF4A4A4A),
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.w400,
+            fontSize: 15.51.sp,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );
