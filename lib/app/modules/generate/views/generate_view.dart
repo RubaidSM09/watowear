@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/generate/views/photo_preview_view.dart';
+import 'package:watowear_chole/common/widget/custom_buttons.dart';
+import 'package:watowear_chole/common/widget/custom_cards.dart';
+import 'package:watowear_chole/common/widget/misc.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_text.dart';
@@ -44,78 +48,43 @@ class GenerateView extends GetView<GenerateController> {
 
               SizedBox(height: 26.5.h,),
 
-              Container(
-                padding: EdgeInsets.all(4.43.w),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.86.r),
-                  color: Colors.white,
-                  border: Border.all(
-                    color: Color(0xFFE5E7EB),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withAlpha(13),
-                      blurRadius: 2.22.r,
-                      offset: Offset(0.w, 1.11.h)
-                    )
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 12.19.h),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6.65.r),
-                        color: WTWColor.primary
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/generate/camera.png',
-                            scale: 4,
-                          ),
-                          SizedBox(width: 8.87.w,),
-                          Text(
-                            'Camera',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Comfortaa',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15.51.sp,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 12.19.h),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6.65.r),
-                          color: Colors.white
-                      ),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/generate/gallery.png',
-                            scale: 4,
-                          ),
-                          SizedBox(width: 8.87.w,),
-                          Text(
-                            'Gallery',
-                            style: TextStyle(
-                              color: WTWColor.primary,
-                              fontFamily: 'Comfortaa',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15.51.sp,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              CameraOrGalleryCard(),
+
+              SizedBox(height: 17.728.h,),
+
+              WTWCamera(),
+
+              SizedBox(height: 25.91.h,),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  UploadFromGalleryButton(onTap: () {  }),
+
+                  CaptureButton(onTap: () {  }),
+                ],
+              ),
+
+              SizedBox(height: 25.73.h,),
+
+              TipsForBetterPhotosSection(),
+
+              SizedBox(height: 25.h,),
+              
+              WTWSecondaryButton(
+                text: 'Switch Camera',
+                icon: 'assets/images/generate/switch_camera.png',
+                onTap: () {  },
+              ),
+
+              SizedBox(height: 12.64.h,),
+
+              WTWPrimaryButton(
+                text: 'Preview',
+                onTap: () => Get.to(PhotoPreviewView()),
+              ),
+
+              SizedBox(height: 30.h,),
             ],
           ),
         ),

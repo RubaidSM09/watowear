@@ -354,6 +354,8 @@ class WTWPrimaryButton extends GetView {
   final String icon;
   final double width;
   final double height;
+  final double paddingWidth;
+  final double paddingHeight;
   final VoidCallback onTap;
 
   const WTWPrimaryButton({
@@ -361,6 +363,8 @@ class WTWPrimaryButton extends GetView {
     this.icon = '',
     this.width = 385,
     this.height = 48,
+    this.paddingWidth = 48,
+    this.paddingHeight = 12,
     required this.onTap,
     super.key,
   });
@@ -372,7 +376,7 @@ class WTWPrimaryButton extends GetView {
       child: Container(
         width: width,
         height: height,
-        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           color: WTWColor.primary,
@@ -449,6 +453,120 @@ class WTWSecondaryButton extends GetView {
                 color: WTWColor.text_icons,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w400,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DeleteButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final VoidCallback onTap;
+
+  const DeleteButton({
+    required this.text,
+    this.icon = '',
+    this.width = 385,
+    this.height = 48,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.r),
+            color: Color(0xFFEF4444),
+            border: Border.all(
+                color: Color(0xFFE5E7EB),
+            )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CancelButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final VoidCallback onTap;
+
+  const CancelButton({
+    required this.text,
+    this.icon = '',
+    this.width = 385,
+    this.height = 48,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.r),
+            color: Color(0xFFF3F4F6),
+            border: Border.all(
+              color: Color(0xFFE5E7EB),
+            )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: WTWColor.text_icons,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
                 fontFamily: 'Comfortaa',
               ),
             ) : SizedBox.shrink(),
@@ -544,6 +662,115 @@ class RefineSuggestionsButton extends StatelessWidget {
             fontSize: 15.51.sp,
           ),
           textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}
+
+class UploadFromGalleryButton extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const UploadFromGalleryButton({
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8.r),
+            color: Colors.white,
+            border: Border.all(
+              color: Color(0xFFC9C4B9),
+              width: 1.11.sp,
+            )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/generate/upload_from_gallery.png',
+              width: 17.816179275512695.w,
+              height: 17.816179275512695.h,
+              scale: 4,
+            ),
+
+            SizedBox(width: 8.91.w,),
+
+            SizedBox(
+              width: 184.84286499023438.w,
+              child: Text(
+                'Upload from Gallery',
+                style: TextStyle(
+                  color: WTWColor.text_icons,
+                  fontSize: 17.82.sp,
+                  fontWeight: FontWeight.w400,
+                  fontFamily: 'Comfortaa',
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CaptureButton extends StatelessWidget {
+  final VoidCallback onTap;
+
+  const CaptureButton({
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(23.09.w),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: WTWColor.primary,
+          border: Border.all(
+            color: Colors.white,
+            width: 4.45.sp,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(26),
+              blurRadius: 6.68.r,
+              offset: Offset(0.w, 4.45.h),
+            ),
+            BoxShadow(
+              color: Colors.black.withAlpha(26),
+              blurRadius: 16.7.r,
+              offset: Offset(0.w, 11.14.h),
+            ),
+            BoxShadow(
+              color: Color(0x6B745F4D).withAlpha(76),
+              blurRadius: 0.r,
+              offset: Offset(0.w, 0.h),
+            ),
+            BoxShadow(
+              color: Colors.white,
+              blurRadius: 0.r,
+              offset: Offset(0.w, 0.h),
+            ),
+          ],
+        ),
+        child: Image.asset(
+          'assets/images/generate/camera.png',
+          width: 21.307796478271484.w,
+          height: 18.64432144165039.h,
+          // scale: 4,
         ),
       ),
     );

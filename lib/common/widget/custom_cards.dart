@@ -1051,3 +1051,257 @@ class OutfitCards extends StatelessWidget {
     );
   }
 }
+
+class OutfitCardsWitRating extends StatelessWidget {
+  final String image;
+  final String title;
+  final String description;
+  final double rating;
+  final int itemCount;
+
+  const OutfitCardsWitRating({
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.rating,
+    required this.itemCount,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 186.1363525390625.w,
+      // height: 292.5.h,
+      padding: EdgeInsets.only(bottom: 13.3.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.86.r),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(26),
+            blurRadius: 4.43.r,
+            offset: Offset(0.w, 2.22.h),
+          ),
+          BoxShadow(
+            color: Colors.black.withAlpha(26),
+            blurRadius: 6.65.r,
+            offset: Offset(0.w, 4.43.h),
+          ),
+        ],
+        border: Border.all(
+          color: Color(0xFFE5E7EB),
+        ),
+      ),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8.86.r),
+              topRight: Radius.circular(8.86.r),
+            ),
+            child: Image.asset(
+              image,
+              width: 186.1363525390625.w,
+              height: 177.27272033691406.h,
+              fit: BoxFit.contain,
+            ),
+          ),
+
+          SizedBox(height: 13.3.h,),
+
+          Row(
+            children: [
+              SizedBox(width: 13.3.w,),
+
+              SizedBox(
+                width: 159.5454559326172.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: Color(0xFF4A4A4A),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17.73.sp,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                    SizedBox(
+                      width: 122.98295593261719.w,
+                      child: Text(
+                        description,
+                        style: TextStyle(
+                          color: Color(0xFF858585),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13.3.sp,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+
+                    SizedBox(height: 7.7575.h,),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.star_rounded,
+                              size: 17.73.sp,
+                              color: Color(0xFFEAB308),
+                            ),
+                            SizedBox(width: 4.43.w,),
+                            Text(
+                              '$rating',
+                              style: TextStyle(
+                                color: Color(0xFFEAB308),
+                                fontFamily: 'Comfortaa',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13.3.sp,
+                              ),
+                            )
+                          ],
+                        ),
+
+                        Text(
+                          '$itemCount items',
+                          style: TextStyle(
+                            color: Color(0xFFC89F7D),
+                            fontFamily: 'Comfortaa',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 13.3.sp,
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CameraOrGalleryCard extends StatelessWidget {
+  const CameraOrGalleryCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(4.43.w),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8.86.r),
+        color: Colors.white,
+        border: Border.all(
+          color: Color(0xFFE5E7EB),
+        ),
+        boxShadow: [
+          BoxShadow(
+              color: Colors.black.withAlpha(13),
+              blurRadius: 2.22.r,
+              offset: Offset(0.w, 1.11.h)
+          )
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 12.19.h),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6.65.r),
+                color: WTWColor.primary
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/generate/camera.png',
+                  scale: 4,
+                ),
+                SizedBox(width: 8.87.w,),
+                Text(
+                  'Camera',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15.51.sp,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 12.19.h),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6.65.r),
+                color: Colors.white
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/generate/gallery.png',
+                  scale: 4,
+                ),
+                SizedBox(width: 8.87.w,),
+                Text(
+                  'Gallery',
+                  style: TextStyle(
+                    color: WTWColor.primary,
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15.51.sp,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class FilterCard extends StatelessWidget {
+  final String text;
+  final bool isSelected;
+
+  const FilterCard({
+    required this.text,
+    required this.isSelected,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.42.w, vertical: 8.79.h),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.79.r),
+          color: isSelected ? Color(0xFFB57D4A) : Color(0xFFD8D8CF),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(13),
+              blurRadius: 2.2.r,
+              offset: Offset(0.w, 1.1.h),
+            )
+          ],
+          border: Border.all(
+            color: Color(0xFFE5E7EB),
+          )
+      ),
+      child: FilterText(
+        text: text,
+        isSelected: isSelected,
+      ),
+    );
+  }
+}

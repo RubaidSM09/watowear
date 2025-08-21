@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/add_wardrobe/bindings/add_wardrobe_binding.dart';
 import '../modules/add_wardrobe/views/add_wardrobe_view.dart';
+import '../modules/closet/bindings/closet_binding.dart';
+import '../modules/closet/views/closet_view.dart';
+import '../modules/dashboard/bindings/dashboard_binding.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/generate/bindings/generate_binding.dart';
 import '../modules/generate/views/generate_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -63,6 +67,16 @@ class AppPages {
       name: _Paths.GENERATE,
       page: () => const GenerateView(),
       binding: GenerateBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.CLOSET,
+      page: () => const ClosetView(),
+      binding: ClosetBinding(),
     ),
   ];
 }

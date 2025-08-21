@@ -11,6 +11,8 @@ abstract class Routes {
   static const VERIFY_MAIL = _Paths.VERIFY_MAIL;
   static const ADD_WARDROBE = _Paths.ADD_WARDROBE;
   static const GENERATE = _Paths.GENERATE;
+  static const DASHBOARD = _Paths.DASHBOARD;
+  static const CLOSET = _Paths.CLOSET;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const VERIFY_MAIL = '/verify-mail';
   static const ADD_WARDROBE = '/add-wardrobe';
   static const GENERATE = '/generate';
+  static const DASHBOARD = '/dashboard';
+  static const CLOSET = '/closet';
 }

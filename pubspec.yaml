@@ -78,6 +78,9 @@ flutter:
     - assets/images/home/outfit_suggestions/
     - assets/images/home/outfit_details/
     - assets/images/generate/
+    - assets/images/generate/photo_preview/
+    - assets/images/home/item_details/
+    - assets/images/closet/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

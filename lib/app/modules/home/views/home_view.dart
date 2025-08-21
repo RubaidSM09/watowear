@@ -191,32 +191,35 @@ class HomeView extends GetView<HomeController> {
         ),
       ),
 
-      floatingActionButton: Container(
-        width: 51.w,
-        height: 51.w,
-        decoration: BoxDecoration(
-          color: WTWColor.accent,
-          shape: BoxShape.circle,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/home/voice.png',
-              width: 13.12417984008789.w,
-              height: 19.0897159576416.h,
-            ),
-            SizedBox(height: 3.18.h,),
-            Text(
-              'Ask Chloé',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Comfortaa',
-                fontWeight: FontWeight.w400,
-                fontSize: 5.13.sp,
+      floatingActionButton: GestureDetector(
+        onTap: () {  },
+        child: Container(
+          width: 51.w,
+          height: 51.w,
+          decoration: BoxDecoration(
+            color: WTWColor.accent,
+            shape: BoxShape.circle,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/home/voice.png',
+                width: 13.12417984008789.w,
+                height: 19.0897159576416.h,
               ),
-            )
-          ],
+              SizedBox(height: 3.18.h,),
+              Text(
+                'Ask Chloé',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'Comfortaa',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 5.13.sp,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -179,3 +179,173 @@ class WTWLoadingBar extends StatelessWidget {
     );
   }
 }
+
+class WTWCamera extends StatelessWidget {
+  const WTWCamera({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 114.17.w, vertical: 117.09.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(17.73.r),
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFF8A8F74),
+            Color(0xFFB58A5F),
+          ]
+        ),
+        border: Border.all(
+          color: Colors.white.withAlpha(77),
+          width: 4.43.sp
+        )
+      ),
+      child: Column(
+        children: [
+          Image.asset(
+            'assets/images/generate/camera.png',
+            width: 53.18181610107422.w,
+            height: 46.534088134765625.h,
+            // scale: 4,
+          ),
+          SizedBox(height: 12.178.h,),
+          SizedBox(
+            width: 161.w,
+            child: Text(
+              'Position your item\nin the frame',
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w400,
+                fontSize: 17.73.sp,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class TipsForBetterPhotosSection extends StatelessWidget {
+  
+  const TipsForBetterPhotosSection({
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 390.w,
+      padding: EdgeInsets.all(18.w),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(13.3.r),
+        color: Colors.white,
+        border: Border.all(
+          color: Color(0xFFE5E7EB),
+        )
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Tips for better photos:',
+            style: TextStyle(
+              color: Color(0xFF3D3B38),
+              fontSize: 15.51.sp,
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Comfortaa',
+            ),
+          ),
+
+          SizedBox(height: 18.02.h,),
+
+          TipsForBetterPhotosRow(text: 'Use good lighting'),
+
+          SizedBox(height: 10.h,),
+
+          TipsForBetterPhotosRow(text: 'Keep the item centered'),
+
+          SizedBox(height: 10.h,),
+
+          TipsForBetterPhotosRow(text: 'Avoid shadows and reflections'),
+
+          SizedBox(height: 10.h,),
+
+          TipsForBetterPhotosRow(text: 'Use a plain background'),
+        ],
+      ),
+    );
+  }
+}
+
+class TipsForBetterPhotosRow extends StatelessWidget {
+  final String text;
+  
+  const TipsForBetterPhotosRow({
+    required this.text,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 6.w,
+          height: 6.h,
+          decoration: BoxDecoration(
+            color: Color(0xFF3D3B38),
+            shape: BoxShape.circle,
+          ),
+        ),
+
+        SizedBox(width: 8.w,),
+
+        Text(
+          text,
+          style: TextStyle(
+            color: Color(0xFF374151),
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w300,
+            fontFamily: 'Comfortaa',
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ItemPicSection extends StatelessWidget {
+  const ItemPicSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 390.w,
+      height: 390.h,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.72.r),
+          border: Border.all(
+            color: Color(0xFFE5E7EB),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(13),
+              blurRadius: 2.18.r,
+              offset: Offset(0.w, 1.09.h),
+            )
+          ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8.72.r),
+        child: Image.asset(
+          'assets/images/home/item_details/item_pic.png',
+          fit: BoxFit.cover,
+          scale: 4,
+        ),
+      ),
+    );
+  }
+}

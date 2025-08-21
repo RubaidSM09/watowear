@@ -856,3 +856,67 @@ class OutfitSuggestionsTextBold extends StatelessWidget {
     );
   }
 }
+
+class MyClosetUpperSectionText extends StatelessWidget {
+  final int count;
+  final String type;
+
+  const MyClosetUpperSectionText({
+    required this.count,
+    required this.type,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+          children: [
+            TextSpan(
+              text: '$count\n',
+              style: TextStyle(
+                color: Color(0xFF414141),
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w600,
+                fontSize: 19.78.sp,
+              ),
+            ),
+            TextSpan(
+              text: type,
+              style: TextStyle(
+                color: Color(0xFF414141),
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w400,
+                fontSize: 13.19.sp,
+              ),
+            ),
+          ]
+      ),
+    );
+  }
+}
+
+class FilterText extends StatelessWidget {
+  final String text;
+  final bool isSelected;
+
+  const FilterText({
+    required this.text,
+    required this.isSelected,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: isSelected ? Colors.white : Color(0xFF414141),
+        fontFamily: 'Comfortaa',
+        fontWeight: FontWeight.w500,
+        fontSize: 15.39.sp,
+      ),
+    );
+  }
+}
