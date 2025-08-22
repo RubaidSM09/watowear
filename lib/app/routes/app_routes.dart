@@ -13,6 +13,8 @@ abstract class Routes {
   static const GENERATE = _Paths.GENERATE;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const CLOSET = _Paths.CLOSET;
+  static const PROFILE = _Paths.PROFILE;
+  static const MISSIONS = _Paths.MISSIONS;
 }
 
 abstract class _Paths {
@@ -27,4 +29,6 @@ abstract class _Paths {
   static const GENERATE = '/generate';
   static const DASHBOARD = '/dashboard';
   static const CLOSET = '/closet';
+  static const PROFILE = '/profile';
+  static const MISSIONS = '/missions';
 }

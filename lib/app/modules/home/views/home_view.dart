@@ -6,6 +6,7 @@ import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
 import 'package:watowear_chole/app/modules/home/views/generate_outfit_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_suggestions_view.dart';
+import 'package:watowear_chole/app/modules/home/views/setting_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 
@@ -22,11 +23,14 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         backgroundColor: WTWColor.background,
         scrolledUnderElevation: 0,
-        leading: Image.asset(
-          'assets/images/home/menu.png',
-          width: 17.5.w,
-          height: 15.h,
-          scale: 4,
+        leading: GestureDetector(
+          onTap: () => Get.to(SettingView()),
+          child: Image.asset(
+            'assets/images/home/menu.png',
+            width: 17.5.w,
+            height: 15.h,
+            scale: 4,
+          ),
         ),
         title: Column(
           children: [

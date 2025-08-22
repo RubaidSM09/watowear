@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/profile/views/profile_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_text_fields.dart';
 import 'package:watowear_chole/common/widget/custom_widgets.dart';
@@ -47,10 +48,13 @@ class ItemDetailsView extends GetView {
                       ),
                     ]
                   ),
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage: AssetImage(
-                      'assets/images/home/item_details/profile_pic.jpg',
+                  child: GestureDetector(
+                    onTap: () => Get.to(ProfileView()),
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundImage: AssetImage(
+                        'assets/images/home/item_details/profile_pic.jpg',
+                      ),
                     ),
                   ),
                 )

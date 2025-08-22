@@ -1305,3 +1305,129 @@ class FilterCard extends StatelessWidget {
     );
   }
 }
+
+class ProfileStatCard extends StatelessWidget {
+  final String title;
+  final double count;
+  final String description;
+  final Color color;
+  final String icon;
+  final bool isButtonAvailable;
+  final bool isInfoAvailable;
+
+  const ProfileStatCard({
+    required this.title,
+    required this.count,
+    required this.description,
+    required this.color,
+    required this.icon,
+    this.isButtonAvailable = false,
+    this.isInfoAvailable = false,
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 185.877197265625.w,
+      height: 184.73683166503906.h,
+      padding: EdgeInsets.all(19.39.w),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(9.12.r),
+        gradient: LinearGradient(
+          colors: [
+            WTWColor.primary.withAlpha(13),
+            WTWColor.primary.withAlpha(5),
+          ],
+        ),
+        border: Border.all(
+          color: WTWColor.primary.withAlpha(26),
+          width: 1.14.sp,
+        )
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(11.4.w),
+                decoration: BoxDecoration(
+                    color: color,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Color(0xFFE5E7EB),
+                    )
+                ),
+                child: Image.asset(
+                  icon,
+                  scale: 4,
+                ),
+              ),
+              SizedBox(width: 13.68596725.w,),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      color: Color(0xFf6B7280),
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.68.sp,
+                    ),
+                  ),
+                  Text(
+                    '$count',
+                    style: TextStyle(
+                      color: WTWColor.text_icons,
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 22.81.sp,
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+
+          isInfoAvailable ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: 82.10526275634766.w,
+                child: Text(
+                  description,
+                  style: TextStyle(
+                    color: Color(0xFF6B7280),
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 13.68.sp,
+                  ),
+                ),
+              ),
+              Image.asset(
+                'assets/images/profile/info2.png',
+                scale: 4,
+              )
+            ],
+          ) :
+          Text(
+            description,
+            style: TextStyle(
+              color: Color(0xFF6B7280),
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w400,
+              fontSize: 13.68.sp,
+            ),
+          ),
+
+          isButtonAvailable ? WTWPrimaryProfileStatButton(
+            text: 'View My Closet',
+            onTap: () {  },
+          ) : SizedBox.shrink(),
+        ],
+      ),
+    );
+  }
+}

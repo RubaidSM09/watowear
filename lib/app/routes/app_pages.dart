@@ -10,8 +10,12 @@ import '../modules/generate/bindings/generate_binding.dart';
 import '../modules/generate/views/generate_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/missions/bindings/missions_binding.dart';
+import '../modules/missions/views/missions_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/sign_in/bindings/sign_in_binding.dart';
 import '../modules/sign_in/views/sign_in_view.dart';
 import '../modules/sign_up/bindings/sign_up_binding.dart';
@@ -77,6 +81,16 @@ class AppPages {
       name: _Paths.CLOSET,
       page: () => const ClosetView(),
       binding: ClosetBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => const ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.MISSIONS,
+      page: () => const MissionsView(),
+      binding: MissionsBinding(),
     ),
   ];
 }

@@ -7,7 +7,7 @@ class OnboardingController extends GetxController {
 
   void onPageChanged(int i) => current.value = i;
 
-  void skip() => Get.offAllNamed('/home');
+  void skip() => Get.offAllNamed('/dashboard');
 
   void next() {
     if (current.value < 5) {

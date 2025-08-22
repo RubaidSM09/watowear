@@ -407,6 +407,64 @@ class WTWPrimaryButton extends GetView {
   }
 }
 
+class WTWPrimaryProfileStatButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final double paddingWidth;
+  final double paddingHeight;
+  final VoidCallback onTap;
+
+  const WTWPrimaryProfileStatButton({
+    required this.text,
+    this.icon = '',
+    this.width = 147.1052703857422,
+    this.height = 36.49122619628906,
+    this.paddingWidth = 20.81,
+    this.paddingHeight = 10.26,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.56.r),
+          color: WTWColor.primary,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 12.68.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class WTWSecondaryButton extends GetView {
   final String text;
   final String icon;
@@ -771,6 +829,126 @@ class CaptureButton extends StatelessWidget {
           width: 21.307796478271484.w,
           height: 18.64432144165039.h,
           // scale: 4,
+        ),
+      ),
+    );
+  }
+}
+
+class WTWPrimaryProfileTopOutfitButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final double paddingWidth;
+  final double paddingHeight;
+  final VoidCallback onTap;
+
+  const WTWPrimaryProfileTopOutfitButton({
+    required this.text,
+    this.icon = '',
+    this.width = 55.98410415649414,
+    this.height = 29.649124145507812,
+    this.paddingWidth = 10.39,
+    this.paddingHeight = 6.84,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.56.r),
+          color: WTWColor.primary,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 13.68.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WTWSecondaryProfileTopOutfitButton extends GetView {
+  final String text;
+  final String icon;
+  final double width;
+  final double height;
+  final double paddingWidth;
+  final double paddingHeight;
+  final VoidCallback onTap;
+
+  const WTWSecondaryProfileTopOutfitButton({
+    required this.text,
+    this.icon = '',
+    this.width = 55.98410415649414,
+    this.height = 29.649124145507812,
+    this.paddingWidth = 10.39,
+    this.paddingHeight = 6.84,
+    required this.onTap,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.56.r),
+          color: Colors.transparent,
+          border: Border.all(
+            color: WTWColor.primary,
+            width: 1.14.sp,
+          )
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon != '' ? Image.asset(
+              icon,
+              width: 16.w,
+              height: 16.h,
+              scale: 4,
+            ) : SizedBox.shrink(),
+            icon != '' ? text != '' ? SizedBox(width: 10.w,) : SizedBox.shrink() : SizedBox.shrink(),
+            text != '' ? Text(
+              text,
+              style: TextStyle(
+                color: WTWColor.primary,
+                fontSize: 13.68.sp,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Comfortaa',
+              ),
+            ) : SizedBox.shrink(),
+          ],
         ),
       ),
     );
