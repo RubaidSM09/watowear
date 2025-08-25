@@ -470,6 +470,8 @@ class WTWSecondaryButton extends GetView {
   final String icon;
   final double width;
   final double height;
+  final double paddingWidth;
+  final double paddingHeight;
   final VoidCallback onTap;
 
   const WTWSecondaryButton({
@@ -477,6 +479,8 @@ class WTWSecondaryButton extends GetView {
     this.icon = '',
     this.width = 385,
     this.height = 48,
+    this.paddingWidth = 48,
+    this.paddingHeight = 12,
     required this.onTap,
     super.key,
   });
@@ -488,7 +492,7 @@ class WTWSecondaryButton extends GetView {
       child: Container(
         width: width,
         height: height,
-        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(

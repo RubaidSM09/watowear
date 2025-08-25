@@ -5,7 +5,22 @@ import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import '../../custom_colors.dart';
 
 class MissionCard extends StatelessWidget {
-  const MissionCard({super.key});
+  final String icon;
+  final String title;
+  final String description;
+  final int gainedXP;
+  final int totalMissions;
+  final int completedMissions;
+
+  const MissionCard({
+    required this.icon,
+    required this.title,
+    required this.description,
+    required this.gainedXP,
+    required this.totalMissions,
+    required this.completedMissions,
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +50,7 @@ class MissionCard extends StatelessWidget {
                         border: Border.all(color: Color(0xFFE5E7EB))
                     ),
                     child: Image.asset(
-                      'assets/images/style_missions/upload_new_item.png',
+                      icon,
                       scale: 4,
                     ),
                   ),
@@ -46,7 +61,7 @@ class MissionCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Upload 10 New Items',
+                          title,
                           style: TextStyle(
                             color: Color(0xFF4A4A4A),
                             fontFamily: 'Comfortaa',
@@ -55,7 +70,7 @@ class MissionCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Add items to build your digital wardrobe',
+                          description,
                           style: TextStyle(
                             color: WTWColor.primary,
                             fontFamily: 'Comfortaa',
@@ -72,9 +87,11 @@ class MissionCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    '+50 XP',
+                    '+$gainedXP XP',
                     style: TextStyle(
-                      color: Color(0xFF828282),
+                      color: (completedMissions/totalMissions) > 0.5 ? Color(0xFF22C55E)
+                          : (completedMissions/totalMissions) > 0.25 ? Color(0xFFFB923C)
+                          : Color(0xFF828282),
                       fontFamily: 'Comfortaa',
                       fontWeight: FontWeight.w700,
                       fontSize: 15.25.sp,
@@ -107,7 +124,7 @@ class MissionCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '70% (7/10)',
+                    '${(completedMissions/totalMissions)*100}% ($completedMissions/$totalMissions)',
                     style: TextStyle(
                       color: Color(0xFF828282),
                       fontFamily: 'Comfortaa',
@@ -132,10 +149,12 @@ class MissionCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: (344.2458190917969*(70/100)).w,
+                    width: (344.2458190917969*(completedMissions/totalMissions)).w,
                     height: 10.893855094909668.h,
                     decoration: BoxDecoration(
-                      color: Color(0xFF22C55E),
+                      color: (completedMissions/totalMissions) > 0.5 ? Color(0xFF22C55E)
+                          : (completedMissions/totalMissions) > 0.25 ? Color(0xFFFB923C)
+                          : Color(0xFF828282),
                       borderRadius: BorderRadius.circular(10892.77.r),
                       border: Border.all(color: Color(0xFFE5E7EB)),
                     ),

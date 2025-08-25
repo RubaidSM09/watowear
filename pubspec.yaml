@@ -38,6 +38,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   smooth_page_indicator: ^1.2.1
   flutter_svg: ^2.2.0
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +87,9 @@ flutter:
     - assets/images/home/voice_assistant/
     - assets/images/bottom_navigation_bar/
     - assets/images/style_missions/
+    - assets/images/style_missions/rewards_achievements/
+    - assets/images/home/notifications/
+    - assets/images/home/saved_outfit/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

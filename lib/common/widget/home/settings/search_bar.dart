@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WTWSearchBar extends StatelessWidget {
-  const WTWSearchBar({super.key});
+  final String searchBarText;
+
+  const WTWSearchBar({
+    this.searchBarText = 'Search here',
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,7 @@ class WTWSearchBar extends StatelessWidget {
           ),
           SizedBox(width: 16.72.w,),
           Text(
-            'Search here',
+            searchBarText,
             style: TextStyle(
               color: Color(0xFFADAEBC),
               fontFamily: 'Comfortaa',

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
 import 'package:watowear_chole/app/modules/home/views/generate_outfit_view.dart';
+import 'package:watowear_chole/app/modules/home/views/notifications_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_suggestions_view.dart';
 import 'package:watowear_chole/app/modules/home/views/setting_view.dart';
@@ -45,11 +46,14 @@ class HomeView extends GetView<HomeController> {
                   height: 37.h,
                   scale: 4,
                 ),
-                Image.asset(
-                  'assets/images/home/notifications.png',
-                  width: 17.5.w,
-                  height: 20.h,
-                  scale: 4,
+                GestureDetector(
+                  onTap: () => Get.to(NotificationsView()),
+                  child: Image.asset(
+                    'assets/images/home/notifications.png',
+                    width: 17.5.w,
+                    height: 20.h,
+                    scale: 4,
+                  ),
                 )
               ],
             ),

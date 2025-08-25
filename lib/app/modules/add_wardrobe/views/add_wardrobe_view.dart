@@ -88,7 +88,7 @@ class AddWardrobeView extends GetView<AddWardrobeController> {
 
               SizedBox(height: 30.69.h,),
               
-              OnboardingButton(text: 'Continue', onTap: () => Get.toNamed('/home')),
+              OnboardingButton(text: 'Continue', onTap: () => Get.toNamed('/dashboard')),
 
               SizedBox(height: 43.31.h,),
             ],

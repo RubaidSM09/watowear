@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/home/views/saved_outfits_view.dart';
 import 'package:watowear_chole/app/modules/home/views/voice_assistant_view.dart';
 
 import '../../../custom_colors.dart';
@@ -26,9 +27,12 @@ class AllSettingsList extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SettingsRow(
-            icon: 'assets/images/home/settings/saved_outfits.png',
-            title: 'Saved Outfits',
+          GestureDetector(
+            onTap: () => Get.to(SavedOutfitsView()),
+            child: SettingsRow(
+              icon: 'assets/images/home/settings/saved_outfits.png',
+              title: 'Saved Outfits',
+            ),
           ),
 
           Divider(color: Color(0xFFF3F4F6), thickness: 1.14.h),

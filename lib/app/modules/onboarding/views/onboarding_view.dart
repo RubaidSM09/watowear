@@ -211,7 +211,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   children: [
                     OnboardingButton(
                       text: 'Get Started',
-                      onTap: controller.openSignUp,
+                      onTap: controller.next,
                     ),
                     SizedBox(height: 16.h),
                     Text(
@@ -241,6 +241,7 @@ class OnboardingView extends GetView<OnboardingController> {
                       text: 'Sign In',
                       onTap: controller.openSignIn,
                     ),
+                    SizedBox(height: 16.h),
                     Text(
                       'Continue as a guest',
                       style: TextStyle(
