@@ -26,31 +26,19 @@ class SavedOutfitsFilterSection extends StatelessWidget {
 
             SizedBox(width: 9.026795654.w,),
 
-            SavedOutfitsFilter(text: 'Tops',),
+            SavedOutfitsFilter(text: 'Casual',),
 
             SizedBox(width: 9.026795654.w,),
 
-            SavedOutfitsFilter(text: 'Bottoms',),
+            SavedOutfitsFilter(text: 'Formal',),
 
             SizedBox(width: 9.026795654.w,),
 
-            SavedOutfitsFilter(text: 'Dresses',),
+            SavedOutfitsFilter(text: 'Work',),
 
             SizedBox(width: 9.026795654.w,),
 
-            SavedOutfitsFilter(text: 'Outerwear',),
-
-            SizedBox(width: 9.026795654.w,),
-
-            SavedOutfitsFilter(text: 'Shoes',),
-
-            SizedBox(width: 9.026795654.w,),
-
-            SavedOutfitsFilter(text: 'Accessories',),
-
-            SizedBox(height: 18.04230652.h,),
-
-            
+            SavedOutfitsFilter(text: 'Date Night',),
           ],
         ),
       ),

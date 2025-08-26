@@ -15,51 +15,120 @@ class SavedOutfitsCardsSection extends StatelessWidget {
             Text(
               '124 items found',
               style: TextStyle(
-                color: Color(0xFF4B5563),
+                color: Color(0xFF6B7280),
                 fontFamily: 'Comfortaa',
                 fontWeight: FontWeight.w400,
-                fontSize: 15.79.sp,
+                fontSize: 15.8.sp,
               ),
             ),
-            Row(
-              children: [
-                Text(
-                  'Recently Added',
-                  style: TextStyle(
-                    color: WTWColor.text_icons,
-                    fontFamily: 'Comfortaa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15.79.sp,
-                  ),
-                ),
-                SizedBox(width: 8.232817383.w,),
-                Icon(
-                  Icons.keyboard_arrow_down,
-                  size: 20.sp,
-                  color: WTWColor.text_icons,
-                )
-              ],
-            )
+            Text(
+              'Last saved 2 days ago',
+              style: TextStyle(
+                color: Color(0xFF6B7280),
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w400,
+                fontSize: 15.8.sp,
+              ),
+            ),
           ],
         ),
 
-        SizedBox(height: 18.05589783.h,),
+        SizedBox(height: 18.05589783.h),
 
         Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SavedOutfitCard(
-                  image: 'assets/images/home/saved_outfit/black_leather_jacket.png',
-                  name: 'Black Leather Jacket',
-                  categories: ['Outerwear', 'Black'],
-                  wornCount: 3,
-                )
-              ],
-            )
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image:
+                          'assets/images/home/saved_outfit/business_casual.png',
+                      name: 'Business Casual',
+                      categories: ['Work', 'Smart'],
+                      wornCount: 3,
+                      itemCount: 5,
+                    ),
+                  ),
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image:
+                          'assets/images/home/saved_outfit/weekend_comfort.png',
+                      name: 'Weekend Comfort',
+                      categories: ['Casual', 'Cozy'],
+                      wornCount: 7,
+                      itemCount: 4,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 18.05154785.h),
+
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image:
+                          'assets/images/home/saved_outfit/date_night_glam.png',
+                      name: 'Date Night Glam',
+                      categories: ['Date', 'Elegant'],
+                      wornCount: 2,
+                      itemCount: 6,
+                    ),
+                  ),
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image: 'assets/images/home/saved_outfit/summer_party.png',
+                      name: 'Summer Party',
+                      categories: ['Party', 'Bright'],
+                      wornCount: 0,
+                      itemCount: 5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 18.05154785.h),
+
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image:
+                      'assets/images/home/saved_outfit/executive_look.png',
+                      name: 'Executive Look',
+                      categories: ['Formal', 'Power'],
+                      wornCount: 1,
+                      itemCount: 4,
+                    ),
+                  ),
+                  Flexible(
+                    child: SavedOutfitCard(
+                      image: 'assets/images/home/saved_outfit/athleisure_chic.png',
+                      name: 'Athleisure Chic',
+                      categories: ['Casual', 'Sport'],
+                      wornCount: 5,
+                      itemCount: 3,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
-        )
+        ),
+
+        SizedBox(height: 29.85049561.h),
       ],
     );
   }
@@ -70,44 +139,92 @@ class SavedOutfitCard extends StatelessWidget {
   final String name;
   final List<String> categories;
   final int wornCount;
+  final int itemCount;
 
   const SavedOutfitCard({
     required this.image,
     required this.name,
     required this.categories,
     required this.wornCount,
-    super.key
+    required this.itemCount,
+    super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 183.89743041992188.w,
+      width: 189.w,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(9.03.r),
-          color: Colors.white,
-          border: Border.all(color: Color(0xFFE5E7EB)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withAlpha(13),
-              blurRadius: 2.26.r,
-              offset: Offset(0.w, 1.13.h),
-            )
-          ]
+        borderRadius: BorderRadius.circular(13.54.r),
+        color: Colors.white,
+        border: Border.all(color: Color(0xFFE5E7EB)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(20),
+            blurRadius: 13.54.r,
+            offset: Offset(0.w, 2.26.h),
+          ),
+        ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(9.03.r), topRight: Radius.circular(9.03.r),),
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
-              scale: 4,
-            ),
+          Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(13.54.r),
+                  topRight: Radius.circular(13.54.r),
+                ),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  // width: double.infinity,
+                  // height: 144.41026306152344.h,
+                  scale: 4,
+                ),
+              ),
+
+              Positioned(
+                top: 13.54.h,
+                left: 13.54.w,
+                child: Container(
+                  padding: EdgeInsets.all(10.16.w),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withAlpha(230),
+                    // border: Border.all(color: Color(0xFFE5E7EB)),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.more_vert,
+                    color: Color(0xFF4B5563),
+                    size: 22.57309913635254.sp,
+                  ),
+                ),
+              ),
+
+              Positioned(
+                top: 13.54.h,
+                left: 134.31.w,
+                child: Container(
+                  padding: EdgeInsets.all(10.16.w),
+                  decoration: BoxDecoration(
+                    color: WTWColor.accent,
+                    border: Border.all(color: Color(0xFFE5E7EB)),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 15.801169395446777.sp,
+                  ),
+                ),
+              ),
+            ],
           ),
 
           Padding(
-            padding: EdgeInsets.all(13.54.w),
+            padding: EdgeInsets.all(18.06.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -117,23 +234,51 @@ class SavedOutfitCard extends StatelessWidget {
                     color: WTWColor.text_icons,
                     fontFamily: 'Comfortaa',
                     fontWeight: FontWeight.w400,
-                    fontSize: 15.79.sp,
+                    fontSize: 18.06.sp,
                   ),
                 ),
 
-                SizedBox(height: 4.511795654.h,),
+                SizedBox(height: 4.511795654.h),
 
-                Wrap(
-                  spacing: 4.511091309.w,
-                  runSpacing: 4.511091309.w,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 4.511091309.w,
+                    children: categories.map((category) {
+                      return SavedOutfitType(text: category);
+                    }).toList(),
+                  ),
+                ),
+
+                SizedBox(height: 9.026666031.h),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SavedOutfitType(text: 'Outerwear',),
-                    SavedOutfitType(text: 'Black',),
+                    Text(
+                      '$itemCount items',
+                      style: TextStyle(
+                        color: Color(0xFF9CA3AF),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13.54.sp,
+                      ),
+                    ),
+
+                    Text(
+                      wornCount!=0 ? 'Worn $wornCount times' : 'Never worn',
+                      style: TextStyle(
+                        color: Color(0xFF9CA3AF),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13.54.sp,
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
@@ -143,27 +288,21 @@ class SavedOutfitCard extends StatelessWidget {
 class SavedOutfitType extends StatelessWidget {
   final String text;
 
-  const SavedOutfitType({
-    required this.text,
-    super.key
-  });
+  const SavedOutfitType({required this.text, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 7.15.w, vertical: 6.77.h),
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(22.56.r),
-          border: Border.all(
-            color: WTWColor.secondary_bg,
-            width: 1.13.sp,
-          )
+        color: Color(0xFFF4F1EB),
+        borderRadius: BorderRadius.circular(18.06.r),
+        border: Border.all(color: WTWColor.secondary_bg, width: 1.13.sp),
       ),
       child: Text(
         text,
         style: TextStyle(
-          color: WTWColor.text_icons,
+          color: WTWColor.primary,
           fontFamily: 'Comfortaa',
           fontWeight: FontWeight.w400,
           fontSize: 13.54.sp,

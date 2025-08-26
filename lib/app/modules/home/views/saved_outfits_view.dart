@@ -24,7 +24,7 @@ class SavedOutfitsView extends GetView {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox.shrink(),
-                WTWAppbarText(text: 'My Wardrobe'),
+                WTWAppbarText(text: 'Saved Outfits'),
                 Row(
                   children: [
                     Image.asset(
