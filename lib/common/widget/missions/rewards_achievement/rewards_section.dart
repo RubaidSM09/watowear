@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:watowear_chole/app/modules/missions/views/badge_details_view.dart';
+import 'package:watowear_chole/app/modules/missions/views/rewards_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 
 class RewardsSection extends StatelessWidget {
@@ -21,13 +25,16 @@ class RewardsSection extends StatelessWidget {
                 fontSize: 19.61.sp,
               ),
             ),
-            Text(
-              'See All',
-              style: TextStyle(
-                color: Color(0xFF2F2E2D),
-                fontFamily: 'Comfortaa',
-                fontWeight: FontWeight.w400,
-                fontSize: 12.61.sp,
+            GestureDetector(
+              onTap: () => Get.to(RewardsView()),
+              child: Text(
+                'See All',
+                style: TextStyle(
+                  color: Color(0xFF2F2E2D),
+                  fontFamily: 'Comfortaa',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.61.sp,
+                ),
               ),
             ),
           ],
@@ -41,10 +48,13 @@ class RewardsSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Flexible(
-                child: RewardsSectionCard(
-                  icon: 'assets/images/style_missions/rewards_achievements/voice_pioneer.png',
-                  title: 'Voice Pioneer',
-                  subtitle: 'Used voice assistant',
+                child: GestureDetector(
+                  onTap: () => Get.to(BadgeDetailsView()),
+                  child: RewardsSectionCard(
+                    icon: 'assets/images/style_missions/rewards_achievements/voice_pioneer.png',
+                    title: 'Voice Pioneer',
+                    subtitle: 'Used voice assistant',
+                  ),
                 ),
               ),
 

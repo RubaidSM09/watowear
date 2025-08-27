@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:watowear_chole/app/modules/missions/views/mission_details_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
 import '../../custom_colors.dart';
@@ -166,7 +169,7 @@ class MissionCard extends StatelessWidget {
 
           SizedBox(height: 21.78843948.h,),
 
-          WTWPrimaryButton(text: 'Continue', onTap: () {  }),
+          WTWPrimaryButton(text: 'Continue', onTap: () => Get.to(MissionDetailsView())),
         ],
       ),
     );

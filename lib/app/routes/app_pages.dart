@@ -45,7 +45,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ONBOARDING,
-      page: () => const RewardAchievementsView(),
+      page: () => const OnboardingView(),
       binding: OnboardingBinding(),
     ),
     GetPage(
