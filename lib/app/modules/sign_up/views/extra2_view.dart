@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 
-import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_text.dart';
 
 class Extra2View extends GetView {

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/missions/views/reward_achievements_view.dart';
 
 import '../modules/add_wardrobe/bindings/add_wardrobe_binding.dart';
 import '../modules/add_wardrobe/views/add_wardrobe_view.dart';
@@ -44,7 +45,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ONBOARDING,
-      page: () => const OnboardingView(),
+      page: () => const RewardAchievementsView(),
       binding: OnboardingBinding(),
     ),
     GetPage(

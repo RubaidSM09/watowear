@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
-import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_text.dart';
 import 'package:watowear_chole/common/widget/custom_widgets.dart';
 import 'package:watowear_chole/common/widget/misc.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:watowear_chole/app/modules/sign_in/views/sign_in_view.dart';
 import 'package:watowear_chole/app/modules/sign_up/controllers/verify_mail_controller.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:watowear_chole/app/modules/sign_up/views/verify_mail_view.dart';
 
 class ExtrasController extends GetxController {
   TextEditingController ageController = TextEditingController();
@@ -30,15 +29,7 @@ class ExtrasController extends GetxController {
   }
 
   final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {

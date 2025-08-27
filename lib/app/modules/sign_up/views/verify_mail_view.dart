@@ -9,7 +9,6 @@ import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_buttons.dart';
 import '../../../../common/widget/custom_logos.dart';
 import '../../../../common/widget/custom_text.dart';
-import '../../sign_in/views/new_password_view.dart';
 
 class VerifyMailView extends GetView<VerifyMailController> {
   const VerifyMailView({super.key});

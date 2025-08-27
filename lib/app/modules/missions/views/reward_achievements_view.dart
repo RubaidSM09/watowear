@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/missions/controllers/reward_achievements_controller.dart';
 import 'package:watowear_chole/common/widget/missions/rewards_achievement/badge_collection_section.dart';
+import 'package:watowear_chole/common/widget/missions/rewards_achievement/milestones_section.dart';
 import 'package:watowear_chole/common/widget/missions/rewards_achievement/rewards_achievements_upper_section.dart';
+import 'package:watowear_chole/common/widget/missions/rewards_achievement/rewards_section.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_text.dart';
 
-class RewardAchievementsView extends GetView {
+class RewardAchievementsView extends GetView<RewardAchievementsController> {
   const RewardAchievementsView({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.put(RewardAchievementsController());
+
     return Scaffold(
       backgroundColor: WTWColor.background,
       appBar: AppBar(
@@ -69,9 +74,19 @@ class RewardAchievementsView extends GetView {
 
               SizedBox(height: 20.h,),
 
-              BadgeCollectionSection(),
+              BadgeCollectionSection(
+                selectedBadgeTypes: controller.selectedBadgeType,
+              ),
 
               SizedBox(height: 21.h,),
+
+              MilestonesSection(),
+
+              SizedBox(height: 21.h,),
+
+              RewardsSection(),
+
+              SizedBox(height: 47.67028809.h,),
             ],
           ),
         ),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:watowear_chole/app/modules/sign_up/views/extra7_view.dart';
 import 'package:watowear_chole/app/modules/sign_up/views/extra8_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
