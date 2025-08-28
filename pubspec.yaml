@@ -100,6 +100,7 @@ flutter:
     - assets/images/closet/my_closet/quick_scan/add_item_details/
     - assets/images/closet/my_closet/quick_scan/add_item_details/congratulations_popup/
     - assets/images/closet/my_closet/quick_scan/generate_outfits_now/
+    - assets/images/style_missions/rewards_achievements/rewards/progress_details/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
