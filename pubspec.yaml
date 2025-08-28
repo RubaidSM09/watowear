@@ -93,6 +93,10 @@ flutter:
     - assets/images/style_missions/mission_details/
     - assets/images/style_missions/rewards_achievements/rewards/
     - assets/images/style_missions/rewards_achievements/badge_details/
+    - assets/images/closet/my_closet/
+    - assets/images/closet/my_closet/select_photos/
+    - assets/images/closet/my_closet/review_crops/
+    - assets/images/closet/my_closet/quick_scan/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
