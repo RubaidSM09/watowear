@@ -97,6 +97,9 @@ flutter:
     - assets/images/closet/my_closet/select_photos/
     - assets/images/closet/my_closet/review_crops/
     - assets/images/closet/my_closet/quick_scan/
+    - assets/images/closet/my_closet/quick_scan/add_item_details/
+    - assets/images/closet/my_closet/quick_scan/add_item_details/congratulations_popup/
+    - assets/images/closet/my_closet/quick_scan/generate_outfits_now/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

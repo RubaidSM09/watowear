@@ -475,6 +475,8 @@ class WTWSecondaryButton extends GetView {
   final double height;
   final double paddingWidth;
   final double paddingHeight;
+  final Color textColor;
+  final Color borderColor;
   final VoidCallback onTap;
 
   const WTWSecondaryButton({
@@ -485,6 +487,8 @@ class WTWSecondaryButton extends GetView {
     this.height = 48,
     this.paddingWidth = 48,
     this.paddingHeight = 12,
+    this.textColor = WTWColor.text_icons,
+    this.borderColor = WTWColor.primary,
     required this.onTap,
     super.key,
   });
@@ -500,7 +504,7 @@ class WTWSecondaryButton extends GetView {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
-            color: WTWColor.primary
+            color: borderColor
           )
         ),
         child: Row(
@@ -516,7 +520,7 @@ class WTWSecondaryButton extends GetView {
             text != '' ? Text(
               text,
               style: TextStyle(
-                color: WTWColor.text_icons,
+                color: textColor,
                 fontSize: textSize.sp,
                 fontWeight: FontWeight.w400,
                 fontFamily: 'Comfortaa',

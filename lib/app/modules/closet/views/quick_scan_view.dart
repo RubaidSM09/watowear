@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/closet/controllers/quick_scan_controller.dart';
+import 'package:watowear_chole/app/modules/closet/views/scan_done_view.dart';
 import 'package:watowear_chole/common/widget/closet/my_closet/quick_scan/detected_captured_remaining_section.dart';
 import 'package:watowear_chole/common/widget/closet/my_closet/quick_scan/quick_scan_camera_button.dart';
 import 'package:watowear_chole/common/widget/closet/my_closet/quick_scan/quick_scan_image_section.dart';
@@ -56,7 +57,7 @@ class QuickScanView extends GetView<QuickScanController> {
               WTWPrimaryButton(
                 text: 'Process Items (1)',
                 width: 360.w,
-                onTap: () {  },
+                onTap: () => Get.to(ScanDoneView()),
               ),
 
               SizedBox(height: 16.h),
