@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:watowear_chole/app/modules/home/views/saved_outfit_details_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 
 class SavedOutfitsCardsSection extends StatelessWidget {
@@ -152,134 +155,137 @@ class SavedOutfitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 189.w,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(13.54.r),
-        color: Colors.white,
-        border: Border.all(color: Color(0xFFE5E7EB)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(20),
-            blurRadius: 13.54.r,
-            offset: Offset(0.w, 2.26.h),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(13.54.r),
-                  topRight: Radius.circular(13.54.r),
-                ),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                  // width: double.infinity,
-                  // height: 144.41026306152344.h,
-                  scale: 4,
-                ),
-              ),
-
-              Positioned(
-                top: 13.54.h,
-                left: 13.54.w,
-                child: Container(
-                  padding: EdgeInsets.all(10.16.w),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withAlpha(230),
-                    // border: Border.all(color: Color(0xFFE5E7EB)),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.more_vert,
-                    color: Color(0xFF4B5563),
-                    size: 22.57309913635254.sp,
-                  ),
-                ),
-              ),
-
-              Positioned(
-                top: 13.54.h,
-                left: 134.31.w,
-                child: Container(
-                  padding: EdgeInsets.all(10.16.w),
-                  decoration: BoxDecoration(
-                    color: WTWColor.accent,
-                    border: Border.all(color: Color(0xFFE5E7EB)),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                    size: 15.801169395446777.sp,
-                  ),
-                ),
-              ),
-            ],
-          ),
-
-          Padding(
-            padding: EdgeInsets.all(18.06.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () => Get.to(SavedOutfitDetailsView()),
+      child: Container(
+        width: 189.w,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(13.54.r),
+          color: Colors.white,
+          border: Border.all(color: Color(0xFFE5E7EB)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withAlpha(20),
+              blurRadius: 13.54.r,
+              offset: Offset(0.w, 2.26.h),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(
-                  name,
-                  style: TextStyle(
-                    color: WTWColor.text_icons,
-                    fontFamily: 'Comfortaa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18.06.sp,
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(13.54.r),
+                    topRight: Radius.circular(13.54.r),
+                  ),
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                    // width: double.infinity,
+                    // height: 144.41026306152344.h,
+                    scale: 4,
                   ),
                 ),
 
-                SizedBox(height: 4.511795654.h),
-
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    spacing: 4.511091309.w,
-                    children: categories.map((category) {
-                      return SavedOutfitType(text: category);
-                    }).toList(),
+                Positioned(
+                  top: 13.54.h,
+                  left: 13.54.w,
+                  child: Container(
+                    padding: EdgeInsets.all(10.16.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withAlpha(230),
+                      // border: Border.all(color: Color(0xFFE5E7EB)),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.more_vert,
+                      color: Color(0xFF4B5563),
+                      size: 22.57309913635254.sp,
+                    ),
                   ),
                 ),
 
-                SizedBox(height: 9.026666031.h),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '$itemCount items',
-                      style: TextStyle(
-                        color: Color(0xFF9CA3AF),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13.54.sp,
-                      ),
+                Positioned(
+                  top: 13.54.h,
+                  left: 134.31.w,
+                  child: Container(
+                    padding: EdgeInsets.all(10.16.w),
+                    decoration: BoxDecoration(
+                      color: WTWColor.accent,
+                      border: Border.all(color: Color(0xFFE5E7EB)),
+                      shape: BoxShape.circle,
                     ),
-
-                    Text(
-                      wornCount!=0 ? 'Worn $wornCount times' : 'Never worn',
-                      style: TextStyle(
-                        color: Color(0xFF9CA3AF),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13.54.sp,
-                      ),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                      size: 15.801169395446777.sp,
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),
-          ),
-        ],
+
+            Padding(
+              padding: EdgeInsets.all(18.06.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                      color: WTWColor.text_icons,
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18.06.sp,
+                    ),
+                  ),
+
+                  SizedBox(height: 4.511795654.h),
+
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      spacing: 4.511091309.w,
+                      children: categories.map((category) {
+                        return SavedOutfitType(text: category);
+                      }).toList(),
+                    ),
+                  ),
+
+                  SizedBox(height: 9.026666031.h),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '$itemCount items',
+                        style: TextStyle(
+                          color: Color(0xFF9CA3AF),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13.54.sp,
+                        ),
+                      ),
+
+                      Text(
+                        wornCount!=0 ? 'Worn $wornCount times' : 'Never worn',
+                        style: TextStyle(
+                          color: Color(0xFF9CA3AF),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13.54.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
