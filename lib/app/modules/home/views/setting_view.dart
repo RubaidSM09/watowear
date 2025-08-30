@@ -31,11 +31,7 @@ class SettingView extends GetView<SettingController> {
             scale: 4,
           ),
         ),
-        title: Column(
-          children: [
-            WTWAppbarText(text: 'Settings'),
-          ],
-        ),
+        title: WTWAppbarText(text: 'Settings'),
         centerTitle: true,
       ),
       body: Padding(
@@ -58,6 +54,8 @@ class SettingView extends GetView<SettingController> {
               AllSettingsList(
                 isNotificationActive: controller.isNotificationActive,
                 isDarkMode: controller.isDarkMode,
+
+                isDataProcessingConsentActive: controller.isDataProcessingConsentActive,
               ),
 
               SizedBox(height: 20.h,),

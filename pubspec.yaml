@@ -102,6 +102,8 @@ flutter:
     - assets/images/closet/my_closet/quick_scan/generate_outfits_now/
     - assets/images/style_missions/rewards_achievements/rewards/progress_details/
     - assets/images/home/saved_outfit/outfit_details/
+    - assets/images/home/help_n_faq/
+    - assets/images/home/legal_privacy/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

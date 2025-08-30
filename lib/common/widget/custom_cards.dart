@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:watowear_chole/app/modules/closet/views/my_closet_view.dart';
+import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_text.dart';
@@ -976,80 +977,83 @@ class OutfitCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 186.1363525390625.w,
-      height: 292.5.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.86.r),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withAlpha(26),
-            blurRadius: 4.43.r,
-            offset: Offset(0.w, 2.22.h),
-          ),
-          BoxShadow(
+    return GestureDetector(
+      onTap: () => Get.to(OutfitDetailsView()),
+      child: Container(
+        width: 186.1363525390625.w,
+        height: 292.5.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.86.r),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
               color: Colors.black.withAlpha(26),
-              blurRadius: 6.65.r,
-            offset: Offset(0.w, 4.43.h),
+              blurRadius: 4.43.r,
+              offset: Offset(0.w, 2.22.h),
+            ),
+            BoxShadow(
+                color: Colors.black.withAlpha(26),
+                blurRadius: 6.65.r,
+              offset: Offset(0.w, 4.43.h),
+            ),
+          ],
+          border: Border.all(
+            color: Color(0xFFE5E7EB),
           ),
-        ],
-        border: Border.all(
-          color: Color(0xFFE5E7EB),
         ),
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8.86.r),
-              topRight: Radius.circular(8.86.r),
-            ),
-            child: Image.asset(
-              image,
-              width: 186.1363525390625.w,
-              height: 177.27272033691406.h,
-              fit: BoxFit.contain,
-            ),
-          ),
-
-          SizedBox(height: 13.3.h,),
-
-          Row(
-            children: [
-              SizedBox(width: 13.3.w,),
-
-              SizedBox(
-                width: 159.5454559326172.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        color: Color(0xFF4A4A4A),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 17.73.sp,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      description,
-                      style: TextStyle(
-                        color: Color(0xFF858585),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13.3.sp,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ],
-                ),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8.86.r),
+                topRight: Radius.circular(8.86.r),
               ),
-            ],
-          )
-        ],
+              child: Image.asset(
+                image,
+                width: 186.1363525390625.w,
+                height: 177.27272033691406.h,
+                fit: BoxFit.contain,
+              ),
+            ),
+      
+            SizedBox(height: 13.3.h,),
+      
+            Row(
+              children: [
+                SizedBox(width: 13.3.w,),
+      
+                SizedBox(
+                  width: 159.5454559326172.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          color: Color(0xFF4A4A4A),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17.73.sp,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Text(
+                        description,
+                        style: TextStyle(
+                          color: Color(0xFF858585),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 13.3.sp,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

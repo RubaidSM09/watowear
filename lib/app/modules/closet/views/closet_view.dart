@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 import 'package:watowear_chole/common/widget/custom_widgets.dart';
 
@@ -143,7 +144,7 @@ class ClosetView extends GetView<ClosetController> {
       ),
 
       floatingActionButton: GestureDetector(
-        onTap: () {  },
+        onTap: () => Get.to(GenerateView()),
         child: Container(
           padding: EdgeInsets.all(21.5.w),
           decoration: BoxDecoration(

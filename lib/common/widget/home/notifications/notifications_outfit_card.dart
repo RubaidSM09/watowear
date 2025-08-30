@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
@@ -85,7 +88,7 @@ class NotificationsOutfitCard extends StatelessWidget {
                       height: 54.736839294433594.h,
                       paddingWidth: 13.06,
                       paddingHeight: 13.54,
-                      onTap: () {  },
+                      onTap: () => Get.to(OutfitDetailsView()),
                     ),
                     WTWSecondaryButton(
                       text: 'Share',

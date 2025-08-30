@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/home/views/help_n_faq_view.dart';
+import 'package:watowear_chole/app/modules/home/views/legal_privacy_view.dart';
 import 'package:watowear_chole/app/modules/home/views/saved_outfits_view.dart';
 import 'package:watowear_chole/app/modules/home/views/voice_assistant_view.dart';
 
@@ -10,9 +12,13 @@ class AllSettingsList extends StatelessWidget {
   final RxBool isNotificationActive;
   final RxBool isDarkMode;
 
+  final RxBool isDataProcessingConsentActive;
+
   const AllSettingsList({
     required this.isNotificationActive,
     required this.isDarkMode,
+
+    required this.isDataProcessingConsentActive,
     super.key
   });
 
@@ -87,16 +93,22 @@ class AllSettingsList extends StatelessWidget {
 
           Divider(color: Color(0xFFF3F4F6), thickness: 1.14.h),
 
-          SettingsRow(
-            icon: 'assets/images/home/settings/help_center.png',
-            title: 'Help Center',
+          GestureDetector(
+            onTap: () => Get.to(HelpNFaqView()),
+            child: SettingsRow(
+              icon: 'assets/images/home/settings/help_center.png',
+              title: 'Help Center',
+            ),
           ),
 
           Divider(color: Color(0xFFF3F4F6), thickness: 1.14.h),
 
-          SettingsRow(
-            icon: 'assets/images/home/settings/advanced_settings.png',
-            title: 'Advanced Settings',
+          GestureDetector(
+            onTap: () => Get.to(LegalPrivacyView()),
+            child: SettingsRow(
+              icon: 'assets/images/home/settings/advanced_settings.png',
+              title: 'Advanced Settings',
+            ),
           ),
         ],
       ),

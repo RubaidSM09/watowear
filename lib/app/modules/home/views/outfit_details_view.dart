@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/home/views/saved_outfits_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
 import '../../../../common/custom_colors.dart';
@@ -183,7 +184,7 @@ class OutfitDetailsView extends GetView {
                     text: 'Save Outfit',
                     icon: 'assets/images/home/outfit_details/save_outfit.png',
                     width: 296,
-                    onTap: () {  },
+                    onTap: () => Get.to(SavedOutfitsView()),
                   ),
 
                   GestureDetector(
