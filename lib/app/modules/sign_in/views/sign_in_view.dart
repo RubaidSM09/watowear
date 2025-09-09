@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:watowear_chole/app/modules/sign_in/views/forgot_password_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
@@ -103,7 +104,7 @@ class SignInView extends GetView<SignInController> {
 
                 SizedBox(height: 24.99.h,),
 
-                SignInButton(onTap: () => Get.offNamed('/home')),
+                SignInButton(onTap: () => Get.off(DashboardView())),
 
                 SizedBox(height: 33.31.h,),
 

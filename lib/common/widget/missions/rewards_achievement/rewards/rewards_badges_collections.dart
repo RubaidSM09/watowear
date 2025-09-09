@@ -14,106 +14,82 @@ class RewardsBadgesCollections extends StatelessWidget {
         alignment: WrapAlignment.spaceBetween,
         runSpacing: 18.24.h,
         children: [
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/first_outfit.png',
-              title: 'First Outfit',
-              subtitle: 'Created your first AI outfit',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/first_outfit.png',
+            title: 'First Outfit',
+            subtitle: 'Created your first AI outfit',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/wardrobe_starter.png',
-              title: 'Wardrobe Starter',
-              subtitle: 'Added 5 items to closet',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/wardrobe_starter.png',
+            title: 'Wardrobe Starter',
+            subtitle: 'Added 5 items to closet',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/voice_pioneer.png',
-              title: 'Voice Pioneer',
-              subtitle: 'Used voice assistant',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/voice_pioneer.png',
+            title: 'Voice Pioneer',
+            subtitle: 'Used voice assistant',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/style_explorer.png',
-              title: 'Style Explorer',
-              subtitle: 'Try 5 different styles',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/style_explorer.png',
+            title: 'Style Explorer',
+            subtitle: 'Try 5 different styles',
+            enabled: false,
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/social_share.png',
-              title: 'Social Sharer',
-              subtitle: 'Shared your first outfit',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/social_share.png',
+            title: 'Social Sharer',
+            subtitle: 'Shared your first outfit',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/dya_7_streak.png',
-              title: '7-Day Streak',
-              subtitle: 'Use app 7 days in a row',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/dya_7_streak.png',
+            title: '7-Day Streak',
+            subtitle: 'Use app 7 days in a row',
+            enabled: false,
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/trendsetter.png',
-              title: 'Trendsetter',
-              subtitle: 'Created 10 outfits',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/trendsetter.png',
+            title: 'Trendsetter',
+            subtitle: 'Created 10 outfits',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/color_master.png',
-              title: 'Color Master',
-              subtitle: 'Use all color categories',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/color_master.png',
+            title: 'Color Master',
+            subtitle: 'Use all color categories',
+            enabled: false,
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/organizer.png',
-              title: 'Organizer',
-              subtitle: 'Tagged 20 items',
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/organizer.png',
+            title: 'Organizer',
+            subtitle: 'Tagged 20 items',
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/ai_whisperer.png',
-              title: 'AI Whisperer',
-              subtitle: '50 voice interactions',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/ai_whisperer.png',
+            title: 'AI Whisperer',
+            subtitle: '50 voice interactions',
+            enabled: false,
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/seasonal_stylist.png',
-              title: 'Seasonal Stylist',
-              subtitle: 'Create outfits for all seasons',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/seasonal_stylist.png',
+            title: 'Seasonal Stylist',
+            subtitle: 'Create outfits for all seasons',
+            enabled: false,
           ),
 
-          Flexible(
-            child: RewardBadgesCard(
-              icon: 'assets/images/style_missions/rewards_achievements/rewards/perfectionist.png',
-              title: 'Perfectionist',
-              subtitle: 'Complete all daily missions',
-              enabled: false,
-            ),
+          RewardBadgesCard(
+            icon: 'assets/images/style_missions/rewards_achievements/rewards/perfectionist.png',
+            title: 'Perfectionist',
+            subtitle: 'Complete all daily missions',
+            enabled: false,
           ),
         ],
       ),

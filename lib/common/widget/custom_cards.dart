@@ -395,55 +395,58 @@ class AddWardrobeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 356.w,
-      height: 68.5.h,
-      padding: EdgeInsets.symmetric(horizontal: 20.5.w, vertical: 10.13.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        color: fillColor,
-        border: Border.all(color: borderColor, width: borderWidth.sp),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Image.asset(image, width: 18.w, height: 18.h, scale: 4),
-              SizedBox(width: 15.21.w),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16.sp,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40.w),
+      child: Container(
+        // width: 356.w,
+        // height: 68.5.h,
+        padding: EdgeInsets.symmetric(horizontal: 20.5.w, vertical: 10.13.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          color: fillColor,
+          border: Border.all(color: borderColor, width: borderWidth.sp),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Image.asset(image, width: 18.w, height: 18.h, scale: 4),
+                SizedBox(width: 15.21.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
+                      ),
                     ),
-                  ),
-                  Text(
-                    subTitle,
-                    style: TextStyle(
-                      color: Color(0xFF4B5563),
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14.sp,
+                    Text(
+                      subTitle,
+                      style: TextStyle(
+                        color: Color(0xFF4B5563),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                  ],
+                ),
+              ],
+            ),
 
-          Icon(
-            Icons.arrow_forward_ios,
-            color: WTWColor.text_icons.withAlpha(153),
-            size: 22.sp,
-          ),
-        ],
+            Icon(
+              Icons.arrow_forward_ios,
+              color: WTWColor.text_icons.withAlpha(153),
+              size: 22.r,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -454,138 +457,141 @@ class WhatHappensNext extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 356.w,
-      height: 162.h,
-      padding: EdgeInsets.symmetric(horizontal: 42.5.w, vertical: 18.15.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8.r),
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          Text(
-            'What happens next?',
-            style: TextStyle(
-              color: WTWColor.text_icons,
-              fontFamily: 'Comfortaa',
-              fontWeight: FontWeight.w400,
-              fontSize: 14.sp,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40.0.w),
+      child: Container(
+        // width: 356.w,
+        // height: 162.h,
+        padding: EdgeInsets.symmetric(horizontal: 42.5.w, vertical: 18.15.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          color: Colors.white,
+        ),
+        child: Column(
+          children: [
+            Text(
+              'What happens next?',
+              style: TextStyle(
+                color: WTWColor.text_icons,
+                fontFamily: 'Comfortaa',
+                fontWeight: FontWeight.w400,
+                fontSize: 14.sp,
+              ),
             ),
-          ),
 
-          SizedBox(height: 11.1.h),
+            SizedBox(height: 11.1.h),
 
-          SizedBox(
-            height: 93.h,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 5.25.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: WTWColor.primary.withAlpha(26),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.asset(
-                        'assets/images/add_wardrobe/auto_tag.png',
-                        width: 12.75.w,
-                        height: 12.h,
-                        scale: 4,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 238.w,
-                      child: Text(
-                        'Auto-tagging with confirmation',
-                        style: TextStyle(
-                          color: Color(0xFF4B5563),
-                          fontFamily: 'Comfortaa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.sp,
+            SizedBox(
+              height: 93.h,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 5.25.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: WTWColor.primary.withAlpha(26),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.asset(
+                          'assets/images/add_wardrobe/auto_tag.png',
+                          width: 12.75.w,
+                          height: 12.h,
+                          scale: 4,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 5.25.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: WTWColor.primary.withAlpha(26),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.asset(
-                        'assets/images/add_wardrobe/color.png',
-                        width: 12.75.w,
-                        height: 12.h,
-                        scale: 4,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 238.w,
-                      child: Text(
-                        'Color and style analysis',
-                        style: TextStyle(
-                          color: Color(0xFF4B5563),
-                          fontFamily: 'Comfortaa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.sp,
+                      SizedBox(
+                        width: 238.w,
+                        child: Text(
+                          'Auto-tagging with confirmation',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontFamily: 'Comfortaa',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 5.25.w,
-                        vertical: 4.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: WTWColor.primary.withAlpha(26),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.asset(
-                        'assets/images/add_wardrobe/suggestion.png',
-                        width: 12.75.w,
-                        height: 12.h,
-                        scale: 4,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 238.w,
-                      child: Text(
-                        'Smart outfit suggestions',
-                        style: TextStyle(
-                          color: Color(0xFF4B5563),
-                          fontFamily: 'Comfortaa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14.sp,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 5.25.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: WTWColor.primary.withAlpha(26),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.asset(
+                          'assets/images/add_wardrobe/color.png',
+                          width: 12.75.w,
+                          height: 12.h,
+                          scale: 4,
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      SizedBox(
+                        width: 238.w,
+                        child: Text(
+                          'Color and style analysis',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontFamily: 'Comfortaa',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 5.25.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: WTWColor.primary.withAlpha(26),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.asset(
+                          'assets/images/add_wardrobe/suggestion.png',
+                          width: 12.75.w,
+                          height: 12.h,
+                          scale: 4,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 238.w,
+                        child: Text(
+                          'Smart outfit suggestions',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontFamily: 'Comfortaa',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

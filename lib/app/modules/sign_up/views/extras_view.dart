@@ -21,89 +21,91 @@ class ExtrasView extends GetView<ExtrasController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WTWColor.background,
-      body: Stack(
-        children: [
-          PageView(
-            controller: controller.pageController,
-            onPageChanged: controller.onPageChanged,
-            children: [
-              Extra1View(), // 1
-              Extra2View(), // 2
-              Extra3View(), // 3
-              Extra4View(), // 4
-              Extra5View(), // 5
-              Extra6View(), // 6
-              Extra7View(),
-              Extra8View(onTap1: controller.next, onTap2: controller.back,),
-            ],
-          ),
-
-          Positioned(
-              left: 30.13.w,
-              top: 74.1.h,
-              child: Icon(
-                Icons.arrow_back,
-                size: 20.sp,
-                color: WTWColor.text_icons,
-              ),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            PageView(
+              controller: controller.pageController,
+              onPageChanged: controller.onPageChanged,
+              children: [
+                Extra1View(), // 1
+                Extra2View(), // 2
+                Extra3View(), // 3
+                Extra4View(), // 4
+                Extra5View(), // 5
+                Extra6View(), // 6
+                Extra7View(),
+                Extra8View(onTap1: controller.next, onTap2: controller.back,),
+              ],
             ),
-
-          Positioned(
-              left: 374.15.w,
-              top: 76.6.h,
-              child: TextButton(
-                onPressed: controller.skip,
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: WTWColor.text_icons,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Comfortaa',
+        
+            Positioned(
+                left: 30.13.w,
+                top: 74.1.h,
+                child: Icon(
+                  Icons.arrow_back,
+                  size: 20.sp,
+                  color: WTWColor.text_icons,
+                ),
+              ),
+        
+            Positioned(
+                left: 374.15.w,
+                top: 76.6.h,
+                child: TextButton(
+                  onPressed: controller.skip,
+                  child: Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: WTWColor.text_icons,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Comfortaa',
+                    ),
                   ),
                 ),
               ),
-            ),
-
-          // Bottom: indicator + primary action
-          Obx(() {
-            final idx = controller.current.value;
-            if (idx<7){
-              return Positioned(
-                top: 800.h,
-                child: Container(
-                  width: 440.w,
-                  padding: EdgeInsets.all(16.w),
-                  decoration: BoxDecoration(
-                      color: WTWColor.background,
-                      boxShadow: [
-                        BoxShadow(
-                            color: WTWColor.text_icons.withAlpha(15),
-                            blurRadius: 20.r
-                        )
-                      ]
+        
+            // Bottom: indicator + primary action
+            Obx(() {
+              final idx = controller.current.value;
+              if (idx<7){
+                return Positioned(
+                  top: 775.h,
+                  child: Container(
+                    width: 440.w,
+                    padding: EdgeInsets.all(16.w),
+                    decoration: BoxDecoration(
+                        color: WTWColor.background,
+                        boxShadow: [
+                          BoxShadow(
+                              color: WTWColor.text_icons.withAlpha(15),
+                              blurRadius: 20.r
+                          )
+                        ]
+                    ),
+                    child: Column(
+                      children: [
+                        OnboardingButton(
+                          text: 'Continue',
+                          onTap: controller.next, // Next page
+                        ),
+                        SizedBox(height: 16.h),
+                        OnboardingButton2(
+                          text: 'Back',
+                          onTap: controller.back, // Previous page
+                        ),
+                      ],
+                    ),
                   ),
-                  child: Column(
-                    children: [
-                      OnboardingButton(
-                        text: 'Continue',
-                        onTap: controller.next, // Next page
-                      ),
-                      SizedBox(height: 16.h),
-                      OnboardingButton2(
-                        text: 'Back',
-                        onTap: controller.back, // Previous page
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }
-            else {
-              return SizedBox.shrink();
-            }
-          }),
-        ],
+                );
+              }
+              else {
+                return SizedBox.shrink();
+              }
+            }),
+          ],
+        ),
       ),
     );
   }
