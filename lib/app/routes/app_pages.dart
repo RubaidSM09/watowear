@@ -60,7 +60,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.VERIFY_MAIL,
-      page: () => const VerifyMailView(),
+      page: () => const VerifyMailView(purpose: '',),
       binding: SignUpBinding(),
     ),
     GetPage(

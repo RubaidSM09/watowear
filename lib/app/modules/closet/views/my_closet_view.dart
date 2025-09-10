@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/closet/views/camera_access_required_view.dart';
 import 'package:watowear_chole/app/modules/closet/views/quick_scan_view.dart';
 import 'package:watowear_chole/app/modules/closet/views/review_crops_view.dart';
 import 'package:watowear_chole/app/modules/closet/views/select_photos_view.dart';
@@ -66,7 +67,7 @@ class MyClosetView extends GetView {
               WTWPrimaryButton(
                 text: 'Quick Scan',
                 width: 360.w,
-                onTap: () => Get.to(QuickScanView()),
+                onTap: () => Get.dialog(CameraAccessRequiredView()),
               ),
 
               SizedBox(height: 25.h,),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/sign_in/controllers/forgot_password_controller.dart';
 import 'package:watowear_chole/app/modules/sign_in/views/new_password_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/verify_mail_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_logos.dart';
 import 'package:watowear_chole/common/widget/custom_text_fields.dart';
@@ -63,7 +64,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
 
                 SizedBox(height: 30.h,),
 
-                ResetPasswordButton(text: 'Send Reset Link', onTap: () => Get.to(NewPasswordView())),
+                ResetPasswordButton(text: 'Send Reset Link', onTap: () => Get.to(VerifyMailView(purpose: 'Forgot Password'))),
               ],
             ),
           )

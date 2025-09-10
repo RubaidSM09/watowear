@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/closet/views/photo_library_access_required_view.dart';
+import 'package:watowear_chole/app/modules/closet/views/quick_scan_view.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_buttons.dart';
@@ -245,6 +246,7 @@ class CameraAccessRequiredView extends GetView {
                 paddingWidth: 45,
                 onTap: () {
                   Get.back();
+                  Get.to(QuickScanView());
                   Get.dialog(PhotoLibraryAccessRequiredView());
                 },
               ),

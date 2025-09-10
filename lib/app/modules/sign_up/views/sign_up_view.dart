@@ -118,7 +118,7 @@ class SignUpView extends GetView<SignUpController> {
 
                 SizedBox(height: 35.95.h,),
 
-                CreateAccountButton(onTap: () => Get.to(VerifyMailView())),
+                CreateAccountButton(onTap: () => Get.to(VerifyMailView(purpose: 'Sign Up',))),
               ],
             ),
           ),

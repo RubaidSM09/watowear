@@ -31,7 +31,7 @@ class Onboarding3View extends GetView {
                 ),
                 SizedBox(height: 26.h),
                 Text(
-                  'Digitize your real clothes in seconds.',
+                  'AI-powered styling just for you.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: WTWColor.accent,
@@ -44,7 +44,7 @@ class Onboarding3View extends GetView {
                 SizedBox(
                   width: 341.w,
                   child: Text(
-                    'Organize. See what you own. Get personalized outfit suggestions based on your actual wardrobe.',
+                    'Based on your mood, occasion, and personal style preferences.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: WTWColor.text_icons,

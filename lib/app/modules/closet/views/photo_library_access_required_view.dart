@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/closet/views/select_photos_view.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_buttons.dart';
@@ -243,7 +244,10 @@ class PhotoLibraryAccessRequiredView extends GetView {
                 text: 'Allow Camera Access',
                 icon: 'assets/images/closet/my_closet/quick_scan/generate_outfits_now/allow_camera_access.png',
                 paddingWidth: 45,
-                onTap: () {  },
+                onTap: () {
+                  Get.back();
+                  Get.to(SelectPhotosView());
+                },
               ),
 
               SizedBox(height: 10.h,),

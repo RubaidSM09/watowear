@@ -103,7 +103,7 @@ class SignInView extends GetView<SignInController> {
 
                 SizedBox(height: 24.99.h,),
 
-                SignInButton(onTap: () => Get.offNamed('/home')),
+                SignInButton(onTap: () => Get.offNamed('/dashboard')),
 
                 SizedBox(height: 33.31.h,),
 

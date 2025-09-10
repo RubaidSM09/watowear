@@ -11,7 +11,7 @@ class SplashController extends GetxController with GetSingleTickerProviderStateM
 
     anim = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 2000),
     );
 
     fade = CurvedAnimation(parent: anim, curve: Curves.easeIn);

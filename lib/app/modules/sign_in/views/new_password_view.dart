@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/sign_in/views/sign_in_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
 import '../../../../common/custom_colors.dart';
@@ -88,7 +89,16 @@ class NewPasswordView extends GetView<NewPasswordController> {
 
                 SizedBox(height: 30.h,),
 
-                ResetPasswordButton(text: 'Reset Password', onTap: () => Get.to(NewPasswordView())),
+                ResetPasswordButton(
+                  text: 'Reset Password',
+                  onTap: () {
+                    // Get.back();
+                    // Get.back();
+                    // Get.back();
+                    // Get.back();
+                    Get.to(SignInView());
+                  },
+                ),
               ],
             ),
           )

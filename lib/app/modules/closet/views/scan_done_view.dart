@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/closet/views/analyzing_video_view.dart';
+import 'package:watowear_chole/app/modules/closet/views/quick_scan_multi_item_view.dart';
 import 'package:watowear_chole/app/modules/closet/views/review_crops_view.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
@@ -63,7 +64,7 @@ class ScanDoneView extends GetView {
               text: 'Finish (3/5)',
               width: 360.w,
               onTap: () {
-                Get.to(ReviewCropsView());
+                Get.to(QuickScanMultiItemView());
                 Get.dialog(AnalyzingVideoView());
               },
             ),

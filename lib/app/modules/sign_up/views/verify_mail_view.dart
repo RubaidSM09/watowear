@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/sign_in/views/new_password_view.dart';
 import 'package:watowear_chole/app/modules/sign_up/controllers/verify_mail_controller.dart';
 import 'package:watowear_chole/app/modules/sign_up/views/extras_view.dart';
 import 'package:watowear_chole/common/widget/custom_footer.dart';
@@ -11,7 +12,12 @@ import '../../../../common/widget/custom_logos.dart';
 import '../../../../common/widget/custom_text.dart';
 
 class VerifyMailView extends GetView<VerifyMailController> {
-  const VerifyMailView({super.key});
+  final String purpose;
+
+  const VerifyMailView({
+    required this.purpose,
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +112,18 @@ class VerifyMailView extends GetView<VerifyMailController> {
 
                 SizedBox(height: 30.h,),
 
-                ResetPasswordButton(text: 'Verify Email', onTap: () => Get.to(ExtrasView()),),
+                ResetPasswordButton(
+                  text: 'Verify Email',
+                  onTap: () {
+                    if(purpose=='Sign Up'){
+                      Get.back();
+                      Get.to(ExtrasView());
+                    }
+                    if(purpose=='Forgot Password'){
+                      Get.to(NewPasswordView());
+                    }
+                  },
+                ),
               ],
             ),
           ),
