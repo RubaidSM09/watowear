@@ -17,6 +17,8 @@ class SettingsBottomSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                  width: 36.49123001098633.w,
+                  height: 36.49123001098633.h,
                   padding: EdgeInsets.all(8.27.w),
                   decoration: BoxDecoration(
                     color: WTWColor.primary,
@@ -24,13 +26,14 @@ class SettingsBottomSection extends StatelessWidget {
                     border: Border.all(color: Color(0xFFE5E7EB)),
                   ),
                   child: Image.asset(
-                    'assets/images/home/settings/watowear.png',
+                    'assets/images/home/settings/hanger-removebg-preview.png',
+                    fit: BoxFit.cover,
                     scale: 4,
                   ),
                 ),
                 SizedBox(width: 9.128769989.w,),
                 Text(
-                  'WatoWear',
+                  'WATOWEAR',
                   style: TextStyle(
                     color: WTWColor.text_icons,
                     fontFamily: 'Comfortaa',
@@ -56,7 +59,7 @@ class SettingsBottomSection extends StatelessWidget {
             SizedBox(height: 4.56.h,),
 
             Text(
-              '© 2024 WatoWear. All rights reserved.',
+              '© 2024 WATOWEAR. All rights reserved.',
               style: TextStyle(
                 color: Color(0xFF6B7280),
                 fontFamily: 'Comfortaa',

@@ -504,9 +504,11 @@ class BodyShapeText extends StatelessWidget {
 
 class VibeText extends StatelessWidget {
   final String text;
+  final RxBool isSelected;
 
   const VibeText({
     required this.text,
+    required this.isSelected,
     super.key,
   });
 
@@ -515,7 +517,7 @@ class VibeText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        color: WTWColor.text_icons,
+        color: isSelected.value ? WTWColor.background : WTWColor.text_icons,
         fontFamily: 'Comfortaa',
         fontWeight: FontWeight.w400,
         fontSize: 16.65.sp,
@@ -598,9 +600,11 @@ class FavColorsText extends StatelessWidget {
 
 class CelebrityText extends StatelessWidget {
   final String text;
+  final RxBool isSelected;
 
   const CelebrityText({
     required this.text,
+    required this.isSelected,
     super.key,
   });
 
@@ -611,7 +615,7 @@ class CelebrityText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: WTWColor.text_icons,
+          color: isSelected.value ? WTWColor.background : WTWColor.text_icons,
           fontFamily: 'Comfortaa',
           fontWeight: FontWeight.w400,
           fontSize: 14.57.sp,
@@ -718,7 +722,7 @@ class NewToWatowearText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'New to Watowear?',
+      'New to WATOWEAR?',
       style: TextStyle(
         color: Color(0xFF707868),
         fontFamily: 'Comfortaa',

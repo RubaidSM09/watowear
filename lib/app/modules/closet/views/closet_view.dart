@@ -14,6 +14,8 @@ class ClosetView extends GetView<ClosetController> {
   const ClosetView({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.put(ClosetController());
+
     return Scaffold(
       backgroundColor: WTWColor.background,
       appBar: AppBar(
@@ -64,7 +66,7 @@ class ClosetView extends GetView<ClosetController> {
 
               SizedBox(height: 18.01.h,),
 
-              MyClosetUpperSection(),
+              MyClosetUpperSection(isGrid: controller.isGrid,),
 
               SizedBox(height: 18.01.h,),
 
@@ -74,19 +76,80 @@ class ClosetView extends GetView<ClosetController> {
 
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    FilterCard(text: 'All', isSelected: true,),
-                    SizedBox(width: 8.799.w,),
-                    FilterCard(text: 'Tops', isSelected: false,),
-                    SizedBox(width: 8.799.w,),
-                    FilterCard(text: 'Bottoms', isSelected: false,),
-                    SizedBox(width: 8.799.w,),
-                    FilterCard(text: 'Dresses', isSelected: false,),
-                    SizedBox(width: 8.799.w,),
-                    FilterCard(text: 'Shoes', isSelected: false,),
-                  ],
-                ),
+                child: Obx(() {
+                  return Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          controller.selectedFitler.value = [
+                            true.obs,
+                            false.obs,
+                            false.obs,
+                            false.obs,
+                            false.obs
+                          ];
+                        },
+                        child: FilterCard(text: 'All',
+                          isSelected: controller.selectedFitler[0],),
+                      ),
+                      SizedBox(width: 8.799.w,),
+                      GestureDetector(
+                        onTap: () {
+                          controller.selectedFitler.value = [
+                            false.obs,
+                            true.obs,
+                            false.obs,
+                            false.obs,
+                            false.obs,
+                          ];
+                        },
+                        child: FilterCard(text: 'Tops',
+                          isSelected: controller.selectedFitler[1],),
+                      ),
+                      SizedBox(width: 8.799.w,),
+                      GestureDetector(
+                          onTap: () {
+                            controller.selectedFitler.value = [
+                              false.obs,
+                              false.obs,
+                              true.obs,
+                              false.obs,
+                              false.obs
+                            ];
+                          },
+                          child: FilterCard(text: 'Bottoms',
+                            isSelected: controller.selectedFitler[2],)
+                      ),
+                      SizedBox(width: 8.799.w,),
+                      GestureDetector(
+                          onTap: () {
+                            controller.selectedFitler.value = [
+                              false.obs,
+                              false.obs,
+                              false.obs,
+                              true.obs,
+                              false.obs
+                            ];
+                          },
+                          child: FilterCard(text: 'Dresses',
+                            isSelected: controller.selectedFitler[3],)
+                      ),
+                      SizedBox(width: 8.799.w,),
+                      GestureDetector(
+                          onTap: () {
+                            controller.selectedFitler.value = [
+                              false.obs,
+                              false.obs,
+                              false.obs,
+                              false.obs,
+                              true.obs
+                            ];
+                          }, child: FilterCard(text: 'Shoes',
+                        isSelected: controller.selectedFitler[4],)
+                      ),
+                    ],
+                  );
+                }),
               ),
 
               SizedBox(height: 25.8075.h,),

@@ -11,7 +11,49 @@ class WTWSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return TextField(
+      decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 11.92.w, vertical: 14.h),
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(9.03.r),
+          borderSide: BorderSide(
+            color: Color(0xFFCDCDC0),
+            width: 1.13.sp,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(9.03.r),
+          borderSide: BorderSide(
+            color: Color(0xFFCDCDC0),
+            width: 1.13.sp,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(9.03.r),
+          borderSide: BorderSide(
+            color: Color(0xFFCDCDC0),
+            width: 1.13.sp,
+          ),
+        ),
+
+        prefixIcon: Image.asset(
+          'assets/images/home/settings/search_setting.png',
+          scale: 4,
+        ),
+
+        hintText: searchBarText,
+        hintStyle: TextStyle(
+          color: Color(0xFFADAEBC),
+          fontFamily: 'Comfortaa',
+          fontWeight: FontWeight.w400,
+          fontSize: 18.05.sp,
+        ),
+      ),
+    );
+
+    /*return Container(
       padding: EdgeInsets.symmetric(horizontal: 11.92.w, vertical: 14.h),
       width: 385.8461608886719.w,
       decoration: BoxDecoration(
@@ -40,6 +82,6 @@ class WTWSearchBar extends StatelessWidget {
           )
         ],
       ),
-    );
+    );*/
   }
 }
