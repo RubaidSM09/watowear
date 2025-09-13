@@ -59,14 +59,12 @@ class PhotoPreviewView extends GetView {
                 children: [
                   WTWPrimaryButton(
                     text: 'Keep Photo',
-                    width: 180.w,
-                    paddingWidth: 33,
+                    paddingLeftWidth: 33,
                     onTap: () => Get.to(ItemDetailsView()),
                   ),
                   WTWPrimaryButton(
                     text: 'Retake Photo',
-                    width: 180.w,
-                    paddingWidth: 33,
+                    paddingLeftWidth: 33,
                     onTap: () {  },
                   ),
                 ],

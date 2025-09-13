@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/sign_up/views/extra7_view.dart';
 import 'package:watowear_chole/app/modules/sign_up/views/extra8_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/extra9_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
 import '../../../../common/custom_colors.dart';
@@ -61,6 +62,7 @@ class ExtrasView extends GetView<ExtrasController> {
               onPageChanged: controller.onPageChanged,
               children: [
                 Extra1View(), // 1
+                Extra9View(),
                 Extra2View(), // 2
                 Extra3View(), // 3
                 Extra4View(), // 4
@@ -170,7 +172,7 @@ class ExtrasView extends GetView<ExtrasController> {
 
       bottomNavigationBar: Obx(() {
         final idx = controller.current.value;
-        if (idx >= 7) return const SizedBox.shrink();
+        if (idx >= 8) return const SizedBox.shrink();
         return SafeArea(
           top: false,
           child: Container(

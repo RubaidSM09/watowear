@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/sign_in/views/sign_in_view.dart';
 import 'package:watowear_chole/app/modules/sign_up/controllers/verify_mail_controller.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/privacy_policy_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/terms_condition_view.dart';
 
 import '../custom_colors.dart';
 
@@ -216,14 +218,58 @@ class PrivacyPolicyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'I agree to the Terms & Conditions and Privacy Policy',
-      style: TextStyle(
-        color: WTWColor.text_icons,
-        fontFamily: 'Comfortaa',
-        fontWeight: FontWeight.w400,
-        fontSize: 12.sp,
-      ),
+    return Wrap(
+      children: [
+        Text(
+          'I agree to the ',
+          style: TextStyle(
+            color: WTWColor.text_icons,
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.w400,
+            fontSize: 12.sp,
+          ),
+        ),
+
+        GestureDetector(
+          onTap: () => Get.to(TermsConditionView()),
+          child: Text(
+            'Terms & Conditions',
+            style: TextStyle(
+              color: WTWColor.text_icons,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w400,
+              fontSize: 12.sp,
+              decoration: TextDecoration.underline,
+              decorationColor: WTWColor.text_icons,
+            ),
+          ),
+        ),
+
+        Text(
+          ' and ',
+          style: TextStyle(
+            color: WTWColor.text_icons,
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.w400,
+            fontSize: 12.sp,
+          ),
+        ),
+
+        GestureDetector(
+          onTap: () => Get.to(PrivacyPolicyView()),
+          child: Text(
+            'Privacy Policy',
+            style: TextStyle(
+              color: WTWColor.text_icons,
+              fontFamily: 'Comfortaa',
+              fontWeight: FontWeight.w400,
+              fontSize: 12.sp,
+              decoration: TextDecoration.underline,
+              decorationColor: WTWColor.text_icons,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:watowear_chole/app/modules/home/views/help_n_faq_view.dart';
 import 'package:watowear_chole/app/modules/home/views/legal_privacy_view.dart';
 import 'package:watowear_chole/app/modules/home/views/saved_outfits_view.dart';
 import 'package:watowear_chole/app/modules/home/views/voice_assistant_view.dart';
+import 'package:watowear_chole/app/modules/profile/views/edit_profile_view.dart';
 
 import '../../../custom_colors.dart';
 
@@ -71,9 +72,12 @@ class AllSettingsList extends StatelessWidget {
 
           Divider(color: Color(0xFFF3F4F6), thickness: 1.14.h),
 
-          SettingsRow(
-            icon: 'assets/images/home/settings/edit_profile.png',
-            title: 'Edit Profile',
+          GestureDetector(
+            onTap: () => Get.to(EditProfileView()),
+            child: SettingsRow(
+              icon: 'assets/images/home/settings/edit_profile.png',
+              title: 'Edit Profile',
+            ),
           ),
 
           Divider(color: Color(0xFFF3F4F6), thickness: 1.14.h),

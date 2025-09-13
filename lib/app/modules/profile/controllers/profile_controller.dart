@@ -1,11 +1,16 @@
 import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
+  final heightUnit = 'Ft'.obs;
+  final heightUnits = const ['Ft', 'In', 'Cm'];
+  final weightUnit = 'Kg'.obs;
+  final weightUnits = const ['Kg', 'lbs'];
 
-  final count = 0.obs;
+  void setHeightUnit(String? v) {
+    if (v != null) heightUnit.value = v;
+  }
 
-
-
-  void increment() => count.value++;
+  void setWeightUnit(String? v) {
+    if (v != null) weightUnit.value = v;
+  }
 }

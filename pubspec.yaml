@@ -104,6 +104,8 @@ flutter:
     - assets/images/home/saved_outfit/outfit_details/
     - assets/images/home/help_n_faq/
     - assets/images/home/legal_privacy/
+    - assets/images/home/outfit_details/edit_outfit/
+    - assets/images/drawer/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

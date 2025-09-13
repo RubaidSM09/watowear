@@ -55,7 +55,6 @@ class NotificationsView extends GetView {
               WTWPrimaryButton(
                 text: 'I’ll Wear This Today',
                 icon: 'assets/images/home/notifications/waer_this_today.png',
-                width: 360.w,
                 onTap: () {  },
               ),
 

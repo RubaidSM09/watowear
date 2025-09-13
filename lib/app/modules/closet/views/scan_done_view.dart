@@ -61,8 +61,9 @@ class ScanDoneView extends GetView {
             top: 801.h,
             left: 40.w,
             child: WTWPrimaryButton(
+              paddingLeftWidth: 130,
+              paddingRightWidth: 130,
               text: 'Finish (3/5)',
-              width: 360.w,
               onTap: () {
                 Get.to(QuickScanMultiItemView());
                 Get.dialog(AnalyzingVideoView());

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/home/views/edit_outfit_view.dart';
 import 'package:watowear_chole/app/modules/home/views/saved_outfits_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 
@@ -183,7 +184,6 @@ class OutfitDetailsView extends GetView {
                   WTWPrimaryButton(
                     text: 'Save Outfit',
                     icon: 'assets/images/home/outfit_details/save_outfit.png',
-                    width: 296,
                     onTap: () => Get.to(SavedOutfitsView()),
                   ),
 
@@ -214,11 +214,13 @@ class OutfitDetailsView extends GetView {
 
               SizedBox(height: 16.h,),
 
-              WTWSecondaryButton(
+              WTWPrimaryButton(
                 text: 'Edit',
                 icon: 'assets/images/home/outfit_details/edit.png',
-                width: 360,
-                onTap: () {  },
+                color: Colors.transparent,
+                borderColor: WTWColor.primary,
+                textColor: WTWColor.text_icons,
+                onTap: () => Get.to(EditOutfitView()),
               ),
 
               SizedBox(height: 30.h,),

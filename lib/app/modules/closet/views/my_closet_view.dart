@@ -58,7 +58,6 @@ class MyClosetView extends GetView {
               
               WTWPrimaryButton(
                 text: 'Import Images',
-                width: 360.w,
                 onTap: () => Get.to(SelectPhotosView()),
               ),
 
@@ -66,7 +65,6 @@ class MyClosetView extends GetView {
 
               WTWPrimaryButton(
                 text: 'Quick Scan',
-                width: 360.w,
                 onTap: () => Get.dialog(CameraAccessRequiredView()),
               ),
 

@@ -15,6 +15,8 @@ class CustomTextField extends StatelessWidget {
   final int? minLines; // ignored when obscureText = true
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final Color fillColor;
+  final double width;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
 
@@ -31,6 +33,8 @@ class CustomTextField extends StatelessWidget {
     this.minLines,
     this.prefixIcon,
     this.suffixIcon,
+    this.fillColor = Colors.transparent,
+    this.width = 356.0000305175781,
     this.onChanged,
     this.validator,
   });
@@ -48,7 +52,7 @@ class CustomTextField extends StatelessWidget {
         LabelText(text: labelText),
         SizedBox(height: 8.h),
         SizedBox(
-          width: 356.0000305175781.w,
+          width: width.w,
           height: 49.96491622924805.h,
           child: TextFormField(
             controller: controller,
@@ -82,7 +86,7 @@ class CustomTextField extends StatelessWidget {
                 vertical: 12.h,
               ),
               filled: true,
-              fillColor: Colors.transparent,
+              fillColor: fillColor,
               border: border(),
               enabledBorder: border(),
               focusedBorder: border(),

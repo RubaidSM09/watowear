@@ -4,15 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
 import 'package:watowear_chole/app/modules/home/views/generate_outfit_view.dart';
+import 'package:watowear_chole/app/modules/home/views/help_n_faq_view.dart';
 import 'package:watowear_chole/app/modules/home/views/notifications_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_details_view.dart';
 import 'package:watowear_chole/app/modules/home/views/outfit_suggestions_view.dart';
 import 'package:watowear_chole/app/modules/home/views/setting_view.dart';
+import 'package:watowear_chole/app/modules/home/views/wardrobe_carousal_view.dart';
+import 'package:watowear_chole/app/modules/profile/views/edit_profile_view.dart';
+import 'package:watowear_chole/app/modules/sign_in/views/sign_in_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/privacy_policy_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_text.dart';
+import '../../profile/views/profile_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -24,7 +30,7 @@ class HomeView extends GetView<HomeController> {
       appBar: AppBar(
         backgroundColor: WTWColor.background,
         scrolledUnderElevation: 0,
-        leading: GestureDetector(
+        /*leading: GestureDetector(
           onTap: () => Get.to(SettingView()),
           child: Image.asset(
             'assets/images/home/menu.png',
@@ -32,7 +38,7 @@ class HomeView extends GetView<HomeController> {
             height: 15.h,
             scale: 4,
           ),
-        ),
+        ),*/
         title: Column(
           children: [
             Row(
@@ -197,6 +203,159 @@ class HomeView extends GetView<HomeController> {
                 SizedBox(height: 29.17041016.h,),
               ],
             ),
+          ),
+        ),
+      ),
+
+      drawer: SafeArea(
+        child: Container(
+          width: 328.w,
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 34.h),
+          color: Color(0xFF6A6D57),
+          child: Column(
+            spacing: 16.h,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                spacing: 16.w,
+                children: [
+                  CircleAvatar(
+                    radius: 32.r,
+                    backgroundImage: AssetImage(
+                      'assets/images/home/settings/profile_pic.jpg',
+                    ),
+                  ),
+
+                  Column(
+                    spacing: 10.h,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Emma Johnson',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 22.81.sp,
+                        ),
+                      ),
+
+                      Text(
+                        'user123@gmail.com',
+                        style: TextStyle(
+                          color: Color(0xFFE5E7EB),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15.96.sp,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+
+              WTWPrimaryButton(
+                text: 'Edit Profile',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 12,
+                onTap: () => Get.to(EditProfileView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Profile',
+                icon: 'assets/images/drawer/profile.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.to(ProfileView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Wardrobe',
+                icon: 'assets/images/drawer/wardrobe.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.to(WardrobeCarousalView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Settings',
+                icon: 'assets/images/drawer/settings.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.to(SettingView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Help/Support',
+                icon: 'assets/images/drawer/help_support.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.to(HelpNFaqView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Policies',
+                icon: 'assets/images/drawer/policies.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.to(PrivacyPolicyView()),
+              ),
+
+              WTWPrimaryButton(
+                text: 'Share with friend',
+                icon: 'assets/images/drawer/share_with_friend.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () {  },
+              ),
+
+              WTWPrimaryButton(
+                text: 'Logout',
+                icon: 'assets/images/drawer/logout.png',
+                color: Colors.transparent,
+                borderColor: Color(0xFFDADADA),
+                paddingLeftWidth: 12,
+                paddingTopHeight: 8,
+                paddingBottomHeight: 8,
+                paddingRightWidth: 0,
+                textAlignment: MainAxisAlignment.start,
+                onTap: () => Get.off(SignInView()),
+              ),
+            ],
           ),
         ),
       ),

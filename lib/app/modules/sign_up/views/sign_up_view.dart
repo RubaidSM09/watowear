@@ -94,20 +94,31 @@ class SignUpView extends GetView<SignUpController> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        controller.isChecked.value = !controller.isChecked.value;
-                      },
-                      child: Container(
-                        width: 20.818714141845703.w,
-                        height: 20.818714141845703.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(1.04.r),
-                          border: Border.all(color: Colors.black, width: 0.52.w),
+                    Obx(() {
+                      return GestureDetector(
+                        onTap: () {
+                          controller.isChecked.value =
+                          !controller.isChecked.value;
+                        },
+                        child: Container(
+                          width: 20.818714141845703.w,
+                          height: 20.818714141845703.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(1.04.r),
+                            border: Border.all(
+                                color: Colors.black, width: 0.52.w),
+                          ),
+                          child: controller.isChecked.value
+                              ? Icon(
+                            Icons.check,
+                            size: 16.sp,
+                            color: Colors.black,
+                          )
+                              : null,
                         ),
-                      ),
-                    ),
+                      );
+                    }),
                     SizedBox(width: 12.49.w,),
                     SizedBox(
                       width: 320.w,
@@ -119,6 +130,33 @@ class SignUpView extends GetView<SignUpController> {
                 SizedBox(height: 35.95.h,),
 
                 CreateAccountButton(onTap: () => Get.to(VerifyMailView(purpose: 'Sign Up',))),
+
+                SizedBox(height: 33.31.h,),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      color: WTWColor.secondary_bg,
+                      width: 100.20632934570312.w,
+                      height: 1.040935754776001,
+                    ),
+                    ContinueWithText(),
+                    Container(
+                      color: WTWColor.secondary_bg,
+                      width: 100.20632934570312.w,
+                      height: 1.040935754776001,
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 33.31.h,),
+
+                GoogleButton(onTap: () {  }),
+
+                SizedBox(height: 16.66.h,),
+
+                AppleButton(onTap: () {  }),
               ],
             ),
           ),

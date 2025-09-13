@@ -126,7 +126,6 @@ class ProfileView extends GetView<ProfileController> {
               WTWPrimaryButton(
                 text: 'Style New Outfit',
                 icon: 'assets/images/profile/add.png',
-                width: 360.w,
                 onTap: () {  },
               ),
 

@@ -236,7 +236,7 @@ class CongratulationsPopupView extends GetView {
               WTWPrimaryButton(
                 text: 'Generate Outfits Now',
                 icon: 'assets/images/closet/my_closet/quick_scan/add_item_details/congratulations_popup/generate_outfits_now.png',
-                paddingWidth: 45,
+                paddingLeftWidth: 40,
                 onTap: () => Get.to(GenerateOutfitsNowView()),
               ),
 

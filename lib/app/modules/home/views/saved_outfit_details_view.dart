@@ -694,7 +694,6 @@ class SavedOutfitDetailsView extends GetView {
                     child: WTWPrimaryButton(
                       text: 'Recreate Outfit',
                       icon: 'assets/images/home/saved_outfit/outfit_details/recreate_outfit.png',
-                      width: 360.w,
                       onTap: () {  },
                     ),
                   ),

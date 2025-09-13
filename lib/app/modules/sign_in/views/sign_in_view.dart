@@ -15,6 +15,8 @@ class SignInView extends GetView<SignInController> {
   const SignInView({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.put(SignInController());
+
     return Scaffold(
       backgroundColor: WTWColor.background,
       appBar: AppBar(

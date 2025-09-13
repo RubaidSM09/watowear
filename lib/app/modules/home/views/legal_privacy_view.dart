@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/home/views/legal_mentions_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/privacy_policy_view.dart';
+import 'package:watowear_chole/app/modules/sign_up/views/terms_condition_view.dart';
 
 import '../../../../common/custom_colors.dart';
 import '../../../../common/widget/custom_text.dart';
@@ -248,6 +251,7 @@ class LegalPrivacyMiddleSection extends StatelessWidget {
           iconColor: Color(0xFFDCFCE7),
           title: 'Terms & Conditions',
           subtitle: 'Service usage agreement',
+          onTap: () => Get.to(TermsConditionView()),
         ),
 
         LegalPrivacyMiddleSectionCard(
@@ -255,6 +259,7 @@ class LegalPrivacyMiddleSection extends StatelessWidget {
           iconColor: Color(0xFFF3E8FF),
           title: 'Privacy Policy',
           subtitle: 'How we handle your data',
+          onTap: () => Get.to(PrivacyPolicyView()),
         ),
 
         LegalPrivacyMiddleSectionCard(
@@ -262,6 +267,7 @@ class LegalPrivacyMiddleSection extends StatelessWidget {
           iconColor: Color(0xFFFFEDD5),
           title: 'Legal Mentions',
           subtitle: 'Company information & disclaimers',
+          onTap: () => Get.to(LegalMentionsView()),
         ),
       ],
     );
@@ -273,78 +279,83 @@ class LegalPrivacyMiddleSectionCard extends StatelessWidget {
   final Color iconColor;
   final String title;
   final String subtitle;
+  final void Function()? onTap;
 
   const LegalPrivacyMiddleSectionCard({
     required this.icon,
     required this.iconColor,
     required this.title,
     required this.subtitle,
+    required this.onTap,
     super.key
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 27.37.w, vertical: 18.25.h,),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(9.12.r),
-        border: Border.all(color: Color(0xFFE5E7EB)),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            spacing: 13.5.w,
-            children: [
-              Container(
-                padding: EdgeInsets.all(12.26.r),
-                decoration: BoxDecoration(
-                  color: iconColor,
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Color(0xFFE5E7EB),),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 27.37.w, vertical: 18.25.h,),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(9.12.r),
+          border: Border.all(color: Color(0xFFE5E7EB)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              spacing: 13.5.w,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(12.26.r),
+                  decoration: BoxDecoration(
+                    color: iconColor,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Color(0xFFE5E7EB),),
+                  ),
+                  child: Image.asset(
+                    icon,
+                    scale: 4,
+                  ),
                 ),
-                child: Image.asset(
-                  icon,
-                  scale: 4,
-                ),
-              ),
 
-              SizedBox(
-                width: 245.1028137207031.w,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        color: WTWColor.text_icons,
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 18.25.sp,
+                SizedBox(
+                  width: 245.1028137207031.w,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          color: WTWColor.text_icons,
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18.25.sp,
+                        ),
                       ),
-                    ),
-                    Text(
-                      subtitle,
-                      style: TextStyle(
-                        color: Color(0xFF6B7280),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15.96.sp,
+                      Text(
+                        subtitle,
+                        style: TextStyle(
+                          color: Color(0xFF6B7280),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15.96.sp,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+                    ],
+                  ),
+                )
+              ],
+            ),
 
-          Icon(
-            Icons.keyboard_arrow_down,
-            size: 25.r,
-            color: Color(0xFF9CA3AF),
-          ),
-        ],
+            Icon(
+              Icons.keyboard_arrow_down,
+              size: 25.r,
+              color: Color(0xFF9CA3AF),
+            ),
+          ],
+        ),
       ),
     );
   }

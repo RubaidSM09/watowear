@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:watowear_chole/common/widget/closet/my_closet/quick_scan/quick_scan_camera_button.dart';
+import 'package:watowear_chole/common/widget/closet/my_closet/quick_scan/quick_scan_image_section.dart';
 
+import '../../../../../app/modules/closet/views/quick_scan_multi_item_view.dart';
+import '../../../../../app/modules/closet/views/scan_done_view.dart';
 import '../../../../custom_colors.dart';
+import '../../../custom_buttons.dart';
+import 'detected_captured_remaining_section.dart';
 
 class SingleItemVsQuickScanSelectionSection extends StatelessWidget {
   final bool isQuickScanSelected;
@@ -126,7 +134,39 @@ class SingleItemVsQuickScanSelectionSection extends StatelessWidget {
 
           SizedBox(height: 20.h,),
 
-          // isQuickScan.value ? RewardsBadgesSection() : RewardsPointsSection(),
+          !isQuickScan.value ? Column(
+            children: [
+              QuickScanImageSection(),
+
+              SizedBox(height: 25.h),
+
+              QuickScanCameraButton(),
+
+              SizedBox(height: 25.h),
+
+              DetectedCapturedRemainingSection(),
+
+              SizedBox(height: 38.h),
+
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: WTWPrimaryButton(
+                  text: 'Process Items (1)',
+                  onTap: () => Get.to(ScanDoneView()),
+                ),
+              ),
+
+              SizedBox(height: 16.h),
+
+              WTWSecondaryButton(
+                text: 'Cancel',
+                width: 360.w,
+                onTap: () {  },
+              ),
+
+              SizedBox(height: 25.h),
+            ],
+          ) : QuickScanMultiItemView(),
         ],
       );
     });

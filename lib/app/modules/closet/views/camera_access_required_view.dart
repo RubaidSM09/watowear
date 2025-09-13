@@ -243,7 +243,7 @@ class CameraAccessRequiredView extends GetView {
               WTWPrimaryButton(
                 text: 'Allow Camera Access',
                 icon: 'assets/images/closet/my_closet/quick_scan/generate_outfits_now/allow_camera_access.png',
-                paddingWidth: 45,
+                paddingLeftWidth: 45,
                 onTap: () {
                   Get.back();
                   Get.to(QuickScanView());

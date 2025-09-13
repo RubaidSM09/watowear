@@ -84,10 +84,8 @@ class NotificationsOutfitCard extends StatelessWidget {
                     WTWPrimaryButton(
                       text: 'View Details',
                       icon: 'assets/images/home/notifications/view_details.png',
-                      width: 169.91229248046875.w,
-                      height: 54.736839294433594.h,
-                      paddingWidth: 13.06,
-                      paddingHeight: 13.54,
+                      paddingLeftWidth: 13.06,
+                      paddingTopHeight: 13.54,
                       onTap: () => Get.to(OutfitDetailsView()),
                     ),
                     WTWSecondaryButton(

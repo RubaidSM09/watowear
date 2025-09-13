@@ -143,6 +143,7 @@ class GoogleButton extends GetView {
         ),
         child: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 'assets/images/authentication/google_logo.png',
@@ -189,6 +190,7 @@ class AppleButton extends GetView {
         ),
         child: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 'assets/images/authentication/apple_logo.png',
@@ -353,20 +355,28 @@ class WTWPrimaryButton extends GetView {
   final String text;
   final double textSize;
   final String icon;
-  final double width;
-  final double height;
-  final double paddingWidth;
-  final double paddingHeight;
+  final double paddingLeftWidth;
+  final double paddingRightWidth;
+  final double paddingTopHeight;
+  final double paddingBottomHeight;
+  final Color color;
+  final Color borderColor;
+  final Color textColor;
+  final MainAxisAlignment textAlignment;
   final VoidCallback onTap;
 
   const WTWPrimaryButton({
     required this.text,
     this.textSize = 16,
     this.icon = '',
-    this.width = 385,
-    this.height = 48,
-    this.paddingWidth = 48,
-    this.paddingHeight = 12,
+    this.paddingLeftWidth = 48,
+    this.paddingRightWidth = 48,
+    this.paddingTopHeight = 12,
+    this.paddingBottomHeight = 12,
+    this.color = WTWColor.primary,
+    this.borderColor = Colors.transparent,
+    this.textColor = Colors.white,
+    this.textAlignment = MainAxisAlignment.center,
     required this.onTap,
     super.key,
   });
@@ -376,15 +386,16 @@ class WTWPrimaryButton extends GetView {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width,
-        height: height,
-        padding: EdgeInsets.symmetric(horizontal: paddingWidth.w, vertical: paddingHeight.h),
+        padding: EdgeInsets.only(left: paddingLeftWidth.w, right: paddingRightWidth.w, top: paddingTopHeight.h, bottom: paddingBottomHeight.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.r),
-          color: WTWColor.primary,
+          color: color,
+          border: Border.all(
+            color: borderColor,
+          )
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: textAlignment,
           children: [
             icon != '' ? Image.asset(
               icon,
@@ -396,7 +407,7 @@ class WTWPrimaryButton extends GetView {
             text != '' ? Text(
               text,
               style: TextStyle(
-                color: Colors.white,
+                color: textColor,
                 fontSize: textSize.sp,
                 fontWeight: FontWeight.w600,
                 fontFamily: 'Comfortaa',

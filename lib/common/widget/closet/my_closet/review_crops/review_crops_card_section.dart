@@ -154,10 +154,9 @@ class ReviewCropsCard extends StatelessWidget {
                       WTWPrimaryButton(
                         text: 'Accept',
                         icon: 'assets/images/closet/my_closet/review_crops/accept.png',
-                        width: 117.w,
-                        height: 47.h,
-                        paddingWidth: 21.13.w,
-                        paddingHeight: 16.h,
+                        paddingLeftWidth: 21.13.w,
+                        paddingRightWidth: 21.13.w,
+                        paddingTopHeight: 16.h,
                         textSize: 14,
                         onTap: () {  },
                       ),

@@ -190,11 +190,13 @@ class AddItemDetailsView extends GetView {
 
               SizedBox(height: 30.h,),
               
-              WTWPrimaryButton(
-                text: 'Save Draft',
-                icon: 'assets/images/closet/my_closet/quick_scan/add_item_details/save_draft.png',
-                width: 360.w,
-                onTap: () {  },
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: WTWPrimaryButton(
+                  text: 'Save Draft',
+                  icon: 'assets/images/closet/my_closet/quick_scan/add_item_details/save_draft.png',
+                  onTap: () {  },
+                ),
               ),
 
               SizedBox(height: 20.h,),

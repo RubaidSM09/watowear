@@ -32,10 +32,12 @@ class SelectPhotosView extends GetView {
 
             SizedBox(height: 27.h,),
 
-            WTWPrimaryButton(
-              text: 'Done',
-              width: 360.w,
-              onTap: () => Get.to(UploadingItemsView()),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
+              child: WTWPrimaryButton(
+                text: 'Done',
+                onTap: () => Get.to(UploadingItemsView()),
+              ),
             ),
 
             SizedBox(height: 25.h,),

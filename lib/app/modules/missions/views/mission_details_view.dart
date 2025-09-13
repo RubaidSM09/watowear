@@ -83,7 +83,6 @@ class MissionDetailsView extends GetView {
                   Center(
                     child: WTWPrimaryButton(
                       text: 'Mark Mission Complete',
-                      width: 360.w,
                       onTap: () {  },
                     ),
                   ),

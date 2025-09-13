@@ -38,10 +38,12 @@ class ReviewCropsView extends GetView {
 
               SizedBox(height: 40.h,),
               
-              WTWPrimaryButton(
-                text: 'Continue (0/5)',
-                width: 360.w,
-                onTap: () {  },
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: WTWPrimaryButton(
+                  text: 'Continue (0/5)',
+                  onTap: () {  },
+                ),
               ),
 
               SizedBox(height: 16.h,),
