@@ -1,11 +1,6 @@
 import 'package:get/get.dart';
 
 class ClosetController extends GetxController {
-  //TODO: Implement ClosetController
-
-  final count = 0.obs;
-
-
-
-  void increment() => count.value++;
+  RxBool isGrid = true.obs;
+  RxList<RxBool> selectedFitler = [true.obs, false.obs, false.obs, false.obs, false.obs,].obs;
 }

@@ -40,8 +40,8 @@ class HomeView extends GetView<HomeController> {
               children: [
                 SizedBox.shrink(),
                 Image.asset(
-                  'assets/images/onboarding/onboarding1Text.png',
-                  color: WTWColor.text_icons,
+                  'assets/images/onboarding/wtw_logo2.png',
+                  // color: WTWColor.text_icons,
                   width: 148.35238647460938.w,
                   height: 37.h,
                   scale: 4,
@@ -61,140 +61,142 @@ class HomeView extends GetView<HomeController> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.only(left: 30.w, right: 30.w, /*top: 53.h*/),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 26.5.h,),
-
-              NewToWatowear(),
-
-              SizedBox(height: 29.h,),
-
-              ResetPasswordHeadText(text: 'Welcome to Watowear!'),
-
-              SizedBox(height: 12.h,),
-
-              Text(
-                'Let’s get you started with your personalized style journey',
-                style: TextStyle(
-                  color: WTWColor.text_icons,
-                  fontFamily: 'Comfortaa',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16.sp,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(left: 30.w, right: 30.w, /*top: 53.h*/),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 26.5.h,),
+        
+                NewToWatowear(),
+        
+                SizedBox(height: 29.h,),
+        
+                ResetPasswordHeadText(text: 'Welcome to WATOWEAR!'),
+        
+                SizedBox(height: 12.h,),
+        
+                Text(
+                  'Let’s get you started with your personalized style journey',
+                  style: TextStyle(
+                    color: WTWColor.text_icons,
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16.sp,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-
-              SizedBox(height: 29.h,),
-
-              Row(
-                children: [
-                  Text(
-                    'Quick Actions',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16.sp,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 9.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  QuickActionButton(text: 'Add items', logo: 'assets/images/home/add_item.png', onTap: () {  }),
-
-                  QuickActionButton(
-                    text: 'Generate Outfit',
-                    logo: 'assets/images/home/generate_outfit.png',
-                    logoColor: WTWColor.accent,
-                    onTap: () => Get.dialog(GenerateOutfitView()),
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 21.h,),
-
-              WTWPrimaryButton(text: 'Add Items to Your Closet', icon: 'assets/images/home/add_items_to_closet.png', onTap: () => Get.to(GenerateView())),
-
-              SizedBox(height: 21.h,),
-
-              StyleProfileCard(styles: ['Chic','Worm Tones','Summer'],),
-
-              SizedBox(height: 21.h,),
-
-              DailyMissionsCard(totalUploads: 1,),
-
-              SizedBox(height: 21.h,),
-
-              OnboardingButton2(text: 'View All', onTap: () {  }),
-
-              SizedBox(height: 21.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Recent Outfits',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16.sp,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  GestureDetector(
-                    onTap: () => Get.to(OutfitSuggestionsView()),
-                    child: Text(
-                      'Take Suggestions?',
+        
+                SizedBox(height: 29.h,),
+        
+                Row(
+                  children: [
+                    Text(
+                      'Quick Actions',
                       style: TextStyle(
                         color: WTWColor.text_icons,
                         fontFamily: 'Comfortaa',
                         fontWeight: FontWeight.w600,
-                        fontSize: 12.sp,
+                        fontSize: 16.sp,
                       ),
                       textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 18.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.to(OutfitDetailsView()),
-                    child: RecentOutfitsCard(
-                      image: 'assets/images/home/casual_friday.png',
-                      title: 'Casual Friday',
+                  ],
+                ),
+        
+                SizedBox(height: 9.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    QuickActionButton(text: 'Add items', logo: 'assets/images/home/add_item.png', onTap: () {  }),
+        
+                    QuickActionButton(
+                      text: 'Generate Outfit',
+                      logo: 'assets/images/home/generate_outfit.png',
+                      logoColor: WTWColor.accent,
+                      onTap: () => Get.dialog(GenerateOutfitView()),
                     ),
-                  ),
-                  RecentOutfitsCard(
-                    image: 'assets/images/home/weekend_vibes.png',
-                    title: 'Weekend Vibes',
-                  ),
-                ],
-              ),
-
-              SizedBox(height: 39.h,),
-
-              WTWPrimaryButton(text: 'Take App Tour', onTap: () {  }),
-
-              SizedBox(height: 29.17041016.h,),
-            ],
+                  ],
+                ),
+        
+                SizedBox(height: 21.h,),
+        
+                WTWPrimaryButton(text: 'Add Items to Your Closet', icon: 'assets/images/home/add_items_to_closet.png', onTap: () => Get.to(GenerateView())),
+        
+                SizedBox(height: 21.h,),
+        
+                StyleProfileCard(styles: ['Chic','Worm Tones','Summer'],),
+        
+                SizedBox(height: 21.h,),
+        
+                DailyMissionsCard(totalUploads: 1,),
+        
+                SizedBox(height: 21.h,),
+        
+                OnboardingButton2(text: 'View All', onTap: () {  }),
+        
+                SizedBox(height: 21.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Recent Outfits',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16.sp,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    GestureDetector(
+                      onTap: () => Get.to(OutfitSuggestionsView()),
+                      child: Text(
+                        'Take Suggestions?',
+                        style: TextStyle(
+                          color: WTWColor.text_icons,
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12.sp,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+        
+                SizedBox(height: 18.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GestureDetector(
+                      onTap: () => Get.to(OutfitDetailsView()),
+                      child: RecentOutfitsCard(
+                        image: 'assets/images/home/casual_friday.png',
+                        title: 'Casual Friday',
+                      ),
+                    ),
+                    RecentOutfitsCard(
+                      image: 'assets/images/home/weekend_vibes.png',
+                      title: 'Weekend Vibes',
+                    ),
+                  ],
+                ),
+        
+                SizedBox(height: 39.h,),
+        
+                WTWPrimaryButton(text: 'Take App Tour', onTap: () {  }),
+        
+                SizedBox(height: 29.17041016.h,),
+              ],
+            ),
           ),
         ),
       ),

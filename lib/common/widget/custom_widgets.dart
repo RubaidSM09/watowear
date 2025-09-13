@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:watowear_chole/common/custom_colors.dart';
 import 'package:watowear_chole/common/widget/custom_rows.dart';
 import 'package:watowear_chole/common/widget/custom_text.dart';
@@ -338,7 +339,12 @@ class ItemStatistics extends StatelessWidget {
 }
 
 class MyClosetUpperSection extends StatelessWidget {
-  const MyClosetUpperSection({super.key});
+  final RxBool isGrid;
+
+  const MyClosetUpperSection({
+    required this.isGrid,
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -348,64 +354,132 @@ class MyClosetUpperSection extends StatelessWidget {
         MyClosetUpperSectionText(count: 42, type: 'Items'),
         MyClosetUpperSectionText(count: 8, type: 'Categories'),
         MyClosetUpperSectionText(count: 15, type: 'Outfits'),
-        GridOrList(),
+        GridOrList(isGrid: isGrid,),
       ],
     );
   }
 }
 
 class GridOrList extends StatelessWidget {
-  const GridOrList({super.key});
+  final RxBool isGrid;
+
+  const GridOrList({
+    required this.isGrid,
+    super.key
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(4.4.w),
-      decoration: BoxDecoration(
-        color: Color(0xFFD8D8CF),
-        borderRadius: BorderRadius.circular(8.79.r),
-        border: Border.all(color: Color(0xFFE5E7EB)),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 13.19.w, vertical: 4.4.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(6.59.r),
-              border: Border.all(color: Color(0xFFE5E7EB)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withAlpha(13),
-                  blurRadius: 2.2.r,
-                  offset: Offset(0.w, 1.1.h),
-                ),
-              ],
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.grid_view_sharp, size: 13.462239265441895.sp),
-                SizedBox(width: 8.787760735.w),
-                Text(
-                  'Grid',
-                  style: TextStyle(
-                    color: Color(0xFF414141),
-                    fontFamily: 'Comfortaa',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15.39.sp,
+    return Obx(() {
+      return isGrid.value ? Container(
+        padding: EdgeInsets.all(4.4.w),
+        decoration: BoxDecoration(
+          color: Color(0xFFD8D8CF),
+          borderRadius: BorderRadius.circular(8.79.r),
+          border: Border.all(color: Color(0xFFE5E7EB)),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: 13.19.w, vertical: 4.4.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6.59.r),
+                border: Border.all(color: Color(0xFFE5E7EB)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withAlpha(13),
+                    blurRadius: 2.2.r,
+                    offset: Offset(0.w, 1.1.h),
                   ),
-                ),
-              ],
+                ],
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.grid_view_sharp, size: 13.462239265441895.sp),
+                  SizedBox(width: 8.787760735.w),
+                  Text(
+                    'Grid',
+                    style: TextStyle(
+                      color: Color(0xFF414141),
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.39.sp,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
 
-          SizedBox(
-            width: 41.76041793823242.w,
-            child: Center(child: Icon(Icons.list, size: 15.385416984558105.sp)),
-          ),
-        ],
-      ),
-    );
+            GestureDetector(
+              onTap: () {
+                isGrid.value = false;
+              },
+              child: SizedBox(
+                width: 41.76041793823242.w,
+                child: Center(
+                    child: Icon(Icons.list, size: 15.385416984558105.sp)),
+              ),
+            ),
+          ],
+        ),
+      ) :
+      Container(
+        padding: EdgeInsets.all(4.4.w),
+        decoration: BoxDecoration(
+          color: Color(0xFFD8D8CF),
+          borderRadius: BorderRadius.circular(8.79.r),
+          border: Border.all(color: Color(0xFFE5E7EB)),
+        ),
+        child: Row(
+          children: [
+            GestureDetector(
+              onTap: () {
+                isGrid.value = true;
+              },
+              child: SizedBox(
+                width: 41.76041793823242.w,
+                child: Center(
+                    child: Icon(Icons.grid_view_sharp, size: 15.385416984558105.sp)),
+              ),
+            ),
+
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: 13.19.w, vertical: 4.4.h),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(6.59.r),
+                border: Border.all(color: Color(0xFFE5E7EB)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withAlpha(13),
+                    blurRadius: 2.2.r,
+                    offset: Offset(0.w, 1.1.h),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.list, size: 13.462239265441895.sp),
+                  SizedBox(width: 8.787760735.w),
+                  Text(
+                    'List',
+                    style: TextStyle(
+                      color: Color(0xFF414141),
+                      fontFamily: 'Comfortaa',
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.39.sp,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
 

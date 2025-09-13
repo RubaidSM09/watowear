@@ -75,20 +75,31 @@ class SignInView extends GetView<SignInController> {
                   children: [
                     Row(
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            controller.isChecked.value = !controller.isChecked.value;
-                          },
-                          child: Container(
-                            width: 20.818714141845703.w,
-                            height: 20.818714141845703.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(1.04.r),
-                              border: Border.all(color: Colors.black, width: 0.52.w),
+                        Obx(() {
+                          return GestureDetector(
+                            onTap: () {
+                              controller.isChecked.value =
+                              !controller.isChecked.value;
+                            },
+                            child: Container(
+                              width: 20.818714141845703.w,
+                              height: 20.818714141845703.h,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(1.04.r),
+                                border: Border.all(
+                                    color: Colors.black, width: 0.52.w),
+                              ),
+                              child: controller.isChecked.value
+                                  ? Icon(
+                                Icons.check,
+                                size: 16.sp,
+                                color: Colors.black,
+                              )
+                                  : null,
                             ),
-                          ),
-                        ),
+                          );
+                        }),
                         SizedBox(width: 12.49.w,),
                         RememberMeText(),
                       ],

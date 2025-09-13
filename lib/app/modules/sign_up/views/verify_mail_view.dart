@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/sign_in/views/new_password_view.dart';
@@ -60,45 +61,79 @@ class VerifyMailView extends GetView<VerifyMailController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(6, (index) {
-                    return Obx(() {
-                      return Padding(
-                        padding: index == 0
-                            ? EdgeInsets.only(right: 6.5.w)
-                            : index == 5
-                            ? EdgeInsets.only(left: 6.5.w)
-                            : EdgeInsets.symmetric(horizontal: 6.5.w),
-                        child: SizedBox(
-                          width: 52.w,
-                          height: 56.h,
+                    return Padding(
+                      padding: index == 0
+                          ? EdgeInsets.only(right: 6.5.w)
+                          : index == 5
+                          ? EdgeInsets.only(left: 6.5.w)
+                          : EdgeInsets.symmetric(horizontal: 6.5.w),
+                      child: SizedBox(
+                        width: 52.w,
+                        height: 56.h,
+                        child: RawKeyboardListener(
+                          focusNode: FocusNode(), // for backspace handling
+                          onKey: (event) {
+                            if (event is RawKeyDownEvent &&
+                                event.logicalKey == LogicalKeyboardKey.backspace &&
+                                controller.otpControllers[index].text.isEmpty &&
+                                index > 0) {
+                              // Move back when current is empty and backspace pressed
+                              controller.focusNodes[index - 1].requestFocus();
+                              controller.otpControllers[index - 1].selection = TextSelection.collapsed(
+                                offset: controller.otpControllers[index - 1].text.length,
+                              );
+                            }
+                          },
                           child: TextField(
-                            controller: TextEditingController(text: controller.otpList[index]),
+                            controller: controller.otpControllers[index],
+                            focusNode: controller.focusNodes[index],
                             keyboardType: TextInputType.number,
-                            maxLength: 1,
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 18.sp),
-                            focusNode: focusNodes[index], // Assigning FocusNode
+                            autofocus: index == 0,
+                            maxLength: 1, // UI counter off below
                             decoration: InputDecoration(
                               counterText: '',
-                              border: OutlineInputBorder(),
-                              focusedBorder: OutlineInputBorder(
+                              border: const OutlineInputBorder(),
+                              focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: WTWColor.text_icons, width: 2),
                               ),
                             ),
+                            // Keep only digits and limit to 1 char
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                              LengthLimitingTextInputFormatter(6), // allow paste of up to 6
+                            ],
                             onChanged: (value) {
-                              controller.updateOTP(index, value); // Update OTP value
+                              // Handle paste of multiple digits
+                              if (value.length > 1) {
+                                final chars = value.replaceAll(RegExp(r'\D'), '').split('');
+                                for (int i = 0; i < chars.length && (index + i) < 6; i++) {
+                                  controller.otpControllers[index + i].text = chars[i];
+                                  controller.updateOTP(index + i, chars[i]);
+                                }
+                                final nextIndex = (index + chars.length).clamp(0, 5);
+                                if (nextIndex < 5) {
+                                  controller.focusNodes[nextIndex + 1].requestFocus();
+                                } else {
+                                  controller.focusNodes[nextIndex].unfocus(); // done
+                                }
+                                return;
+                              }
+
+                              // Normal single digit flow
+                              controller.updateOTP(index, value);
 
                               if (value.isNotEmpty && index < 5) {
-                                // Move to the next field if the current one is filled
-                                FocusScope.of(context).requestFocus(focusNodes[index + 1]);
+                                controller.focusNodes[index + 1].requestFocus();
                               } else if (value.isEmpty && index > 0) {
-                                // Move to the previous field if the current one is empty
-                                FocusScope.of(context).requestFocus(focusNodes[index - 1]);
+                                controller.focusNodes[index - 1].requestFocus();
                               }
                             },
                           ),
                         ),
-                      );
-                    });
+                      ),
+                    );
                   }),
                 ),
 

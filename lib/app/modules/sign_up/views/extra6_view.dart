@@ -16,7 +16,7 @@ class Extra6View extends GetView {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 132.68.h,),
+            SizedBox(height: 32.68.h,),
 
             ResetPasswordHeadText(text: 'Any Favorite Colors?'),
 

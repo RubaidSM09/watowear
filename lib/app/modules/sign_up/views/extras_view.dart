@@ -21,6 +21,38 @@ class ExtrasView extends GetView<ExtrasController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: WTWColor.background,
+
+      appBar: AppBar(
+        backgroundColor: WTWColor.background,
+        leading: GestureDetector(
+          onTap: () => controller.back(),
+          child: Icon(
+            Icons.arrow_back,
+            size: 20.sp,
+            color: WTWColor.text_icons,
+          ),
+        ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox.shrink(),
+            TextButton(
+              onPressed: controller.skip,
+              child: Text(
+                'Skip',
+                style: TextStyle(
+                  color: WTWColor.text_icons,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Comfortaa',
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+
       body: SafeArea(
         child: Stack(
           children: [
@@ -39,35 +71,63 @@ class ExtrasView extends GetView<ExtrasController> {
               ],
             ),
         
-            Positioned(
+            /*Positioned(
                 left: 30.13.w,
                 top: 74.1.h,
-                child: Icon(
-                  Icons.arrow_back,
-                  size: 20.sp,
-                  color: WTWColor.text_icons,
-                ),
-              ),
-        
-            Positioned(
-                left: 374.15.w,
-                top: 76.6.h,
-                child: TextButton(
-                  onPressed: controller.skip,
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(
+                child: GestureDetector(
+                  onTap: () => controller.back(),
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: WTWColor.background,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: WTWColor.secondary_bg,
+                          blurRadius: 10.r
+                        )
+                      ]
+                    ),
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 20.sp,
                       color: WTWColor.text_icons,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Comfortaa',
                     ),
                   ),
                 ),
               ),
         
+            Positioned(
+                right: 15.065.w,
+                top: 70.1.h,
+                child: TextButton(
+                  onPressed: controller.skip,
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                        color: WTWColor.background,
+                        boxShadow: [
+                          BoxShadow(
+                              color: WTWColor.secondary_bg,
+                              blurRadius: 10.r
+                          )
+                        ]
+                    ),
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Comfortaa',
+                      ),
+                    ),
+                  ),
+                ),
+              ),*/
+        
             // Bottom: indicator + primary action
-            Obx(() {
+            /*Obx(() {
               final idx = controller.current.value;
               if (idx<7){
                 return Positioned(
@@ -103,10 +163,38 @@ class ExtrasView extends GetView<ExtrasController> {
               else {
                 return SizedBox.shrink();
               }
-            }),
+            }),*/
           ],
         ),
       ),
+
+      bottomNavigationBar: Obx(() {
+        final idx = controller.current.value;
+        if (idx >= 7) return const SizedBox.shrink();
+        return SafeArea(
+          top: false,
+          child: Container(
+            padding: EdgeInsets.all(16.w),
+            decoration: BoxDecoration(
+              color: WTWColor.background,
+              boxShadow: [
+                BoxShadow(
+                  color: WTWColor.text_icons.withAlpha(15),
+                  blurRadius: 20.r,
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                OnboardingButton(text: 'Continue', onTap: controller.next),
+                SizedBox(height: 16.h),
+                OnboardingButton2(text: 'Back', onTap: controller.back),
+              ],
+            ),
+          ),
+        );
+      }),
     );
   }
 }

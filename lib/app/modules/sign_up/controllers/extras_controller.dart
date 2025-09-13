@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExtrasController extends GetxController {
+  final RxBool isWoman = false.obs;
+  final RxBool isMan = false.obs;
+  final RxBool isNonBinary = false.obs;
+  final RxBool isPNTS = false.obs;
+
+  final RxList<RxBool> selectedBodyShape = [false.obs, false.obs, false.obs, false.obs, false.obs, false.obs].obs;
+  final RxList<RxBool> selectedSkinTone = [false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs].obs;
+  final RxList<RxBool> selectedVibe = [false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs].obs;
+  final RxList<RxBool> selectedNewThing = [false.obs, false.obs, false.obs].obs;
+  final RxList<RxBool> selectedStyle = [false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs, false.obs].obs;
+
   TextEditingController ageController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   final pageController = PageController();
