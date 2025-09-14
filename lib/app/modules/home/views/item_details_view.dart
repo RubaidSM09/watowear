@@ -65,79 +65,81 @@ class ItemDetailsView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0.w),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 26.5.h,),
-
-              ItemPicSection(),
-
-              SizedBox(height: 20.h,),
-
-              CustomTextFieldWhite(
-                labelText: 'Item Name',
-                hintText: 'Blue Denim Jacket',
-              ),
-
-              SizedBox(height: 17.42793884.h,),
-
-              CustomTextFieldWhite(
-                labelText: 'Brand',
-                hintText: 'Levi\'s',
-              ),
-
-              SizedBox(height: 17.42793884.h,),
-
-              CustomTextFieldWhite(
-                labelText: 'Color',
-                hintText: 'Light Blue',
-              ),
-
-              SizedBox(height: 20.h,),
-
-              AIGeneratedTagsSection(),
-
-              SizedBox(height: 20.h,),
-
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 20.h,),
-
-              CustomTagsSection(),
-
-              SizedBox(height: 20.h,),
-
-              CustomTextFieldWhite(
-                labelText: 'Notes',
-                hintText: 'Perfect for layering. Goes well with dark jeans and sneakers.',
-                maxLines: 6,
-              ),
-
-              SizedBox(height: 20.h,),
-
-              ItemStatisticsSection(),
-
-              SizedBox(height: 20.h,),
-              
-              WTWPrimaryButton(
-                text: 'Save Changes',
-                icon: 'assets/images/home/item_details/save.png',
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 16.h,),
-
-              WTWSecondaryButton(
-                text: 'Cancel',
-                onTap: () => Get.dialog(DeleteItemView()),
-              ),
-
-              SizedBox(height: 30.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0.w),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 26.5.h,),
+        
+                ItemPicSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                CustomTextFieldWhite(
+                  labelText: 'Item Name',
+                  hintText: 'Blue Denim Jacket',
+                ),
+        
+                SizedBox(height: 17.42793884.h,),
+        
+                CustomTextFieldWhite(
+                  labelText: 'Brand',
+                  hintText: 'Levi\'s',
+                ),
+        
+                SizedBox(height: 17.42793884.h,),
+        
+                CustomTextFieldWhite(
+                  labelText: 'Color',
+                  hintText: 'Light Blue',
+                ),
+        
+                SizedBox(height: 20.h,),
+        
+                AIGeneratedTagsSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 20.h,),
+        
+                CustomTagsSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                CustomTextFieldWhite(
+                  labelText: 'Notes',
+                  hintText: 'Perfect for layering. Goes well with dark jeans and sneakers.',
+                  maxLines: 6,
+                ),
+        
+                SizedBox(height: 20.h,),
+        
+                ItemStatisticsSection(),
+        
+                SizedBox(height: 20.h,),
+                
+                WTWPrimaryButton(
+                  text: 'Save Changes',
+                  icon: 'assets/images/home/item_details/save.png',
+                  onTap: () {  },
+                ),
+        
+                SizedBox(height: 16.h,),
+        
+                WTWSecondaryButton(
+                  text: 'Cancel',
+                  onTap: () => Get.dialog(DeleteItemView()),
+                ),
+        
+                SizedBox(height: 30.h,),
+              ],
+            ),
           ),
         ),
       ),

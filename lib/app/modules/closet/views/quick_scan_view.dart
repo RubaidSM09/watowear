@@ -28,21 +28,23 @@ class QuickScanView extends GetView<QuickScanController> {
         title: WTWAppbarText(text: 'Quick Scan'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg),
-
-              SizedBox(height: 25.h),
-
-              SingleItemVsQuickScanSelectionSection(
-                isQuickScanSelected: controller.isQuickScanSelected.value,
-              ),
-
-              SizedBox(height: 20.h),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg),
+        
+                SizedBox(height: 25.h),
+        
+                SingleItemVsQuickScanSelectionSection(
+                  isQuickScanSelected: controller.isQuickScanSelected.value,
+                ),
+        
+                SizedBox(height: 20.h),
+              ],
+            ),
           ),
         ),
       ),

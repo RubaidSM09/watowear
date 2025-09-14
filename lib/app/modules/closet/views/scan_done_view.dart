@@ -14,75 +14,77 @@ class ScanDoneView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            width: 500.4383850097656.w,
-            height: 1083.h,
-            child: Image.asset(
-              'assets/images/closet/my_closet/quick_scan/quick_scan_image.png',
-              fit: BoxFit.cover,
-              scale: 4,
-            ),
-          ),
-
-          SizedBox(
-            width: 500.4383850097656.w,
-            height: 1083.h,
-            child: Image.asset(
-              'assets/images/closet/my_closet/quick_scan/scan_done_shade.png',
-              fit: BoxFit.cover,
-              scale: 4,
-            ),
-          ),
-
-          Positioned(
-            top: 86.44.h,
-            left: 74.87.w,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 26.16.w, vertical: 12.51.h,),
-              decoration: BoxDecoration(
-                color: WTWColor.primary,
-                borderRadius: BorderRadius.circular(11.37.r),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            SizedBox(
+              width: 500.4383850097656.w,
+              height: 1083.h,
+              child: Image.asset(
+                'assets/images/closet/my_closet/quick_scan/quick_scan_image.png',
+                fit: BoxFit.cover,
+                scale: 4,
               ),
-              child: Text(
-                '3/5 frames Captured',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Comfortaa',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20.53.sp,
+            ),
+        
+            SizedBox(
+              width: 500.4383850097656.w,
+              height: 1083.h,
+              child: Image.asset(
+                'assets/images/closet/my_closet/quick_scan/scan_done_shade.png',
+                fit: BoxFit.cover,
+                scale: 4,
+              ),
+            ),
+        
+            Positioned(
+              top: 46.44.h,
+              left: 74.87.w,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 26.16.w, vertical: 12.51.h,),
+                decoration: BoxDecoration(
+                  color: WTWColor.primary,
+                  borderRadius: BorderRadius.circular(11.37.r),
+                ),
+                child: Text(
+                  '3/5 frames Captured',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Comfortaa',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20.53.sp,
+                  ),
                 ),
               ),
             ),
-          ),
-          
-          Positioned(
-            top: 801.h,
-            left: 40.w,
-            child: WTWPrimaryButton(
-              paddingLeftWidth: 130,
-              paddingRightWidth: 130,
-              text: 'Finish (3/5)',
-              onTap: () {
-                Get.to(QuickScanMultiItemView());
-                Get.dialog(AnalyzingVideoView());
-              },
+            
+            Positioned(
+              top: 761.h,
+              left: 40.w,
+              child: WTWPrimaryButton(
+                paddingLeftWidth: 130,
+                paddingRightWidth: 130,
+                text: 'Finish (3/5)',
+                onTap: () {
+                  // Get.to(QuickScanMultiItemView());
+                  Get.dialog(AnalyzingVideoView());
+                },
+              ),
             ),
-          ),
-
-          Positioned(
-            top: 871.h,
-            left: 40.w,
-            child: WTWSecondaryButton(
-              text: 'Cancel',
-              width: 360.w,
-              textColor: Colors.white,
-              borderColor: Colors.white,
-              onTap: (){  },
+        
+            Positioned(
+              top: 831.h,
+              left: 40.w,
+              child: WTWSecondaryButton(
+                text: 'Cancel',
+                width: 360.w,
+                textColor: Colors.white,
+                borderColor: Colors.white,
+                onTap: (){  },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

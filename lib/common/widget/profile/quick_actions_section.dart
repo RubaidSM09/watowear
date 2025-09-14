@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:watowear_chole/app/modules/profile/views/edit_profile_view.dart';
 
 import '../../custom_colors.dart';
 
@@ -23,11 +26,14 @@ class QuickActionsSection extends StatelessWidget {
 
         SizedBox(height: 18.24.h,),
 
-        QuickActionCard(
-          title: 'Edit Profile',
-          description: 'Update personal information',
-          color: Color(0xFF6A6D57).withAlpha(26),
-          icon: 'assets/images/profile/edit_profile.png',
+        GestureDetector(
+          onTap: () => Get.to(EditProfileView()),
+          child: QuickActionCard(
+            title: 'Edit Profile',
+            description: 'Update personal information',
+            color: Color(0xFF6A6D57).withAlpha(26),
+            icon: 'assets/images/profile/edit_profile.png',
+          ),
         ),
 
         SizedBox(height: 13.68333588.h,),

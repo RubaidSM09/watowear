@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:watowear_chole/app/modules/profile/views/edit_profile_view.dart';
 import 'package:watowear_chole/common/widget/custom_buttons.dart';
 import 'package:watowear_chole/common/widget/custom_cards.dart';
 import 'package:watowear_chole/common/widget/custom_widgets.dart';
@@ -30,7 +31,7 @@ class ProfileView extends GetView<ProfileController> {
                 SizedBox.shrink(),
                 WTWAppbarText(text: 'Profile'),
                 GestureDetector(
-                  onTap: () {  },
+                  onTap: () => Get.to(EditProfileView()),
                   child: Image.asset(
                     'assets/images/profile/edit.png',
                     width: 17.98.w,
@@ -44,93 +45,95 @@ class ProfileView extends GetView<ProfileController> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0.w),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              ProfileUpperSection(),
-
-              SizedBox(height: 20.h,),
-
-              ProfileEarnNewBadgeSection(),
-
-              SizedBox(height: 20.h,),
-
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ProfileStatCard(
-                        title: 'Items',
-                        count: 142,
-                        description: 'Scanned & cataloged',
-                        color: Color(0xFFDBEAFE),
-                        icon: 'assets/images/profile/items.png',
-                        isButtonAvailable: true,
-                      ),
-                      ProfileStatCard(
-                        title: 'Outfits',
-                        count: 89,
-                        description: 'Saved combinations',
-                        color: Color(0xFFF3E8FF),
-                        icon: 'assets/images/profile/outfits.png',
-                      ),
-                    ],
-                  ),
-
-                  SizedBox(height: 18.24.h,),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ProfileStatCard(
-                        title: 'Missions',
-                        count: 23,
-                        description: 'Completed challenges',
-                        color: Color(0xFFDCFCE7),
-                        icon: 'assets/images/profile/missions.png',
-                      ),
-                      ProfileStatCard(
-                        title: 'Style Score',
-                        count: 8.7,
-                        description: 'Tap to see breakdown',
-                        color: Color(0xFFFFEDD5),
-                        icon: 'assets/images/profile/style_score.png',
-                        isInfoAvailable: true,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-
-              SizedBox(height: 20.h,),
-
-              YourTopOutfitSection(),
-
-              SizedBox(height: 20.h,),
-
-              ThisMonthStyleSection(),
-
-              SizedBox(height: 20.h,),
-
-              QuickActionsSection(),
-
-              SizedBox(height: 30.h,),
-
-              WTWPrimaryButton(
-                text: 'Style New Outfit',
-                icon: 'assets/images/profile/add.png',
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 30.61.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0.w),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                ProfileUpperSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                ProfileEarnNewBadgeSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ProfileStatCard(
+                          title: 'Items',
+                          count: 142,
+                          description: 'Scanned & cataloged',
+                          color: Color(0xFFDBEAFE),
+                          icon: 'assets/images/profile/items.png',
+                          isButtonAvailable: true,
+                        ),
+                        ProfileStatCard(
+                          title: 'Outfits',
+                          count: 89,
+                          description: 'Saved combinations',
+                          color: Color(0xFFF3E8FF),
+                          icon: 'assets/images/profile/outfits.png',
+                        ),
+                      ],
+                    ),
+        
+                    SizedBox(height: 18.24.h,),
+        
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ProfileStatCard(
+                          title: 'Missions',
+                          count: 23,
+                          description: 'Completed challenges',
+                          color: Color(0xFFDCFCE7),
+                          icon: 'assets/images/profile/missions.png',
+                        ),
+                        ProfileStatCard(
+                          title: 'Style Score',
+                          count: 8.7,
+                          description: 'Tap to see breakdown',
+                          color: Color(0xFFFFEDD5),
+                          icon: 'assets/images/profile/style_score.png',
+                          isInfoAvailable: true,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+        
+                SizedBox(height: 20.h,),
+        
+                YourTopOutfitSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                ThisMonthStyleSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                QuickActionsSection(),
+        
+                SizedBox(height: 30.h,),
+        
+                WTWPrimaryButton(
+                  text: 'Style New Outfit',
+                  icon: 'assets/images/profile/add.png',
+                  onTap: () {  },
+                ),
+        
+                SizedBox(height: 30.61.h,),
+              ],
+            ),
           ),
         ),
       ),

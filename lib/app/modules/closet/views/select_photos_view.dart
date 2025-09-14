@@ -21,27 +21,29 @@ class SelectPhotosView extends GetView {
         title: WTWAppbarText(text: 'Select Photos'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Divider(color: WTWColor.secondary_bg,),
-
-            SizedBox(height: 25.h,),
-
-            SelectPhotosSection(),
-
-            SizedBox(height: 27.h,),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w),
-              child: WTWPrimaryButton(
-                text: 'Done',
-                onTap: () => Get.to(UploadingItemsView()),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Divider(color: WTWColor.secondary_bg,),
+        
+              SizedBox(height: 25.h,),
+        
+              SelectPhotosSection(),
+        
+              SizedBox(height: 27.h,),
+        
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.w),
+                child: WTWPrimaryButton(
+                  text: 'Done',
+                  onTap: () => Get.to(UploadingItemsView()),
+                ),
               ),
-            ),
-
-            SizedBox(height: 25.h,),
-          ],
+        
+              SizedBox(height: 25.h,),
+            ],
+          ),
         ),
       ),
     );

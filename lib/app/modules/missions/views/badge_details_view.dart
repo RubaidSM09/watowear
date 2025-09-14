@@ -57,27 +57,29 @@ class BadgeDetailsView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0.w),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 26.5.h,),
-
-              BadgeDetailsUpperSection(),
-
-              SizedBox(height: 26.5.h,),
-
-              RelatedAchievementsSection(),
-
-              SizedBox(height: 26.5.h,),
-
-              YourProgressSection(),
-
-              SizedBox(height: 26.5.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0.w),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 26.5.h,),
+        
+                BadgeDetailsUpperSection(),
+        
+                SizedBox(height: 26.5.h,),
+        
+                RelatedAchievementsSection(),
+        
+                SizedBox(height: 26.5.h,),
+        
+                YourProgressSection(),
+        
+                SizedBox(height: 26.5.h,),
+              ],
+            ),
           ),
         ),
       ),

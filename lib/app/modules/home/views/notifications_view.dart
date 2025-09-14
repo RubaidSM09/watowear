@@ -27,57 +27,62 @@ class NotificationsView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              NotificationsUpperSection(),
-
-              SizedBox(height: 20.85894897.h,),
-
-              NotificationsOutfitCard(),
-
-              SizedBox(height: 20.h,),
-
-              NotificationsOutfitItemsSection(),
-
-              SizedBox(height: 20.h,),
-
-              NotificationsWeatherContextSection(),
-
-              SizedBox(height: 20.33702209.h,),
-              
-              WTWPrimaryButton(
-                text: 'I’ll Wear This Today',
-                icon: 'assets/images/home/notifications/waer_this_today.png',
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 16.h,),
-
-              WTWSecondaryButton(
-                text: 'Create Similar Outfit',
-                icon: 'assets/images/home/notifications/create_similar_outfit.png',
-                width: 360.w,
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 16.h,),
-
-              WTWSecondaryButton(
-                text: 'Save for Later',
-                icon: 'assets/images/home/notifications/save_for_later.png',
-                width: 360.w,
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 25.h,),
-            ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                NotificationsUpperSection(),
+        
+                SizedBox(height: 20.85894897.h,),
+        
+                NotificationsOutfitCard(),
+        
+                SizedBox(height: 20.h,),
+        
+                NotificationsOutfitItemsSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                NotificationsWeatherContextSection(),
+        
+                SizedBox(height: 20.33702209.h,),
+                
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: WTWPrimaryButton(
+                    text: 'I’ll Wear This Today',
+                    icon: 'assets/images/home/notifications/waer_this_today.png',
+                    onTap: () {  },
+                  ),
+                ),
+        
+                SizedBox(height: 16.h,),
+        
+                WTWSecondaryButton(
+                  text: 'Create Similar Outfit',
+                  icon: 'assets/images/home/notifications/create_similar_outfit.png',
+                  width: 360.w,
+                  onTap: () {  },
+                ),
+        
+                SizedBox(height: 16.h,),
+        
+                WTWSecondaryButton(
+                  text: 'Save for Later',
+                  icon: 'assets/images/home/notifications/save_for_later.png',
+                  width: 360.w,
+                  onTap: () {  },
+                ),
+        
+                SizedBox(height: 25.h,),
+              ],
+            ),
           ),
         ),
       ),

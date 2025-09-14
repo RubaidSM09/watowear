@@ -104,31 +104,28 @@ class PhotoLibraryAccessRequiredView extends GetView {
                           ),
                         ),
 
-                        SizedBox(
-                          width: 210.w,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Bulk Import Photos',
-                                style: TextStyle(
-                                  color: WTWColor.text_icons,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Bulk Import Photos',
+                              style: TextStyle(
+                                color: WTWColor.text_icons,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                              Text(
-                                'Select multiple clothing photos at once',
-                                style: TextStyle(
-                                  color: Color(0xFF4B5563),
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                            ),
+                            Text(
+                              'Select multiple clothing photos\nat once',
+                              style: TextStyle(
+                                color: Color(0xFF4B5563),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -155,31 +152,28 @@ class PhotoLibraryAccessRequiredView extends GetView {
                           ),
                         ),
 
-                        SizedBox(
-                          width: 210.w,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Save Time',
-                                style: TextStyle(
-                                  color: WTWColor.text_icons,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Save Time',
+                              style: TextStyle(
+                                color: WTWColor.text_icons,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                              Text(
-                                'Upload existing photos instead of taking new ones',
-                                style: TextStyle(
-                                  color: Color(0xFF4B5563),
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                            ),
+                            Text(
+                              'Upload existing photos instead\nof taking new ones',
+                              style: TextStyle(
+                                color: Color(0xFF4B5563),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -206,31 +200,28 @@ class PhotoLibraryAccessRequiredView extends GetView {
                           ),
                         ),
 
-                        SizedBox(
-                          width: 210.w,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Smart Organization',
-                                style: TextStyle(
-                                  color: WTWColor.text_icons,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Smart Organization',
+                              style: TextStyle(
+                                color: WTWColor.text_icons,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                              Text(
-                                'AI automatically categorizes your imported items',
-                                style: TextStyle(
-                                  color: Color(0xFF4B5563),
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Comfortaa',
-                                ),
+                            ),
+                            Text(
+                              'AI automatically categorizes\nyour imported items',
+                              style: TextStyle(
+                                color: Color(0xFF4B5563),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Comfortaa',
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -244,6 +235,7 @@ class PhotoLibraryAccessRequiredView extends GetView {
                 text: 'Allow Camera Access',
                 icon: 'assets/images/closet/my_closet/quick_scan/generate_outfits_now/allow_camera_access.png',
                 paddingLeftWidth: 45,
+                paddingRightWidth: 45,
                 onTap: () {
                   Get.back();
                   Get.to(SelectPhotosView());

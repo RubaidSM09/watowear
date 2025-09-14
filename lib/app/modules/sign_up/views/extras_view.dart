@@ -170,33 +170,35 @@ class ExtrasView extends GetView<ExtrasController> {
         ),
       ),
 
-      bottomNavigationBar: Obx(() {
-        final idx = controller.current.value;
-        if (idx >= 8) return const SizedBox.shrink();
-        return SafeArea(
-          top: false,
-          child: Container(
-            padding: EdgeInsets.all(16.w),
-            decoration: BoxDecoration(
-              color: WTWColor.background,
-              boxShadow: [
-                BoxShadow(
-                  color: WTWColor.text_icons.withAlpha(15),
-                  blurRadius: 20.r,
-                ),
-              ],
+      bottomNavigationBar: SafeArea(
+        child: Obx(() {
+          final idx = controller.current.value;
+          if (idx >= 8) return const SizedBox.shrink();
+          return SafeArea(
+            top: false,
+            child: Container(
+              padding: EdgeInsets.all(16.w),
+              decoration: BoxDecoration(
+                color: WTWColor.background,
+                boxShadow: [
+                  BoxShadow(
+                    color: WTWColor.text_icons.withAlpha(15),
+                    blurRadius: 20.r,
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  OnboardingButton(text: 'Continue', onTap: controller.next),
+                  SizedBox(height: 16.h),
+                  OnboardingButton2(text: 'Back', onTap: controller.back),
+                ],
+              ),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                OnboardingButton(text: 'Continue', onTap: controller.next),
-                SizedBox(height: 16.h),
-                OnboardingButton2(text: 'Back', onTap: controller.back),
-              ],
-            ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }

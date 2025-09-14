@@ -61,33 +61,35 @@ class RewardAchievementsView extends GetView<RewardAchievementsController> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0.w),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 26.5.h,),
-
-              RewardsAchievementsUpperSection(),
-
-              SizedBox(height: 20.h,),
-
-              BadgeCollectionSection(
-                selectedBadgeTypes: controller.selectedBadgeType,
-              ),
-
-              SizedBox(height: 21.h,),
-
-              MilestonesSection(),
-
-              SizedBox(height: 21.h,),
-
-              RewardsSection(),
-
-              SizedBox(height: 47.67028809.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0.w),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 26.5.h,),
+        
+                RewardsAchievementsUpperSection(),
+        
+                SizedBox(height: 20.h,),
+        
+                BadgeCollectionSection(
+                  selectedBadgeTypes: controller.selectedBadgeType,
+                ),
+        
+                SizedBox(height: 21.h,),
+        
+                MilestonesSection(),
+        
+                SizedBox(height: 21.h,),
+        
+                RewardsSection(),
+        
+                SizedBox(height: 47.67028809.h,),
+              ],
+            ),
           ),
         ),
       ),

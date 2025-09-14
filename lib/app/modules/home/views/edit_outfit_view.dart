@@ -19,156 +19,158 @@ class EditOutfitView extends GetView {
         title: WTWAppbarText(text: 'Edit Outfit'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Outfit Overview',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-
-                  SizedBox.shrink()
-                ],
-              ),
-
-              SizedBox(height: 9.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
-
-                    OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    Text(
+                      'Outfit Overview',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+        
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
-
-              SizedBox(height: 30.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Top Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+        
+                SizedBox(height: 9.h,),
+        
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+        
+                      OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+        
+                      OutfitOverviewCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    ],
                   ),
-
-                  SizedBox.shrink()
-                ],
-              ),
-
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                ),
+        
+                SizedBox(height: 30.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
-
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    Text(
+                      'Top Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+        
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
-
-              SizedBox(height: 25.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Middle Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+        
+                SizedBox(height: 12.h,),
+        
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+        
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    ],
                   ),
-
-                  SizedBox.shrink()
-                ],
-              ),
-
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                ),
+        
+                SizedBox(height: 25.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+                    Text(
+                      'Middle Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+        
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
-
-              SizedBox(height: 25.h,),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Bottom Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+        
+                SizedBox(height: 12.h,),
+        
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+        
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+                    ],
                   ),
-
-                  SizedBox.shrink()
-                ],
-              ),
-
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                ),
+        
+                SizedBox(height: 25.h,),
+        
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
-
-                    TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    Text(
+                      'Bottom Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+        
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
-
-              SizedBox(height: 36.h,),
-
-              WTWPrimaryButton(
-                text: 'Save Outfit',
-                onTap: () {  },
-              ),
-
-              SizedBox(height: 72.h,),
-            ],
+        
+                SizedBox(height: 12.h,),
+        
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+        
+                      TopMiddleBottomSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    ],
+                  ),
+                ),
+        
+                SizedBox(height: 36.h,),
+        
+                WTWPrimaryButton(
+                  text: 'Save Outfit',
+                  onTap: () {  },
+                ),
+        
+                SizedBox(height: 72.h,),
+              ],
+            ),
           ),
         ),
       ),

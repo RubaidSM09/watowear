@@ -58,52 +58,54 @@ class MissionDetailsView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Divider(color: WTWColor.secondary_bg,),
-            
-            Padding(
-              padding: EdgeInsets.all(25.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MissionDetailsProgressSection(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Divider(color: WTWColor.secondary_bg,),
               
-                  SizedBox(height: 20.h,),
-              
-                  MissionRewardsSetcion(),
-              
-                  SizedBox(height: 20.h,),
-              
-                  TaskToCompleteSection(),
-
-                  SizedBox(height: 30.81270508.h,),
-                  
-                  Center(
-                    child: WTWPrimaryButton(
-                      text: 'Mark Mission Complete',
-                      onTap: () {  },
-                    ),
-                  ),
-
-                  SizedBox(height: 12.h,),
-
-                  Center(
-                    child: Text(
-                      'Complete all tasks to unlock rewards.',
-                      style: TextStyle(
-                        color: Color(0xFF555555),
-                        fontFamily: 'Comfortaa',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12.sp,
+              Padding(
+                padding: EdgeInsets.all(25.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MissionDetailsProgressSection(),
+                
+                    SizedBox(height: 20.h,),
+                
+                    MissionRewardsSetcion(),
+                
+                    SizedBox(height: 20.h,),
+                
+                    TaskToCompleteSection(),
+        
+                    SizedBox(height: 30.81270508.h,),
+                    
+                    Center(
+                      child: WTWPrimaryButton(
+                        text: 'Mark Mission Complete',
+                        onTap: () {  },
                       ),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+        
+                    SizedBox(height: 12.h,),
+        
+                    Center(
+                      child: Text(
+                        'Complete all tasks to unlock rewards.',
+                        style: TextStyle(
+                          color: Color(0xFF555555),
+                          fontFamily: 'Comfortaa',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.sp,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

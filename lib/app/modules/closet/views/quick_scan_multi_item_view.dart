@@ -148,32 +148,29 @@ class QuickScanMultiItemView extends GetView {
                       ),
                     ),
 
-                    SizedBox(
-                      width: 289.64910888671875.w,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 4.h,
-                        children: [
-                          Text(
-                            'Prepare your items',
-                            style: TextStyle(
-                              color: WTWColor.text_icons,
-                              fontSize: 18.25.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 4.h,
+                      children: [
+                        Text(
+                          'Prepare your items',
+                          style: TextStyle(
+                            color: WTWColor.text_icons,
+                            fontSize: 18.25.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                          Text(
-                            'Choose 3–5 clothing items you want to add to your closet',
-                            style: TextStyle(
-                              color: Color(0xFF4B5563),
-                              fontSize: 15.96.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                        ),
+                        Text(
+                          'Choose 3–5 clothing items you\nwant to add to your closet',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontSize: 15.96.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -214,32 +211,29 @@ class QuickScanMultiItemView extends GetView {
                       ),
                     ),
 
-                    SizedBox(
-                      width: 289.64910888671875.w,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 4.h,
-                        children: [
-                          Text(
-                            'Lay on white background',
-                            style: TextStyle(
-                              color: WTWColor.text_icons,
-                              fontSize: 18.25.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 4.h,
+                      children: [
+                        Text(
+                          'Lay on white background',
+                          style: TextStyle(
+                            color: WTWColor.text_icons,
+                            fontSize: 18.25.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                          Text(
-                            'Place items flat on a white sheet or clean surface',
-                            style: TextStyle(
-                              color: Color(0xFF4B5563),
-                              fontSize: 15.96.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                        ),
+                        Text(
+                          'Place items flat on a white sheet\nor clean surface',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontSize: 15.96.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -280,32 +274,29 @@ class QuickScanMultiItemView extends GetView {
                       ),
                     ),
 
-                    SizedBox(
-                      width: 289.64910888671875.w,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 4.h,
-                        children: [
-                          Text(
-                            'Ensure good lighting',
-                            style: TextStyle(
-                              color: WTWColor.text_icons,
-                              fontSize: 18.25.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 4.h,
+                      children: [
+                        Text(
+                          'Ensure good lighting',
+                          style: TextStyle(
+                            color: WTWColor.text_icons,
+                            fontSize: 18.25.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                          Text(
-                            'Natural light works best for accurate color detection',
-                            style: TextStyle(
-                              color: Color(0xFF4B5563),
-                              fontSize: 15.96.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                        ),
+                        Text(
+                          'Natural light works best for\naccurate color detection',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontSize: 15.96.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -346,32 +337,29 @@ class QuickScanMultiItemView extends GetView {
                       ),
                     ),
 
-                    SizedBox(
-                      width: 289.64910888671875.w,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 4.h,
-                        children: [
-                          Text(
-                            'Capture & let AI work',
-                            style: TextStyle(
-                              color: WTWColor.text_icons,
-                              fontSize: 18.25.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 4.h,
+                      children: [
+                        Text(
+                          'Capture & let AI work',
+                          style: TextStyle(
+                            color: WTWColor.text_icons,
+                            fontSize: 18.25.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                          Text(
-                            'Our AI will identify and categorize each item automatically',
-                            style: TextStyle(
-                              color: Color(0xFF4B5563),
-                              fontSize: 15.96.sp,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Comfortaa',
-                            ),
+                        ),
+                        Text(
+                          'Our AI will identify and\ncategorize each item\nautomatically',
+                          style: TextStyle(
+                            color: Color(0xFF4B5563),
+                            fontSize: 15.96.sp,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Comfortaa',
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ),
@@ -400,33 +388,30 @@ class QuickScanMultiItemView extends GetView {
                   scale: 4,
                 ),
 
-                SizedBox(
-                  width: 320.31.w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 9.125.h,
-                    children: [
-                      Text(
-                        'Pro Tips',
-                        style: TextStyle(
-                          color: WTWColor.text_icons,
-                          fontSize: 18.25.sp,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Comfortaa',
-                        ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 9.125.h,
+                  children: [
+                    Text(
+                      'Pro Tips',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontSize: 18.25.sp,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Comfortaa',
                       ),
+                    ),
 
-                      Text(
-                        '• Keep items spread out, not overlapping\n• Include accessories like belts, jewelry, bags\n• Avoid shadows by using even lighting',
-                        style: TextStyle(
-                          color: Color(0xFF374151),
-                          fontSize: 15.96.sp,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Comfortaa',
-                        ),
+                    Text(
+                      '• Keep items spread out, not\noverlapping\n• Include accessories like belts,\njewelry, bags\n• Avoid shadows by using even\nlighting',
+                      style: TextStyle(
+                        color: Color(0xFF374151),
+                        fontSize: 15.96.sp,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Comfortaa',
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 )
               ],
             ),

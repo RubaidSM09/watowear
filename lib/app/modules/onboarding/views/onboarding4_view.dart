@@ -24,7 +24,7 @@ class Onboarding4View extends GetView {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(9999.r),
                     child: Image.asset(
-                      'assets/images/onboarding/onboarding4.png',
+                      'assets/images/onboarding/chloe.png',
                       fit: BoxFit.cover,
                       width: 192.w,
                       height: 192.h,

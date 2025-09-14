@@ -24,34 +24,36 @@ class LegalPrivacyView extends GetView<SettingController> {
         title: WTWAppbarText(text: 'Legal Privacy'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              PrivacyControlSection(
-                switchedStates: [
-                  controller.isDataProcessingConsentActive.value,
-                  controller.isMarketingCommunicationsActive.value,
-                  controller.isAnalyticsPerformanceActive.value,
-                ],
-              ),
-
-              SizedBox(height: 24.4.h,),
-
-              LegalPrivacyMiddleSection(),
-
-              SizedBox(height: 21.8.h,),
-
-              YourPrivacySettingsSection(),
-
-              SizedBox(height: 25.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                PrivacyControlSection(
+                  switchedStates: [
+                    controller.isDataProcessingConsentActive.value,
+                    controller.isMarketingCommunicationsActive.value,
+                    controller.isAnalyticsPerformanceActive.value,
+                  ],
+                ),
+        
+                SizedBox(height: 24.4.h,),
+        
+                LegalPrivacyMiddleSection(),
+        
+                SizedBox(height: 21.8.h,),
+        
+                YourPrivacySettingsSection(),
+        
+                SizedBox(height: 25.h,),
+              ],
+            ),
           ),
         ),
       ),
@@ -266,7 +268,7 @@ class LegalPrivacyMiddleSection extends StatelessWidget {
           icon: 'assets/images/home/legal_privacy/legal_mentions.png',
           iconColor: Color(0xFFFFEDD5),
           title: 'Legal Mentions',
-          subtitle: 'Company information & disclaimers',
+          subtitle: 'Company information &\ndisclaimers',
           onTap: () => Get.to(LegalMentionsView()),
         ),
       ],
@@ -320,31 +322,28 @@ class LegalPrivacyMiddleSectionCard extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(
-                  width: 245.1028137207031.w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: TextStyle(
-                          color: WTWColor.text_icons,
-                          fontFamily: 'Comfortaa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 18.25.sp,
-                        ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18.25.sp,
                       ),
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: Color(0xFF6B7280),
-                          fontFamily: 'Comfortaa',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15.96.sp,
-                        ),
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: Color(0xFF6B7280),
+                        fontFamily: 'Comfortaa',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15.96.sp,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 )
               ],
             ),

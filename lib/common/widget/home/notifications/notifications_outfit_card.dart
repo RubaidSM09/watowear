@@ -85,6 +85,7 @@ class NotificationsOutfitCard extends StatelessWidget {
                       text: 'View Details',
                       icon: 'assets/images/home/notifications/view_details.png',
                       paddingLeftWidth: 13.06,
+                      paddingRightWidth: 13.06,
                       paddingTopHeight: 13.54,
                       onTap: () => Get.to(OutfitDetailsView()),
                     ),

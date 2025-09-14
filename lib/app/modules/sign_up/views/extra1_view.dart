@@ -17,12 +17,39 @@ class Extra1View extends GetView<ExtrasController> {
       // fit: StackFit.expand,
       children: [
         Positioned(
-          top: 33.h,
+          top: 15.h,
           left: 42.5.w,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CustomLogo(icon: 'assets/images/authentication/look_at_your_best.png'),
+                Container(
+                  decoration: BoxDecoration(
+                    color: WTWColor.primary,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: WTWColor.primary,
+                      width: 5.r,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withAlpha(26),
+                        blurRadius: 15.r,
+                        offset: Offset(0.w, 10.h)
+                      ),
+                      BoxShadow(
+                          color: Colors.black.withAlpha(26),
+                          blurRadius: 6.r,
+                          offset: Offset(0.w, 4.h)
+                      ),
+                    ]
+                  ),
+                  child: CircleAvatar(
+                    radius: 40.r,
+                    backgroundImage: AssetImage(
+                      'assets/images/onboarding/chloe.png'
+                    ),
+                  ),
+                ),
 
                 SizedBox(height: 20.22.h,),
 

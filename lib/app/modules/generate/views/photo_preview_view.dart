@@ -36,41 +36,43 @@ class PhotoPreviewView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Divider(color: WTWColor.secondary_bg,),
-
-            SizedBox(height: 3.4.h,),
-
-            SizedBox(
-              width: 440.w,
-              height: 764.h,
-              child: Image.asset(
-                'assets/images/generate/photo_preview/preview.png',
-                fit: BoxFit.cover,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Divider(color: WTWColor.secondary_bg,),
+        
+              SizedBox(height: 3.4.h,),
+        
+              SizedBox(
+                width: 440.w,
+                height: 764.h,
+                child: Image.asset(
+                  'assets/images/generate/photo_preview/preview.png',
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 27.w,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  WTWPrimaryButton(
-                    text: 'Keep Photo',
-                    paddingLeftWidth: 33,
-                    onTap: () => Get.to(ItemDetailsView()),
-                  ),
-                  WTWPrimaryButton(
-                    text: 'Retake Photo',
-                    paddingLeftWidth: 33,
-                    onTap: () {  },
-                  ),
-                ],
-              ),
-            )
-          ],
+        
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 27.w,),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    WTWPrimaryButton(
+                      text: 'Keep Photo',
+                      paddingLeftWidth: 33,
+                      onTap: () => Get.to(ItemDetailsView()),
+                    ),
+                    WTWPrimaryButton(
+                      text: 'Retake Photo',
+                      paddingLeftWidth: 33,
+                      onTap: () {  },
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

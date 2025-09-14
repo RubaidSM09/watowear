@@ -43,33 +43,35 @@ class MyClosetView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w,),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 25.h,),
-
-              MyClosetSection(),
-              
-              SizedBox(height: 57.h,),
-              
-              WTWPrimaryButton(
-                text: 'Import Images',
-                onTap: () => Get.to(SelectPhotosView()),
-              ),
-
-              SizedBox(height: 15.h,),
-
-              WTWPrimaryButton(
-                text: 'Quick Scan',
-                onTap: () => Get.dialog(CameraAccessRequiredView()),
-              ),
-
-              SizedBox(height: 25.h,),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w,),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 25.h,),
+        
+                MyClosetSection(),
+                
+                SizedBox(height: 57.h,),
+                
+                WTWPrimaryButton(
+                  text: 'Import Images',
+                  onTap: () => Get.to(SelectPhotosView()),
+                ),
+        
+                SizedBox(height: 15.h,),
+        
+                WTWPrimaryButton(
+                  text: 'Quick Scan',
+                  onTap: () => Get.dialog(CameraAccessRequiredView()),
+                ),
+        
+                SizedBox(height: 25.h,),
+              ],
+            ),
           ),
         ),
       ),

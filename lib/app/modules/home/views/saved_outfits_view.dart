@@ -48,25 +48,27 @@ class SavedOutfitsView extends GetView {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              WTWSearchBar(searchBarText: 'e.g. red jacket, summer, formal...',),
-
-              SizedBox(height: 20.20974457.h,),
-
-              SavedOutfitsFilterSection(),
-
-              SizedBox(height: 18.04230652.h,),
-
-              SavedOutfitsCardsSection(),
-            ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                WTWSearchBar(searchBarText: 'e.g. red jacket, summer, formal...',),
+        
+                SizedBox(height: 20.20974457.h,),
+        
+                SavedOutfitsFilterSection(),
+        
+                SizedBox(height: 18.04230652.h,),
+        
+                SavedOutfitsCardsSection(),
+              ],
+            ),
           ),
         ),
       ),

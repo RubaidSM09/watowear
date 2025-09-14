@@ -20,207 +20,209 @@ class WardrobeCarousalView extends GetView {
         title: WTWAppbarText(text: 'Wardrobe Carousal'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
 
-              SizedBox(height: 24.4.h,),
+                SizedBox(height: 24.4.h,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Recently Used Section',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-
-                  SizedBox.shrink()
-                ],
-              ),
-
-              SizedBox(height: 9.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    Text(
+                      'Recently Used Section',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
 
-                    RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
 
-              SizedBox(height: 30.h,),
+                SizedBox(height: 9.h,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Top Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+
+                      RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+
+                      RecentlyUsedSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    ],
                   ),
+                ),
 
-                  SizedBox.shrink()
-                ],
-              ),
+                SizedBox(height: 30.h,),
 
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    Text(
+                      'Top Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
 
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
 
-              SizedBox(height: 25.h,),
+                SizedBox(height: 12.h,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Middle Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/top.jpg',),
+                    ],
                   ),
+                ),
 
-                  SizedBox.shrink()
-                ],
-              ),
+                SizedBox(height: 25.h,),
 
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+                    Text(
+                      'Middle Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
 
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
 
-              SizedBox(height: 25.h,),
+                SizedBox(height: 12.h,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Bottom Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/middle.jpg',),
+                    ],
                   ),
+                ),
 
-                  SizedBox.shrink()
-                ],
-              ),
+                SizedBox(height: 25.h,),
 
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    Text(
+                      'Bottom Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
 
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
 
-              SizedBox(height: 25.h,),
+                SizedBox(height: 12.h,),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Accessories Selection',
-                    style: TextStyle(
-                      color: WTWColor.text_icons,
-                      fontFamily: 'Comfortaa',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/bottom.jpg',),
+                    ],
                   ),
+                ),
 
-                  SizedBox.shrink()
-                ],
-              ),
+                SizedBox(height: 25.h,),
 
-              SizedBox(height: 12.h,),
-
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  spacing: 12.w,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+                    Text(
+                      'Accessories Selection',
+                      style: TextStyle(
+                        color: WTWColor.text_icons,
+                        fontFamily: 'Comfortaa',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
 
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
-
-                    TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+                    SizedBox.shrink()
                   ],
                 ),
-              ),
 
-              SizedBox(height: 72.h,),
-            ],
+                SizedBox(height: 12.h,),
+
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.w,
+                    children: [
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+
+                      TopMiddleBottomAccessoriesSectionCard(image: 'assets/images/home/outfit_details/edit_outfit/accessories.jpg',),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 72.h,),
+              ],
+            ),
           ),
         ),
       ),

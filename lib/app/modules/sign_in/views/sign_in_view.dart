@@ -28,131 +28,133 @@ class SignInView extends GetView<SignInController> {
         ),
         elevation: 0,
       ),
-      body: Stack(
-        children: [
-          Positioned(
-            top: 60.76.h,
-            left: 42.w,
-            child: Column(
-              children: [
-                LogInHead(),
-
-                SizedBox(height: 10.41.h,),
-
-                LogInSubhead(),
-
-                SizedBox(height: 33.31.h,),
-                
-                CustomTextField(
-                  labelText: 'Email Address',
-                  hintText: 'Enter your email',
-                  controller: controller.emailController,
-                ),
-
-                SizedBox(height: 24.98.h,),
-
-                Obx(() {
-                  return CustomTextField(
-                    labelText: 'Password',
-                    hintText: 'Enter your password',
-                    obscureText: controller.isPasswordVisible.value ? false : true,
-                    controller: controller.passwordController,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        controller.isPasswordVisible.value = !controller.isPasswordVisible.value;
-                      },
-                      child: Icon(
-                        controller.isPasswordVisible.value ? Icons.visibility : Icons.visibility_off,
-                        size: 25.sp,
-                        color: WTWColor.secondary_bg,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Positioned(
+              top: 60.76.h,
+              left: 42.w,
+              child: Column(
+                children: [
+                  LogInHead(),
+        
+                  SizedBox(height: 10.41.h,),
+        
+                  LogInSubhead(),
+        
+                  SizedBox(height: 33.31.h,),
+                  
+                  CustomTextField(
+                    labelText: 'Email Address',
+                    hintText: 'Enter your email',
+                    controller: controller.emailController,
+                  ),
+        
+                  SizedBox(height: 24.98.h,),
+        
+                  Obx(() {
+                    return CustomTextField(
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
+                      obscureText: controller.isPasswordVisible.value ? false : true,
+                      controller: controller.passwordController,
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          controller.isPasswordVisible.value = !controller.isPasswordVisible.value;
+                        },
+                        child: Icon(
+                          controller.isPasswordVisible.value ? Icons.visibility : Icons.visibility_off,
+                          size: 25.sp,
+                          color: WTWColor.secondary_bg,
+                        ),
                       ),
-                    ),
-                  );
-                }),
-
-                SizedBox(height: 24.99.h,),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Obx(() {
-                          return GestureDetector(
-                            onTap: () {
-                              controller.isChecked.value =
-                              !controller.isChecked.value;
-                            },
-                            child: Container(
-                              width: 20.818714141845703.w,
-                              height: 20.818714141845703.h,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(1.04.r),
-                                border: Border.all(
-                                    color: Colors.black, width: 0.52.w),
+                    );
+                  }),
+        
+                  SizedBox(height: 24.99.h,),
+        
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Obx(() {
+                            return GestureDetector(
+                              onTap: () {
+                                controller.isChecked.value =
+                                !controller.isChecked.value;
+                              },
+                              child: Container(
+                                width: 20.818714141845703.w,
+                                height: 20.818714141845703.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(1.04.r),
+                                  border: Border.all(
+                                      color: Colors.black, width: 0.52.w),
+                                ),
+                                child: controller.isChecked.value
+                                    ? Icon(
+                                  Icons.check,
+                                  size: 16.sp,
+                                  color: Colors.black,
+                                )
+                                    : null,
                               ),
-                              child: controller.isChecked.value
-                                  ? Icon(
-                                Icons.check,
-                                size: 16.sp,
-                                color: Colors.black,
-                              )
-                                  : null,
-                            ),
-                          );
-                        }),
-                        SizedBox(width: 12.49.w,),
-                        RememberMeText(),
-                      ],
-                    ),
-                    SizedBox(width: 79.83.w,),
-                    GestureDetector(
-                      onTap: () => Get.to(ForgotPasswordView()),
-                      child: ForgotPasswordText(),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 24.99.h,),
-
-                SignInButton(onTap: () => Get.offNamed('/dashboard')),
-
-                SizedBox(height: 33.31.h,),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      color: WTWColor.secondary_bg,
-                      width: 100.20632934570312.w,
-                      height: 1.040935754776001,
-                    ),
-                    ContinueWithText(),
-                    Container(
-                      color: WTWColor.secondary_bg,
-                      width: 100.20632934570312.w,
-                      height: 1.040935754776001,
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: 33.31.h,),
-                
-                GoogleButton(onTap: () {  }),
-
-                SizedBox(height: 16.66.h,),
-
-                AppleButton(onTap: () {  }),
-              ],
+                            );
+                          }),
+                          SizedBox(width: 12.49.w,),
+                          RememberMeText(),
+                        ],
+                      ),
+                      SizedBox(width: 79.83.w,),
+                      GestureDetector(
+                        onTap: () => Get.to(ForgotPasswordView()),
+                        child: ForgotPasswordText(),
+                      ),
+                    ],
+                  ),
+        
+                  SizedBox(height: 24.99.h,),
+        
+                  SignInButton(onTap: () => Get.offNamed('/dashboard')),
+        
+                  SizedBox(height: 33.31.h,),
+        
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        color: WTWColor.secondary_bg,
+                        width: 100.20632934570312.w,
+                        height: 1.040935754776001,
+                      ),
+                      ContinueWithText(),
+                      Container(
+                        color: WTWColor.secondary_bg,
+                        width: 100.20632934570312.w,
+                        height: 1.040935754776001,
+                      ),
+                    ],
+                  ),
+        
+                  SizedBox(height: 33.31.h,),
+                  
+                  GoogleButton(onTap: () {  }),
+        
+                  SizedBox(height: 16.66.h,),
+        
+                  AppleButton(onTap: () {  }),
+                ],
+              ),
             ),
-          ),
-
-          Positioned(
-            top: 773.76.h,
-            child: LogInFooter(),
-          )
-        ],
+        
+            Positioned(
+              top: 773.76.h,
+              child: LogInFooter(),
+            )
+          ],
+        ),
       )
     );
   }

@@ -24,55 +24,57 @@ class VoiceAssistantView extends GetView<SettingController> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 24.4.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_1.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-
-              SizedBox(height: 24.10897369.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_2.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-
-              SizedBox(height: 24.10897369.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_3.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-
-              SizedBox(height: 24.10897369.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_4.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-
-              SizedBox(height: 24.10897369.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_5.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-
-              SizedBox(height: 24.10897369.h,),
-
-              VoiceAssistantRow(
-                image: 'assets/images/home/voice_assistant/voice_assistant_6.png',
-                switchedState: controller.isVoiceAssistant1Active.value,
-              ),
-            ],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 24.4.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_1.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+        
+                SizedBox(height: 24.10897369.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_2.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+        
+                SizedBox(height: 24.10897369.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_3.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+        
+                SizedBox(height: 24.10897369.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_4.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+        
+                SizedBox(height: 24.10897369.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_5.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+        
+                SizedBox(height: 24.10897369.h,),
+        
+                VoiceAssistantRow(
+                  image: 'assets/images/home/voice_assistant/voice_assistant_6.png',
+                  switchedState: controller.isVoiceAssistant1Active.value,
+                ),
+              ],
+            ),
           ),
         ),
       ),

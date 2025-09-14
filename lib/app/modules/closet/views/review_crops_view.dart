@@ -21,39 +21,41 @@ class ReviewCropsView extends GetView {
         title: WTWAppbarText(text: 'Review Crops'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w,),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 25.h,),
-
-              ReviewCropsCardSection(),
-
-              SizedBox(height: 30.h,),
-
-              ReviewCropsBottomIndicator(),
-
-              SizedBox(height: 40.h,),
-              
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: WTWPrimaryButton(
-                  text: 'Continue (0/5)',
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w,),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 25.h,),
+        
+                ReviewCropsCardSection(),
+        
+                SizedBox(height: 30.h,),
+        
+                ReviewCropsBottomIndicator(),
+        
+                SizedBox(height: 40.h,),
+                
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: WTWPrimaryButton(
+                    text: 'Continue (0/5)',
+                    onTap: () {  },
+                  ),
+                ),
+        
+                SizedBox(height: 16.h,),
+        
+                WTWSecondaryButton(
+                  text: 'Skip All',
+                  width: 360.w,
                   onTap: () {  },
                 ),
-              ),
-
-              SizedBox(height: 16.h,),
-
-              WTWSecondaryButton(
-                text: 'Skip All',
-                width: 360.w,
-                onTap: () {  },
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

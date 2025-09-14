@@ -24,23 +24,25 @@ class RewardsView extends GetView<RewardsController> {
         title: WTWAppbarText(text: 'Rewards'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              Padding(
-                padding: EdgeInsets.all(25.w),
-                child: Obx(() {
-                  return Column(
-                    children: [
-                      PointVsBadgeSelectionSection(isBadgeSelected: controller.isBadge.value,),
-                    ],
-                  );
-                }),
-              ),
-            ],
-          ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                Padding(
+                  padding: EdgeInsets.all(25.w),
+                  child: Obx(() {
+                    return Column(
+                      children: [
+                        PointVsBadgeSelectionSection(isBadgeSelected: controller.isBadge.value,),
+                      ],
+                    );
+                  }),
+                ),
+              ],
+            ),
+        ),
       ),
     );
   }

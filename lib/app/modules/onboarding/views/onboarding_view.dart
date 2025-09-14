@@ -38,228 +38,230 @@ class OnboardingView extends GetView<OnboardingController> {
 
     return Scaffold(
       backgroundColor: WTWColor.background,
-      body: Stack(
-        children: [
-          PageView(
-            controller: controller.pageController,
-            onPageChanged: controller.onPageChanged,
-            children: const [
-              Onboarding1View(), // 1
-              Onboarding2View(), // 2
-              Onboarding3View(), // 3
-              Onboarding4View(), // 4
-              Onboarding5View(), // 5
-              Onboarding6View(), // 6
-            ],
-          ),
-
-          // Top bar (lang + skip) — white for hero, beige for others
-          Obx(() {
-            final idx = controller.current.value;
-            final topColor = idx == 0 ? Colors.white : Colors.black87;
-            return Positioned(
-              left: 25.w,
-              top: 59.6.h,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
-                child: InkWell(
-                  onTap: () {}, // TODO: open language picker
-                  child: Row(
-                    children: [
-                      if (idx == 0)
-                        SvgPicture.asset(
-                          'assets/images/onboarding/UK United Kingdom flag.svg',
-                          width: 20.w,
-                          height: 20.h,
-                        ),
-                      if (idx == 0) SizedBox(width: 9.w),
-                      if (idx == 0)
-                        Text(
-                          'EN',
-                          style: TextStyle(
-                            color: topColor,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Comfortaa',
+      body: SafeArea(
+        child: Stack(
+          children: [
+            PageView(
+              controller: controller.pageController,
+              onPageChanged: controller.onPageChanged,
+              children: const [
+                Onboarding1View(), // 1
+                Onboarding2View(), // 2
+                Onboarding3View(), // 3
+                Onboarding4View(), // 4
+                Onboarding5View(), // 5
+                Onboarding6View(), // 6
+              ],
+            ),
+        
+            // Top bar (lang + skip) — white for hero, beige for others
+            Obx(() {
+              final idx = controller.current.value;
+              final topColor = idx == 0 ? Colors.white : Colors.black87;
+              return Positioned(
+                left: 25.w,
+                top: 28.53.h,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+                  child: InkWell(
+                    onTap: () {}, // TODO: open language picker
+                    child: Row(
+                      children: [
+                        if (idx == 0)
+                          SvgPicture.asset(
+                            'assets/images/onboarding/UK United Kingdom flag.svg',
+                            width: 20.w,
+                            height: 20.h,
                           ),
+                        if (idx == 0) SizedBox(width: 9.w),
+                        if (idx == 0)
+                          Text(
+                            'EN',
+                            style: TextStyle(
+                              color: topColor,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Comfortaa',
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            }),
+        
+            Obx(() {
+              final idx = controller.current.value;
+              final topColor = idx == 0 ? Colors.white : Colors.black87;
+              return Positioned(
+                left: 370.21.w,
+                top: 20.445.h,
+                child: TextButton(
+                  onPressed: controller.skip,
+                  child: Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: topColor,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Comfortaa',
+                    ),
+                  ),
+                ),
+              );
+            }),
+        
+            // Bottom: indicator + primary action
+            Obx(() {
+              final idx = controller.current.value;
+              if (idx == 0) {
+                return Positioned(
+                  left: 192.w,
+                  top: 784.6.h,
+                  child: AnimatedSmoothIndicator(
+                    activeIndex: idx,
+                    count: 6,
+                    effect: WormEffect(
+                      dotHeight: 8.h,
+                      dotWidth: 8.w,
+                      spacing: 8.w,
+                      activeDotColor: kGreen,
+                      dotColor: Color(0xFFD9D4C9),
+                    ),
+                  ),
+                );
+              }
+              if (idx == 1 || idx == 2 || idx == 3) {
+                return Stack(
+                  children: [
+                    Positioned(
+                      left: 49.w,
+                      top: 836.6.h,
+                      child: AnimatedSmoothIndicator(
+                        activeIndex: idx,
+                        count: 6,
+                        effect: WormEffect(
+                          dotHeight: 8.h,
+                          dotWidth: 8.w,
+                          spacing: 8.w,
+                          activeDotColor: kGreen,
+                          dotColor: Color(0xFFD9D4C9),
                         ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 368.w,
+                      top: 823.76.h,
+                      child: GestureDetector(
+                        onTap: controller.next,
+                        child: Image.asset(
+                          'assets/images/onboarding/next.png',
+                          width: 34.w,
+                          height: 34.h,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return Positioned(
+                  left: 45.w,
+                  top: 871.6.h,
+                  child: SizedBox(
+                    width: 342.w,
+                    child: Center(
+                      child: AnimatedSmoothIndicator(
+                        activeIndex: idx,
+                        count: 6,
+                        effect: WormEffect(
+                          dotHeight: 8.h,
+                          dotWidth: 8.w,
+                          spacing: 8.w,
+                          activeDotColor: kGreen,
+                          dotColor: Color(0xFFD9D4C9),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              }
+            }),
+        
+            Obx(() {
+              final idx = controller.current.value;
+              if (idx == 0) {
+                return Positioned(
+                  left: 40.w,
+                  top: 820.6.h,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      OnboardingButton(
+                        text: "Let's Get Started",
+                        onTap: controller.next,
+                      ),
                     ],
                   ),
-                ),
-              ),
-            );
-          }),
-
-          Obx(() {
-            final idx = controller.current.value;
-            final topColor = idx == 0 ? Colors.white : Colors.black87;
-            return Positioned(
-              left: 378.21.w,
-              top: 70.89.h,
-              child: TextButton(
-                onPressed: controller.skip,
-                child: Text(
-                  'Skip',
-                  style: TextStyle(
-                    color: topColor,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'Comfortaa',
-                  ),
-                ),
-              ),
-            );
-          }),
-
-          // Bottom: indicator + primary action
-          Obx(() {
-            final idx = controller.current.value;
-            if (idx == 0) {
-              return Positioned(
-                left: 192.w,
-                top: 834.6.h,
-                child: AnimatedSmoothIndicator(
-                  activeIndex: idx,
-                  count: 6,
-                  effect: WormEffect(
-                    dotHeight: 8.h,
-                    dotWidth: 8.w,
-                    spacing: 8.w,
-                    activeDotColor: kGreen,
-                    dotColor: Color(0xFFD9D4C9),
-                  ),
-                ),
-              );
-            }
-            if (idx == 1 || idx == 2 || idx == 3) {
-              return Stack(
-                children: [
-                  Positioned(
-                    left: 49.w,
-                    top: 886.6.h,
-                    child: AnimatedSmoothIndicator(
-                      activeIndex: idx,
-                      count: 6,
-                      effect: WormEffect(
-                        dotHeight: 8.h,
-                        dotWidth: 8.w,
-                        spacing: 8.w,
-                        activeDotColor: kGreen,
-                        dotColor: Color(0xFFD9D4C9),
+                );
+              } else if (idx == 4) {
+                return Positioned(
+                  left: 40.w,
+                  top: 761.6.h,
+                  child: Column(
+                    children: [
+                      OnboardingButton(
+                        text: 'Get Started',
+                        onTap: controller.next,
                       ),
-                    ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        'Already have an account? Log in',
+                        style: TextStyle(
+                          color: WTWColor.text_icons,
+                          fontFamily: 'Comfortaa',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
-                  Positioned(
-                    left: 368.w,
-                    top: 873.76.h,
-                    child: GestureDetector(
-                      onTap: controller.next,
-                      child: Image.asset(
-                        'assets/images/onboarding/next.png',
-                        width: 34.w,
-                        height: 34.h,
+                );
+              } else if (idx == 5) {
+                return Positioned(
+                  left: 40.w,
+                  top: 697.6.h,
+                  child: Column(
+                    children: [
+                      OnboardingButton(
+                        text: 'Sign Up',
+                        onTap: controller.openSignUp,
                       ),
-                    ),
+                      SizedBox(height: 16.h),
+                      OnboardingButton2(
+                        text: 'Sign In',
+                        onTap: controller.openSignIn,
+                      ),
+                      SizedBox(height: 16.h),
+                      Text(
+                        'Continue as a guest',
+                        style: TextStyle(
+                          color: WTWColor.text_icons,
+                          fontFamily: 'Comfortaa',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              );
-            } else {
-              return Positioned(
-                left: 45.w,
-                top: 921.6.h,
-                child: SizedBox(
-                  width: 342.w,
-                  child: Center(
-                    child: AnimatedSmoothIndicator(
-                      activeIndex: idx,
-                      count: 6,
-                      effect: WormEffect(
-                        dotHeight: 8.h,
-                        dotWidth: 8.w,
-                        spacing: 8.w,
-                        activeDotColor: kGreen,
-                        dotColor: Color(0xFFD9D4C9),
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }
-          }),
-
-          Obx(() {
-            final idx = controller.current.value;
-            if (idx == 0) {
-              return Positioned(
-                left: 40.w,
-                top: 867.6.h,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    OnboardingButton(
-                      text: "Let's Get Started",
-                      onTap: controller.next,
-                    ),
-                  ],
-                ),
-              );
-            } else if (idx == 4) {
-              return Positioned(
-                left: 40.w,
-                top: 801.6.h,
-                child: Column(
-                  children: [
-                    OnboardingButton(
-                      text: 'Get Started',
-                      onTap: controller.next,
-                    ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      'Already have an account? Log in',
-                      style: TextStyle(
-                        color: WTWColor.text_icons,
-                        fontFamily: 'Comfortaa',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            } else if (idx == 5) {
-              return Positioned(
-                left: 40.w,
-                top: 737.6.h,
-                child: Column(
-                  children: [
-                    OnboardingButton(
-                      text: 'Sign Up',
-                      onTap: controller.openSignUp,
-                    ),
-                    SizedBox(height: 16.h),
-                    OnboardingButton2(
-                      text: 'Sign In',
-                      onTap: controller.openSignIn,
-                    ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      'Continue as a guest',
-                      style: TextStyle(
-                        color: WTWColor.text_icons,
-                        fontFamily: 'Comfortaa',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            } // final page has three separate buttons
-            else {
-              return SizedBox.shrink();
-            }
-          }),
-        ],
+                );
+              } // final page has three separate buttons
+              else {
+                return SizedBox.shrink();
+              }
+            }),
+          ],
+        ),
       ),
     );
   }

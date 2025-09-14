@@ -20,21 +20,23 @@ class UploadingItemsView extends GetView {
         title: WTWAppbarText(text: 'Uploading Items'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.w,),
-          child: Column(
-            children: [
-              Divider(color: WTWColor.secondary_bg,),
-
-              SizedBox(height: 25.h,),
-
-              UploadingItemsOverallProgressSection(),
-
-              SizedBox(height: 30.h,),
-
-              UploadingItemsSection(),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.w,),
+            child: Column(
+              children: [
+                Divider(color: WTWColor.secondary_bg,),
+        
+                SizedBox(height: 25.h,),
+        
+                UploadingItemsOverallProgressSection(),
+        
+                SizedBox(height: 30.h,),
+        
+                UploadingItemsSection(),
+              ],
+            ),
           ),
         ),
       ),

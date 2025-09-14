@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 import 'package:watowear_chole/app/modules/generate/views/generate_view.dart';
@@ -46,11 +47,10 @@ class HomeView extends GetView<HomeController> {
               children: [
                 SizedBox.shrink(),
                 Image.asset(
-                  'assets/images/onboarding/wtw_logo2.png',
+                  'assets/images/home/watowear_wordmark_lofo-removebg-preview.png',
                   // color: WTWColor.text_icons,
                   width: 148.35238647460938.w,
                   height: 37.h,
-                  scale: 4,
                 ),
                 GestureDetector(
                   onTap: () => Get.to(NotificationsView()),
