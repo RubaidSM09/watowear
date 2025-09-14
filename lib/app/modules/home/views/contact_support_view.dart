@@ -114,7 +114,7 @@ class ContactSupportView extends GetView<ContactSupportController> {
                           ),
 
                           Obx(() => Container(
-                              padding: EdgeInsets.symmetric(horizontal: 13.33.w, vertical: 8.89.h),
+                              padding: EdgeInsets.symmetric(horizontal: 13.33.w),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.89.r),
                                 color: Colors.white,

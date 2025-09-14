@@ -38,41 +38,6 @@ class VoiceAssistantView extends GetView<SettingController> {
                   image: 'assets/images/home/voice_assistant/voice_assistant_1.png',
                   switchedState: controller.isVoiceAssistant1Active.value,
                 ),
-        
-                SizedBox(height: 24.10897369.h,),
-        
-                VoiceAssistantRow(
-                  image: 'assets/images/home/voice_assistant/voice_assistant_2.png',
-                  switchedState: controller.isVoiceAssistant1Active.value,
-                ),
-        
-                SizedBox(height: 24.10897369.h,),
-        
-                VoiceAssistantRow(
-                  image: 'assets/images/home/voice_assistant/voice_assistant_3.png',
-                  switchedState: controller.isVoiceAssistant1Active.value,
-                ),
-        
-                SizedBox(height: 24.10897369.h,),
-        
-                VoiceAssistantRow(
-                  image: 'assets/images/home/voice_assistant/voice_assistant_4.png',
-                  switchedState: controller.isVoiceAssistant1Active.value,
-                ),
-        
-                SizedBox(height: 24.10897369.h,),
-        
-                VoiceAssistantRow(
-                  image: 'assets/images/home/voice_assistant/voice_assistant_5.png',
-                  switchedState: controller.isVoiceAssistant1Active.value,
-                ),
-        
-                SizedBox(height: 24.10897369.h,),
-        
-                VoiceAssistantRow(
-                  image: 'assets/images/home/voice_assistant/voice_assistant_6.png',
-                  switchedState: controller.isVoiceAssistant1Active.value,
-                ),
               ],
             ),
           ),
