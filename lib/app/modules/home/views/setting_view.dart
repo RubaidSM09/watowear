@@ -55,6 +55,7 @@ class SettingView extends GetView<SettingController> {
                   isDarkMode: controller.isDarkMode,
 
                   isDataProcessingConsentActive: controller.isDataProcessingConsentActive,
+                  isAdvancedSettingsSelected: controller.isAdvancedSettingsSelected,
                 ),
 
                 SizedBox(height: 20.h,),

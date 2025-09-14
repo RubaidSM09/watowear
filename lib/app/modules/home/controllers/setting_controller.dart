@@ -5,6 +5,7 @@ class SettingController extends GetxController {
   RxBool isDarkMode = false.obs;
 
   RxBool isDataProcessingConsentActive = true.obs;
+  RxBool isAdvancedSettingsSelected = true.obs;
   RxBool isMarketingCommunicationsActive = false.obs;
   RxBool isAnalyticsPerformanceActive = true.obs;
 
